@@ -1,0 +1,13 @@
+T3plot                  T3plot
+cwhplot-package         cwh's plot functions
+lowess.bygroup          Plot data in groups, each with lowess or loess
+                        smoothing
+lpr                     Print an object or plot
+mult.fig.p              Plot Setup for MULTiple FIGures, incl. Main
+                        Title
+p.screeplot.princomp    Plot screeplot
+panel.cor               Alternative panel functions for lattice plots
+plotSymbols             Plot symbols, colours, and allow to choose
+plt                     Plot depending on switch, Create multiple plots
+                        with title and time stamp
+pltSplomT               Plot histograms, scatterplot matrix

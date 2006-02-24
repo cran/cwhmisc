@@ -1,0 +1,30 @@
+\name{str2chars}
+\alias{str2chars}
+\alias{cv}
+\alias{vc}
+\title{Convert string to character vector and vice versa.}
+\description{
+  \code{cv} Convert string to vector of characters.
+  \code{vc} Convert vector of characters to string.
+}
+\usage{
+cv(str)
+vc(vec)
+}
+\arguments{
+  \item{str}{a string.}
+  \item{vec}{a vector of characters.}
+}
+\value{
+  \item{cv}{a vector of characters.}
+  \item{vc}{a string.}
+}
+\examples{
+cv("I love you")  # [1] "I" " " "l" "o" "v" "e" " " "y" "o" "u"
+vc(rev(cv("I love you"))) # "uoy evol I"
+}
+\author{
+  Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch},
+  \url{http://www.wsl.ch/staff/christian.hoffmann}
+}
+\keyword{print}

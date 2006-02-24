@@ -1,0 +1,6 @@
+cwhprint-package        cwh's printing functions
+heading                 Write a line of text with underlining and blank
+                        lines
+printP                  Print without square brackets, expression
+                        values together with their call strings
+tex.table               Convert a data matrix into LaTeX code.

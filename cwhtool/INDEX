@@ -1,0 +1,25 @@
+cbind.colnames          Add columns to a data frame, using variable
+                        names.
+clean.na                Clean a matrix or data frame of rows or columns
+                        of containing NA.
+cwhtool-package         cwh's mathematical functions
+delayt                  Waiting loop for program execution
+eql                     Check on equality, including NA==NA and
+                        NaN==NaN.
+libs                    List all installed packages, or all functions
+                        in a package
+like                    Prepare new data for prediction
+ls.functions            List available functions
+napply                  Apply a function to the corresponding elements
+                        of two lists (?)
+numberof                Count the number elements that satisfy a
+                        condition.
+progress.meter          Monitor the progress of a repetitive
+                        calculation.
+remove.dup.rows         Remove duplicate rows
+select.range            Select values from a vector depending on a
+                        range in a second vector.
+setPowerPointStyle      Set PowerPoint style
+tri                     Ternary or Triangular Plots.
+trigrid                 Internal cwhtool functions
+waitReturn              Wait for <Return>

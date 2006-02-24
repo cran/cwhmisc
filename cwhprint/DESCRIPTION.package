@@ -1,0 +1,11 @@
+Package: cwhprint
+Version: 4.3.0
+Date: 2006-02-24
+Title: cwh's printing functions
+Author: Christian W. Hoffmann <christian.hoffmann@wsl.ch>
+Maintainer: Christian W. Hoffmann <christian.hoffmann@wsl.ch>
+Depends: R (>= 0.99), cwhstring
+Description: Miscellaneous functions for general use
+License: GPL version 2 or newer
+URL: http://www.wsl.ch/staff/christian.hoffmann
+

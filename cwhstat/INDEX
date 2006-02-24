@@ -1,0 +1,18 @@
+cwhstat-package         cwh's mathematical functions
+dinvgauss               Inverse Gaussian Distribution
+dpoisgam                Poisson Gamma Distribution
+f.log                   Determine an optimized offset s and return
+                        log10(data+s).
+jitterNA                Jitter entities with NA
+my.table.NA             Tabulate data, with extra rows and columns.
+neg.bin.gof             Approximate a Negative binomial distribution.
+qnorm.ap16              Approximation to the inverse normal
+                        distribution function.
+qres.binom              Randomized quantile residuals
+shapiro.wilk.test       Shapiro-Wilk Normality Test
+smoothed.df             Fit cumulative distribution from kernel
+                        estimate.
+tweedie                 Tweedie Distributions
+tweedief                Tweedie generalized linear model family
+weighted.mean1          Weighted mean1
+weighted.median         Weighted median
