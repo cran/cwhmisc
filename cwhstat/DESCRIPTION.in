@@ -1,3 +1,4 @@
 Package: cwhstat
 Title: cwh's statistical statistical functions
 Description: Miscellaneous statistical functions
+Depends: cwhprint

@@ -51,5 +51,6 @@ tex.tabelle(datmat, precision = 2, rnames = NULL, cnames = NULL,
 }
 \examples{
 }
-\author{}
+\author{
+}
 \keyword{interface}

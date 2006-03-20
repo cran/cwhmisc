@@ -17,7 +17,8 @@ plt(VIEW,f,file="",horizontal = FALSE)
 plotTitStamp(rows, cols, tit, stampl, f=function(x) 0,
       cex=1.5,reset=TRUE,outer=TRUE,oma=c(2,2,4,2),mar=c(4,4,2,1))
 pltTSV(VIEW="see", rows, cols, tit, stampl, f=function(x) 0,
-      cex=1.5,reset=TRUE,outer=TRUE,oma=c(2,2,4,2),mar=c(4,4,2,1),file=stampl,horizontal=TRUE)
+      cex=1.5,reset=TRUE,outer=TRUE,oma=c(2,2,4,2),mar=c(4,4,2,1),
+      file=stampl,horizontal=TRUE)
 pltCharMat(m,tit)
 }
 \arguments{

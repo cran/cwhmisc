@@ -30,13 +30,13 @@ CapLeading(str)
 The same as the argument.
 }
 \examples{
-capitalize  # show use of capply
-cap("f")
-capitalize(c("TruE","faLSe"))
-lower("R")
-lowerize("TruE")
-CapLeading(c("all you ","need"))  # [1] "All you " "need"
-capply(c("abc", "Statistics"), rev)  # reverse strings
+# capitalize shows the use of capply
+cap("f")    # "F"
+capitalize(c("TruE","faLSe"))  # "TRUE"  "FALSE"
+lower("R")  # "r"
+lowerize("TruE")  # "true"
+CapLeading(c("all you ","need"))     # "All you " "Need"
+capply(c("abc", "Statistics"), rev)  # "cba"    "tnahpele"
 }
 \note{
   capply has been reverse engineered from the help page on strsplit:

@@ -6,7 +6,7 @@
   Given a positive definite symmetric matrix \code{A} of dimension 2 by
 	2 and a constant \code{cn}, or the axes \code{a, b} and an angle
 	\code{phi} (in radian, counter clockwise), and the midpoint
-	coordinates \code{m}, points on the ellipse \eqn{(y-m)'*A^(-1)*(y-m) = cn^2} or
+	coordinates \code{m}, points on the ellipse \eqn{(y-m)'*A^{(-1)}*(y-m) = cn^2} or
 	rotm(2,1,2,phi) \%*\% matrix(c(a,0,0,b), 2, 2) will be generated.
 }
 \synopsis{

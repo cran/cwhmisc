@@ -4,8 +4,7 @@
 \description{
   Find a transformation which consists of a translation \code{tr} and a
 	rotation \code{Q} multiplied by a positive scalar \code{f} which maps
-	a set of points \code{x} into the set of points \eqn{xi: xi = f * Q \%*\% 
-	x + tr} The resulting error is minimized by least squares.
+	a set of points \code{x} into the set of points \eqn{xi: xi = f \dot Qx + tr}. The resulting error is minimized by least squares.
 }
 \usage{
   pointfit(xi,x)
@@ -15,8 +14,7 @@
   \item{xi}{Matrix of target points. Each row corresponds to one point.}
 }
 \details{
-  The optimisation is least squares for the problem xi =. Q \%*\% 
-	x + tr. The expansion factor \code{f} is computed as the
+  The optimisation is least squares for the problem \eqn{xi: xi = f \dot Qx + tr}. The expansion factor \code{f} is computed as the
 	geometric mean of the quotients of corresponding
 	coordinate pairs. See the program code.
 }

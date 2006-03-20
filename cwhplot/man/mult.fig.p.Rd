@@ -48,7 +48,7 @@ mult.fig.p(nr.plots, mfrow, mfcol,
   \item{new.par}{the current \code{par} settings.}
   \item{old.par}{the \code{par} \emph{before} the call.}
 }
-\author{Martin Maechler, \email{maechler@stat.math.ethz.ch}, modified by Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch}}
+\author{Martin Maechler, \email{maechler@stat.math.ethz.ch},\cr modified by Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch}}
 \seealso{\code{\link{par}}, \code{\link{layout}}.}
 \examples{
 mult.fig.p(5, main= "Sinus Funktionen verschiedener Frequenzen")

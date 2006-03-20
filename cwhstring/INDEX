@@ -2,6 +2,8 @@ cap                     Change case of strings
 cpos                    Find the position of a substring
 cwhstring-package       cwh's string manipulation functions
 datetime                Show date and time in ISO format
+dc                      Convert number for use in decimal dot centered
+                        table columns
 delstr                  Delete a substring from a string
 dt2str                  Convert time difference to string.
 formatFix               Format to a fixed format representation
@@ -10,15 +12,12 @@ n22dig                  Show vector or matrix (of 0 <= x <=1) in a
                         compact way:
 n2c                     Show absolute values as characters, prepare for
                         plotting
+num2Latex               Convert numeric containing e+-power
 numeric.string          Test string for being a number or made up of
                         digits only.
 padding                 Padding a string with justification
 pasteInfix              Paste(infix)
 pasteRound              Paste rounded values
 replacechar             Replace a character in a string by another
-splitString             Split a string at the location(s) of a
-                        delimiting string, at the single characters of
-                        a delimiter
 str2formula             Convert back to a formula
-strip.whites            Strip white spaces
 strmatch                A "shortest unique identifier" match.

@@ -1,3 +1,6 @@
+FinneyCorr              Finney's correction to log normally distributed
+                        data, r-squared and standard deviation of a
+                        linear model.
 cwhstat-package         cwh's mathematical functions
 dinvgauss               Inverse Gaussian Distribution
 dpoisgam                Poisson Gamma Distribution
@@ -12,6 +15,7 @@ qres.binom              Randomized quantile residuals
 shapiro.wilk.test       Shapiro-Wilk Normality Test
 smoothed.df             Fit cumulative distribution from kernel
                         estimate.
+summaryFs               Print extended summary of lm.
 tweedie                 Tweedie Distributions
 tweedief                Tweedie generalized linear model family
 weighted.mean1          Weighted mean1

@@ -25,7 +25,7 @@
 \note{
   \code{qnorm.ap16} is the approximation used in \code{\link{qnorm}}. The others have an absolute error < \eqn{10^{-3}} and \eqn{10^{-4}}.
 }
-\section{WARNINGS}{
+\section{Warning}{
 	If \code{p <= 0} or \code{p >= 1}, then NA will be returned.
 	
   If \code{p} is very close to 1, a serious loss of significance may be

@@ -23,8 +23,8 @@ substring.location(str, sub, restrict)
   list(first,last)
 }
 \examples{
-cpos(" Baldrian","a",5) #8
-cpos("Baldrian","B",15) #NA
+cpos(" Baldrian","a",5) #  8
+cpos("Baldrian","B",15) # NA
 substring.location("In,theese,housees,there,are,rats","ees")
 #$first  [1]  6 15
 #$last   [1]  8 17

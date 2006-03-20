@@ -1,10 +1,9 @@
-FinneyCorr              Finney's correction to log normally distributed
-                        data.
 adaptlob                Numerically evaluate integral using adaptive
                         rule.
 adaptsimstp             Internal mathlib functions
 cwhmath-package         cwh's mathematical functions
 ellipse                 Generate ellipses
+frac                    Fractional part of number
 is.constant             is.constant
 lengths.angle           Lengths of two vectors and angle between them.
 my.var                  Correlation, Variance and Covariance (Matrices)
@@ -18,5 +17,6 @@ rec.prot                Protected division
 rotangle                Compute rotation angles from orthogonal matrix.
 rotm                    Rotation matrix
 rtf                     Rational Transfer Function objects for R
+seqm                    sequences, empty if "by" not conforming
 signp                   Sign Function
 whole.number            Check an array on whole numbers (x in I).

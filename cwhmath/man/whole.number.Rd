@@ -13,6 +13,10 @@ whole.number(x)
 \value{
 	\code{\link{TRUE}}, \code{\link{FALSE}}
 }
+\examples{
+whole.number(c(pi,2,3)) # FALSE
+whole.number(c(1,2,3))  # TRUE
+}
 \author{Bill Venables }
 \keyword{data}
 

@@ -7,7 +7,8 @@
   5\% nor the 1\% line, the input data are normal with less than 1\% error.
 }
 \usage{
-  T3plot(x,lab=paste("T3 plot of ",deparse(substitute(x))),legend.pos="bottom", cex=0.6, ...)
+  T3plot(x,lab=paste("T3 plot of ",deparse(substitute(x))),
+  legend.pos="bottom", cex=0.6, ...)
 }
 \arguments{
   \item{x}{Data vector.}

@@ -19,12 +19,12 @@ all.digits(str)
 }
 \examples{
 all.digits(c("1231","89a8742")) #  TRUE FALSE
-numeric.string(c("1231","8.9e-2",".7d2"))
- # [1]  TRUE  TRUE FALSE
+numeric.string(c("1231","8.9e-2",".7d2")) # [1]  TRUE  TRUE FALSE
 }
 \author{
   Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch},
   \url{http://www.wsl.ch/staff/christian.hoffmann}
 }
 \keyword{character}
+\keyword{arith}
 

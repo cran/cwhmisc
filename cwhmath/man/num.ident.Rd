@@ -26,3 +26,4 @@
   \url{http://www.wsl.ch/staff/christian.hoffmann}
 }
 \keyword{logic}
+\keyword{arith}
