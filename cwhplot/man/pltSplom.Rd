@@ -14,7 +14,8 @@
   pltHist(data,rows=round(sqrt(ncol(data))),cols=ceiling(ncol(data)/rows))
   pltSplomT(data, mainL = deparse(substitute(data)), xlabL = "", 
     hist = c("h", "d", "b"), adjust = 1, hist.col =
-trellis.par.get("strip.background")$col[5], cex.diag = 1,  h.diag=0.4, ...)
+trellis.par.get("strip.background")$col[5], cex.diag = 1,  h.diag=0.4,
+colYonX = "red", colXonY = "blue", ...)
 }
 \arguments{
   \item{data}{Matrix or data frame containing data, varibles in columns}
@@ -31,6 +32,7 @@ trellis.par.get("strip.background")$col[5], cex.diag = 1,  h.diag=0.4, ...)
   \item{h.diag}{placement of the variable name in the diagonal panel, =0
 	means on the lower border, =0.5 in the middle between lower and
 	upper border}
+  \item{colYonX, colXonY}{colour of smoothing lines, y on x and x on y}
 }
 \value{
 	Are called for their side effect to produce a plot.

@@ -3,7 +3,8 @@
 \title{Weighted median}
 \description{
   Compute the sample median of the vector of values given as its
-	first argument. The weights are given in the second argument.
+	first argument. The weights are given in the second argument; if
+	given, must be of the same length as first argument.  
 }
 \usage{
 weighted.median(x, w=NULL, na.rm=FALSE)
@@ -12,6 +13,14 @@ weighted.median(x, w=NULL, na.rm=FALSE)
   \item{x}{a numeric vector containing the values whose median is to be computed.}
   \item{w}{a numeric vector containing the weights.}
   \item{na.rm}{a logical value indicating whether NA values should be stripped before the computation proceeds.}
+}
+\value{
+  Unweighted mean, if weights  \code{w} are not given. Otherwise, value of
+  \code{x} nearest to the position, where the cumulative sum of the
+  weights reaches 50\% of its maximum value.
+
+  Special cases are considered as
+  closely as possible, see code.
 }
 \author{
   Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch},

@@ -33,4 +33,4 @@
   values of \code{x} log-normal
   }
 \author{W.Stahel, ETH Zuerich, \email{werner.stahel@stat.math.ethz.ch}}
-\keyword{distribution} 
+\keyword{distribution}

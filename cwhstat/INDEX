@@ -12,6 +12,8 @@ neg.bin.gof             Approximate a Negative binomial distribution.
 qnorm.ap16              Approximation to the inverse normal
                         distribution function.
 qres.binom              Randomized quantile residuals
+scode                   Generate the significance codes as in
+                        summary.lm
 shapiro.wilk.test       Shapiro-Wilk Normality Test
 smoothed.df             Fit cumulative distribution from kernel
                         estimate.

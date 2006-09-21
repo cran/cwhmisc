@@ -1,4 +1,4 @@
-\name{Randomized quantile residuals}
+\name{qres}
 \alias{qres.binom}
 \alias{qres.gamma}
 \alias{qres.invgauss}
