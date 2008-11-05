@@ -1,7 +1,5 @@
 catn <- function(...) {cat(...); cat("\n")}
 
-mpf <- function(r,after) {paste(if (r<0) "-" else "+", eval(parse(text = paste("sprintf('%.",after,"f',abs(",r,"))",sep=""))))}
-
 pn <- function() cat("\n")
 
 "prinV" <- function(x,after=2,before)

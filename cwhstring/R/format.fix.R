@@ -1,4 +1,4 @@
-"formatFix" <- function(x,after,before=2,extend=TRUE) {  # 2001.08.29, C.Hoffmann
+"formatFix" <- function(x,after,before=2,extend=TRUE) {  # 2001-08-29, C.Hoffmann
   stripform <- function(x,after,len) {
     st <- format(x,digits=min(max(1,after),22),trim=TRUE,nsmall=after)
     difflen <- nchar(st) - len

@@ -30,8 +30,8 @@ indexLine <- function(n) {
 n2cCompact <- function(x, symm=FALSE) {
   nB <- n2c(x, symm=symm)
   cc <- indexLine(ncol(x))
-  c(cc,paste(apply(nB,2,paste,collapse=""),spacC,if (is.null(rownames(x))) seq(nrow(x)) else abbreviate(rownames(x),minlength = 10),sep=""),cc,paste("legend: ",attr(nB,"legend"),sep=""))
-} ## n2cCompact
+  c(cc,paste(apply(nB,1,paste,collapse=""),spacC,if (is.null(rownames(x))) seq(nrow(x)) else abbreviate(rownames(x),minlength = 10),sep=""),cc,paste("legend: ",attr(nB,"legend"),sep=""))
+} ## n2cCompact co2rected 2008-09-22: apply(,2,
 
 charMat <- function(cc) { ## lines of type n2cCompact
   rows <- length(cc)-3    ## strip lines 1 and -2, -1

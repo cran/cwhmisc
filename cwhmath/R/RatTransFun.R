@@ -1,13 +1,13 @@
 ### Rational Transfer Function objects for S-PLUS.
 ### Author:  Henrik Aalborg Nielsen, IMM, DTU (han@imm.dtu.dk)
 
-rtf <- function(A=1, B=1, delay=0, unit.sg=T, stability.check=T)
+rtf <- function(A=1, B=1, delay=0, unit.sg=TRUE, stability.check=TRUE)
 {
   ## Creates and checks a rational transfer-function object
   ##
   ## y_t = H(q) x_t, where H(q) = q^-delay B(q^-1) / A(q^-1)
   ##
-  ## If unit.sq is TRUE (default) the coefs. of B(q^-1) is multiplied
+  ## If unit.sq is TRUERUE (default) the coefs. of B(q^-1) is multiplied
   ## with a factor making the stationary gain one.
   ##
   ## A(q^-1) = 1   - a_1 q^-1 - ... - a_na q^-na
@@ -36,7 +36,7 @@ rtf <- function(A=1, B=1, delay=0, unit.sg=T, stability.check=T)
 
   # Stability  
   if(length(A) == 1)
-    stable <- T
+    stable <- TRUE
   else {
     tmp <- A
     tmp[-1] <- - A[-1]  # Def. of signs on params
@@ -119,7 +119,7 @@ rtf.filter <- function(x, rtfobj, init)
 }
 
 
-rtf.impulse <- function(rtfobj, lag.max, plot.it=T,
+rtf.impulse <- function(rtfobj, lag.max, plot.it=TRUE,
                         nzero=2, type="h",
                         xlab="Lag", ylab="Impulse Response", ... )
 {
@@ -142,7 +142,7 @@ rtf.impulse <- function(rtfobj, lag.max, plot.it=T,
 }
 
 
-rtf.step <- function(rtfobj, lag.max, plot.it=T,
+rtf.step <- function(rtfobj, lag.max, plot.it=TRUE,
                      nzero=2, type="h",
                      xlab="Lag", ylab="Step Response", ylim, ... )
 {
@@ -169,7 +169,7 @@ rtf.step <- function(rtfobj, lag.max, plot.it=T,
 }
 
 
-print.rtf <- function(x, ..., digits)
+print.rtf <- function(x, digits, ...)
 {
   rtfobj <- x
   cat("Rational transfer function (rtf) object.\n")
@@ -212,7 +212,7 @@ print.rtf <- function(x, ..., digits)
 }
 
 
-plot.rtf <- function(x, ..., lag.max)
+plot.rtf <- function(x, lag.max, ...)
 {
   ## Graphical representation of an object of class 'rtf'.  If lag.max is not specified reasonable things happens.  '...' are passed to rtf.impulse and rtf.step.
 

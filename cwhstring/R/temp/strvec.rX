@@ -1,2 +1,0 @@
-cv <- function(str) {unlist(strsplit(str,""))} # make char vector
-vc <- function(vec) {paste(vec,collapse="")}   # make string

@@ -1,6 +1,8 @@
-capply <- function(str, ff) {
-  sapply(lapply(strsplit(str, NULL), ff), paste, collapse="")
-}
+capply <- function(str, ff,...) {
+  x <- strsplit(str, NULL)
+  y <- lapply(x, ff,...)
+  sapply(y, paste, collapse="")
+} ## 2008-09-29, intermediate results introduced
 
 cap <- function(char) {
   # change lower letters to upper, others leave unchanged
@@ -9,8 +11,7 @@ cap <- function(char) {
 }
 
 capitalize <- function(str) { # vector of words
-  ff <- function(x) paste(lapply(unlist(strsplit(x, NULL)),cap),collapse="")
-  capply(str,ff)
+  capply(str,caplow.ff,cap)
 }
        
 lower <- function(char) {
@@ -20,11 +21,10 @@ lower <- function(char) {
 }
 
 lowerize <- function(str) {
-  ff <- function(x) paste(lapply(unlist(strsplit(x, NULL)),lower),collapse="")
-  capply(str,ff)
+  capply(str,caplow.ff,lower)
 }
 
-"CapLeading" <- function(str) {
+CapLeading <- function(str) {
   ff <- function(x) {r <- x; r[1]<-cap(x[1]); r}
   capply(str,ff)
 }

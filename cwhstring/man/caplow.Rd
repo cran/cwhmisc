@@ -14,7 +14,7 @@
 	character vector
 }
 \usage{
-capply(str,ff)
+capply(str,ff,\ldots)
 cap(char)
 capitalize(str)
 lower(char)
@@ -22,9 +22,10 @@ lowerize(str)
 CapLeading(str)
 }
 \arguments{
+  \item{str}{a character vector.}
   \item{ff}{a function.}
   \item{char}{a single letter.}
-  \item{str}{a character vector.}
+  \item{\ldots}{a function .}
 }
 \value{
 The same as the argument.
@@ -36,7 +37,7 @@ capitalize(c("TruE","faLSe"))  # "TRUE"  "FALSE"
 lower("R")  # "r"
 lowerize("TruE")  # "true"
 CapLeading(c("all you ","need"))     # "All you " "Need"
-capply(c("abc", "Statistics"), rev)  # "cba"    "tnahpele"
+capply(c("abc", "elephant"), rev)  # "cba"    "tnahpele"
 }
 \note{
   capply has been reverse engineered from the help page on strsplit:

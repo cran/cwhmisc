@@ -14,7 +14,7 @@ pasteRound(..., digits=16, sep=" ", collapse=NULL)
   \item{collapse}{argument to \code{\link{paste}}.}
 }
 \value{
-The concatenation of formatted values }
+The concatenation of formatted values
 }
 \examples{
 x <- rnorm(3)

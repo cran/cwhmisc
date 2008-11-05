@@ -8,7 +8,7 @@ lowess.bygroup <- function(x, y, group, lin=FALSE, col = par("col"), bg = NA, pc
     if (length(oi)>0) lines(lowess(x[oi],y[oi]))
   }
   invisible()
-}
+} 
 
 loess.bygroup <- function(x, y, group, lin=FALSE, col = par("col"), bg = NA, pch = par("pch"), cex = 1, ...) {
   for (ii in unique(group)) {

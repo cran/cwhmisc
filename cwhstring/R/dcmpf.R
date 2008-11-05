@@ -15,3 +15,5 @@ dcn <- function(x,d,ch="&") { # d=0: no "&" !!
   s <- sapply(x,function(x) eval(parse(text = paste("sprintf('%.", d, "f',", x, ")", sep = ""))))
   replacechar(s,".",ch)
 }
+
+mpf <- function(r,after) {paste(if (r<0) "-" else "+", eval(parse(text = paste("sprintf('%.",after,"f',abs(",r,"))",sep=""))))}

@@ -6,21 +6,22 @@
 \alias{print.rtf}
 \alias{plot.rtf}
 \title{Rational Transfer Function objects for R}
-\description{
-  ??
+\description{ no detqils given.
 }
+
 \usage{
-rtf(A = 1, B = 1, delay = 0, unit.sg = T, stability.check = T)
+rtf(A = 1, B = 1, delay = 0, unit.sg = TRUE, stability.check = TRUE)
 rtf.filter(x, rtfobj, init)
-rtf.impulse(rtfobj, lag.max, plot.it=T,
+rtf.impulse(rtfobj, lag.max, plot.it=TRUE,
                         nzero=2, type="h",
                         xlab="Lag", ylab="Impulse Response",\dots)
-rtf.step(rtfobj, lag.max, plot.it=T,
+rtf.step(rtfobj, lag.max, plot.it=TRUE,
                      nzero=2, type="h",
                      xlab="Lag", ylab="Step Response", ylim,\dots)
-print.rtf(x,\dots, digits)
-plot.rtf(x,\dots, lag.max)
+print.rtf(x, digits,\dots)
+plot.rtf(x, lag.max,\dots)
 }
+
 \arguments{
   \item{A}{See details}
   \item{B}{See details}
@@ -30,7 +31,7 @@ plot.rtf(x,\dots, lag.max)
   \item{x}{Filter (print.rtf), or (plot.rtf) rational transfer function object as created by rtf()}
   \item{rtfobj}{rational transfer function object as created by rtf()}
   \item{init}{If initialization is needed 'init' is supplied to the recursive filter (the first)}
-  \item{lag.max}{}
+  \item{lag.max}{maximum lag}
   \item{plot.it}{}
   \item{nzero}{}
   \item{type}{}
@@ -101,8 +102,6 @@ rtf:
   \item{delay}{delay}
 }
 \author{Henrik Aalborg Nielsen, IMM, DTU, \email{han@imm.dtu.dk}
-}
-\examples{
 }
 \keyword{math}
 \keyword{array}

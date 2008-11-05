@@ -14,7 +14,7 @@ replacechar(str, char = "_", newchar = ".")
   \item{newchar}{The character to replace with.}
 }
 \value{
-The altered string.}
+The altered string.
 }
 \examples{
 replacechar("my_queer_file,name") # "my.queer.file,name"

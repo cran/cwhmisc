@@ -18,7 +18,7 @@ plotSymbolsFonts(fn=1)
   \item{indx}{indices of panels showing 100 colours each}
   \item{fn}{a font number 1 \dots 5}
 }
-\note{To turn of the click-bell do 'options(locatorBell=FALSE)' (see ?locator).}
+\note{To turn off the click-bell do 'options(locatorBell=FALSE)' (see ?locator).}
 \value{
  list of 
   \item{ch}{character value of symbol}

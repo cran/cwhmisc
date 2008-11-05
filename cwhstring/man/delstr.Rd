@@ -17,10 +17,6 @@ delstr(str,del)
 \examples{
 delstr("Ich gehen heuten in den Garten hinein","en")
 #  "Ich geh heut in d Gart hinein"}
-\source{
-}
-\references{
-}
 \author{
   Christian W. Hoffmann, \email{christian.hoffmann@wsl.ch},
   \url{http://www.wsl.ch/staff/christian.hoffmann}

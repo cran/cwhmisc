@@ -1,6 +1,6 @@
 \name{n22dig}
 \alias{n22dig}
-\title{Show vector or matrix (of 0 <= x <=1) in a compact way:
+\title{Show vector or matrix (of 0 <= x <=1) in a compact way
 }
 \description{
   \code{n22dig} shows	"0.ab" as "ab", "1.00" as " I", "0" as " 0".

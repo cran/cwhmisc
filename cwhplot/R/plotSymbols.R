@@ -1,10 +1,4 @@
 plotSymbols <- function(interactive=FALSE) {
-  ASCII <- c("\000", sapply(1:255, function(i) parse(text=paste("\"\\", structure(i,class="octmode"), "\"", sep=""))[[1]]));
-
-  intToChar <- function(i) {
-    ASCII[i %% 256 + 1];
-  }
-
   interactive <- interactive && interactive();
 
   i <- 0:255;
@@ -36,7 +30,7 @@ plotSymbols <- function(interactive=FALSE) {
         x <- round(x);
         y <- round(y);
         z <- 16*y + x;
-        ch  <- intToChar(z);
+        ch  <- intToASCII(z);
         dec <- as.character(z); 
         hex <- intToHex(z);
         oct <- intToOct(z);
@@ -57,9 +51,8 @@ plotSymbols <- function(interactive=FALSE) {
     }
     return(df);
   }
-
   invisible()
-} # plotSymbols()
+}  ## plotSymbols()
 
 availColors <- function (indx = 0:6)
 {
@@ -85,7 +78,7 @@ availColors <- function (indx = 0:6)
             readline(paste("Currently showing group", ii, "  CR to continue "))
     }
     invisible(foo)
-}
+}  ## availColors()
 
 plotSymbolsFonts <- function (fn=1) {
     i <- 0:255
@@ -98,4 +91,4 @@ plotSymbolsFonts <- function (fn=1) {
     axis(3, at = 0:15)
     axis(4, at = 1:16, labels = 0:15 * 16 + 15, las = 2)
     par(opar)
-}
+}  ## plotSymbolsFonts()

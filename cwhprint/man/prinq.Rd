@@ -1,7 +1,6 @@
 \name{printP}
 \alias{printP}
 \alias{catn}
-\alias{mpf}
 \alias{pn}
 \alias{prinV}
 \alias{prinM}
@@ -19,7 +18,6 @@
 \description{
   These functions may be helpful for documenting ongoing work using \code{\sink()}. \cr
 -  \code{catn(\dots)} is shorthand for cat(\dots); cat("\\n") \cr
--  \code{mpf(r,n)}  returns "+ r" or "- r", depending on the sign of \code{r}, with \code{n} decimal digits. Useful in \code{\link{Sweave}} files \*.Rnw for composing text for linear combinations with coefficients shown in \\Sexp{}. \cr
 -  \code{pn()}    is shorthand for cat("\\n") which is awkward for me to type. \cr
 -  \code{prinV}   prints a vector without \[\], in fix format. \cr
 -  \code{prinM}   prints a matrix without \[\], in fix format. \cr
@@ -30,7 +28,6 @@
 --  The variants N\ldots prepend a linefeed. \cr
 }
 \usage{
-  mpf(r,after)
   catn(...)
   pn()
   prinV(x,after=2,before)
@@ -42,36 +39,19 @@
 }
 \arguments{
   \item{x}{A numerical vector or matrix.}
-  \item{after}{See \code{\link[cwhstring]{formatFix}}, the number of decimals after ".".}
   \item{before}{See \code{\link[cwhstring]{formatFix}}, the number of decimals before "."}
+  \item{after}{See \code{\link[cwhstring]{formatFix}}, the number of decimals after ".".}
   \item{rownam}{Should row names be printed.}
   \item{colnam}{Should column names be printed.}
   \item{xsv}{A string representing a vector expression.}
   \item{xs}{A string representing an expression.}
   \item{\dots}{Additional parameters for \code{\link{print}}.}
-  \item{r}{real value.}
 }
 \examples{
-mpf(pi,5); mpf(-pi,5)
-
 xx <- options(digits=7)
 x <- matrix(c(5,3,2,7,8.235,exp(1),pi,0,99),3,3)
 m <- matrix(c("a","b c","d","ff"," x","","7","8","99"),3,3)
 dimnames(x) <- list(c("r1","r2","r3"),c("c1","c2","c3"))
-
-
-#### In file  T.Rnw:
-##  <<echo=TRUE>>=
-a <- -2; b <- -4; c <- 7
-##  @ 
-##  
-##  The coefficients are: $a = \Sexpr{a}$, $b = \Sexpr{b}$, $c = \Sexpr{c}$.
-##  
-
-##  For the linear combination $$z = a + bx +cy$$ we have
-##   $$z = \Sexpr{sprintf(\%.4f,a)} \Sexpr{mpf(b,3)} x \Sexpr{mpf(c,5)} y$$
-#### end T.Rnw
-###  Sweave: T.Rnw .. T.tex .. T.dvi
 
 
 prinV(as.vector(x))
