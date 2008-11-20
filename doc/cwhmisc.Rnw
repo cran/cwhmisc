@@ -1,0 +1,149 @@
+%% cwhmisc.Rnw   2008-11-19, 10:56,   CWHoffmann
+\documentclass[a4paper,11pt,leqno]{scrartcl}
+\sloppy 
+\usepackage{Sweave}
+
+\newenvironment{Stable}[3]{%
+    \begin{table}[hbtp]
+    \centering
+    \caption{#2\label{#3}}
+    \vskip 0.25cm
+    \begin{tabular}{#1}}%
+   {\end{tabular}
+    \end{table}}
+
+\begin{document}
+
+\title{\textbf{The package "cwhmisc", a short overview}}
+\author{Christian W. Hoffmann\\Swiss Federal Research Institute WSL}
+\maketitle
+
+This package contains material which has been developed and collected as useful and handy. Own ideas and those from others have been used to ease my work. In some cases I incorporated material as is, and references to its author(s) may have to be updated from the web, or may even be lost.
+
+\vspace{8mm}
+Functions are supplied for
+\begin{itemize} 
+\item mathematical use
+\item plotting
+\item printing
+\item data manipulation, statistics, 
+\item string manipulation
+\item Miscellaneous
+\end{itemize}
+
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for mathematical use}{t:math}
+\hline
+adaptlob             &  Numerically evaluate integral using adaptive rule \\
+ellipse              &  Generate ellipses \\
+frac                 &  Fractional part of number \\
+is.constant          &  is a constant identical value\\
+lengths.angle        &  Lengths of two vectors and angle between them \\
+my.var               &  Correlation, Variance and Covariance (Matrices) \\
+normalize            &  Normalize vectors \\
+num.ident            &  Check numerical values for identity \\
+persp2               &  Central perspective from 3 to 2 dimensions along specified axis \\
+pointfit             &  Least squares fit of point clouds, or the "Procrustes problem" \\
+rec.prot             &  Protected division \\
+rotangle             &  Compute rotation angles from orthogonal matrix \\
+rotm                 &  Rotation matrix \\
+rtf                  &  Rational Transfer Function objects for R \\
+seqm                 &  sequences, empty if "by" not conforming \\
+signp                &  Sign Function \\
+whole.number         &  Check an array on whole numbers (x in I) \\
+\hline
+\end{Stable}
+
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for plotting}{t:plot}
+\hline
+T3plot               &  T3plot \\
+lowess.bygroup       &  Plot data in groups, each with lowess or loess smoothing \\
+lpr                  &  Print an object or plot \\
+mult.fig.p           &  Plot Setup for MULTiple FIGures, incl. Main Title \\
+p.screeplot.princomp &  Plot screeplot \\
+panel.cor            &  Alternative panel functions for lattice plots \\
+plotSymbols          &  Plot symbols, colours, and allow to choose \\
+pltCharMat           &  Plot depending on switch, Create multiple plots with title and time stamp \\
+setPowerPointStyle   &  Set PowerPoint style \\
+tri                  &  Ternary or Triangular Plots \\
+\hline
+\end{Stable}
+
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for printing}{t:print}
+\hline
+heading              &  Write a line of text with underlining and blank lines \\
+printP               &  Print without square brackets, expression values together with their call strings \\
+tex.table            &  Convert a data matrix into LaTeX code \\
+\hline
+\end{Stable}
+
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for statistical use, data manipulation}{t:stat}
+\hline
+FinneyCorr           &  Finney's correction to log normally distributed data, r-squared and standard deviation of a linear model \\
+cbind.colnames       &  Add columns to a data frame, using variable names \\
+clean.na             &  Clean a matrix or data frame of rows or columns of containing NA \\
+dinvgauss            &  Inverse Gaussian Distribution \\
+dpoisgam             &  Poisson Gamma Distribution \\
+eql                  &  Check on equality, including NA==NA and NaN==NaN \\
+f.log                &  Determine an optimized offset s and return  log10(data+s) \\
+jitterNA             &  Jitter entities with NA \\
+like                 &  Prepare new data for prediction \\
+my.table.NA          &  Tabulate data, with extra rows and columns \\
+napply               &  Apply a function to the corresponding elements of two lists (?) \\
+neg.bin.gof          &  Approximate a Negative binomial distribution \\
+numberof             &  Count the number elements that satisfy a condition \\
+qnorm.ap16           &  Approximation to the inverse normal  distribution function \\
+qres.binom           &  Randomized quantile residuals \\
+remove.dup.rows      &  Remove duplicate rows \\
+scode                &  Generate the significance codes as in summary.lm \\
+select.range         &  Select values from a vector depending on a range in a second vector \\
+shapiro.wilk.test    &  Shapiro-Wilk Normality Test \\
+smoothed.df          &  Fit cumulative distribution from kernel estimate \\
+summaryFs            &  Print extended summary of lm \\
+tweedie              &  Tweedie Distributions \\
+tweedief             &  Tweedie generalized linear model family \\
+weighted.mean1       &  Weighted mean1 \\
+weighted.median      &  Weighted median \\
+\hline
+\end{Stable}
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for string manipulation}{t:string}
+\hline
+cap                  &  Change case of strings \\
+cpos                 &  Find the position of a substring \\
+datetime             &  Show date and time in ISO format \\
+dc                   &  Convert number for table columns, for equations \\
+delstr               &  Delete a substring from a string \\
+dt2str               &  Convert time difference to string \\
+formatFix            &  Format to a fixed format representation \\
+formula2string       &  Extract sides of a formula to strings \\
+n22dig               &  Show vector or matrix (of 0 <= x <=1) in a compact way \\
+n2c                  &  Show absolute values as characters, prepare for plotting \\
+num2Latex            &  Convert numeric containing e+-power \\
+numericString        &  Test string for being a number or made up of  digits only, convert to bases \\
+padding              &  Padding a string with justification \\
+pasteInfix           &  Paste(infix) \\
+pasteRound           &  Paste rounded values \\
+replacechar          &  Replace a character in a string by another \\
+str2formula          &  Convert back to a formula \\
+strmatch             &  A "shortest unique identifier" match \\
+\hline
+\end{Stable}
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Miscellaneous functions}{t:tool}
+\hline
+delayt               &  Waiting loop for program execution \\
+libs                 &  List all installed packages, or all functions in a package \\
+ls.functions         &  List available functions \\
+progress.meter       &  Monitor the progress of a repetitive
+                        calculation \\
+waitReturn           &  Wait for <Return> \\
+\hline
+\end{Stable}
+
+\end{document}
+
+
