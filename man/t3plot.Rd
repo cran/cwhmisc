@@ -19,7 +19,7 @@
   Is called for its side effect to produce a T3 plot.
 }
 \examples{
-  \dontrun{T3plot(rnorm(100)) }
+  T3plot(rnorm(100))
   \dontrun{T3plot(rnorm(10000)) }
   \dontrun{T3plot(rnorm(1000)+runif(1000)*0.1) }
   \dontrun{T3plot(rnorm(1000)+runif(1000)*10)}

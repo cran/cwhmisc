@@ -17,7 +17,7 @@
   \item{x}{Numerical vector.}
   \item{d}{Number of decimals after ".". d >= 1, will be forced internally.}
   \item{ch}{Substitute "." by \code{ch}}
-  \item{after}{See \code{\link[cwhstring]{formatFix}}, the number of decimals after ".".}
+  \item{after}{See \code{formatFix}, the number of decimals after ".".}
   \item{r}{real value.}
 }
 \value{
@@ -27,7 +27,7 @@
 \note{
 \code{dc} = \code{dcn}, except for \code{ x = integer }.
 
-\code{dc} uses \code{\link[cwhmath]{frac}}, \code{dcn} uses \code{\link{sprintf}}.
+\code{dc} uses \code{frac}, \code{dcn} uses \code{\link{sprintf}}.
 }
 \examples{
   nn <- c(0, 1, 0.1, pi,2*pi,-30*pi)

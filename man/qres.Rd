@@ -14,9 +14,10 @@
 }
 \author{Gordon Smyth, \email{gks@maths.uq.edu.au}}
 \seealso{
- \url{http://www.maths.uq.edu.au/~gks/s/tweedie.html} Tweedie Distributions,\newline
- \url{http://www.maths.uq.edu.au/~gks/s/tweedief.html}	Tweedie family,\newline
- \url{http://www.maths.uq.edu.au/~gks/s/poisgam.html} Poison-gamma Distribution,\newline
- \url{http://www.maths.uq.edu.au/~gks/s/invgauss.html} Inverse Gaussian Distribution.\newline
+  \itemize{
+  \item \url{http://www.maths.uq.edu.au/~gks/s/tweedie.html} Tweedie Distributions,  \item \url{http://www.maths.uq.edu.au/~gks/s/tweedief.html} Tweedie family,
+  \item \url{http://www.maths.uq.edu.au/~gks/s/poisgam.html} Poison-gamma Distribution,
+  \item \url{http://www.maths.uq.edu.au/~gks/s/invgauss.html} Inverse Gaussian Distribution.
+  }
 }
 \keyword{distribution}

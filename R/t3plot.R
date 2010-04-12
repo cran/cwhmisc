@@ -78,5 +78,5 @@ T3plot <- function(x,lab=paste("T3 plot of ",deparse(substitute(x))),legend.pos=
   lines(v,-Tz1,lty=2,col=2)
   lines(v,Tz5,lty=4,col=3)
   lines(v,-Tz5,lty=4,col=3)
-  legend(x=legend.pos,c("5%", "1%"), col = c(2,3), text.col= "black", lty = c(2,4), merge = TRUE, bg='white', cex=cex, ...)
+  legend(x=legend.pos,c("1%", "5%"), col = c(2,3), text.col= "black", lty = c(2,4), merge = TRUE, bg='white', cex=cex, ...)
 }

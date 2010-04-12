@@ -13,7 +13,7 @@
   a vector of strings good for printing numerical matrices.
   \code{charMat} processes the output from \code{n2cCompact} and returns
   vectors x, y, tx of equal lengths for input to
-  \code{\link[CWHplot:pltCharMat]{pltCharMat}}
+  \code{\link{pltCharMat}}
 }
 \usage{
   n2c(x, symm = FALSE)

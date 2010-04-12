@@ -15,7 +15,7 @@
   fractional part, if \code{d} is missing; else
   \eqn{round(10^d*fractional part)}, i.e. the digits without the leading "0.".
 }
-\note{\code{d} not missing is practical for use in \code{\link[cwhstring]{dc}}
+\note{\code{d} not missing is practical for use in \code{\link{dc}}
 }
 \examples{
 frac(c(0,pi,2*pi,30*pi))    # 0.000000 0.141593 0.283185 0.247780

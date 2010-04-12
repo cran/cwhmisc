@@ -1,10 +1,6 @@
-ASCII                   Internal cwhmisc functions
-FinneyCorr              Finney's correction to log normally distributed
-                        data, r-squared and standard deviation of a
-                        linear model.
-T3plot                  T3plot
 adaptlob                Numerically evaluate integral using adaptive
                         rule.
+ASCII                   Internal cwhmisc functions
 cap                     Change case of strings
 cbind.colnames          Add columns to a data frame, using variable
                         names.
@@ -23,6 +19,9 @@ eql                     Check on equality, including NA==NA and
                         NaN==NaN.
 f.log                   Determine an optimized offset s and return
                         log10(data+s).
+FinneyCorr              Finney's correction to log normally distributed
+                        data, r-squared and standard deviation of a
+                        linear model.
 formatFix               Format to a fixed format representation
 frac                    Fractional part of number
 heading                 Write a line of text with underlining and blank
@@ -94,9 +93,9 @@ str2formula             Extract sides of a formula to strings, Convert
                         back to a formula
 strmatch                A "shortest unique identifier" match.
 summaryFs               Print extended summary of lm.
+T3plot                  T3plot
 tex.table               Convert a data matrix into LaTeX code.
 tri                     Ternary or Triangular Plots.
-tweedie                 Tweedie Distributions
 waitReturn              Wait for <Return>
 weighted.mean1          Weighted mean1
 weighted.median         Weighted median

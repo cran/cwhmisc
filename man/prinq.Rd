@@ -16,7 +16,7 @@
 \alias{NprinP}
 \title{Print without square brackets, expression values together with their call strings}
 \description{
-  These functions may be helpful for documenting ongoing work using \code{\sink()}. \cr
+  These functions may be helpful for documenting ongoing work using \code{sink()}. \cr
 -  \code{catn(\dots)} is shorthand for cat(\dots); cat("\\n") \cr
 -  \code{pn()}    is shorthand for cat("\\n") which is awkward for me to type. \cr
 -  \code{prinV}   prints a vector without \[\], in fix format. \cr
@@ -39,8 +39,8 @@
 }
 \arguments{
   \item{x}{A numerical vector or matrix.}
-  \item{before}{See \code{\link[cwhstring]{formatFix}}, the number of decimals before "."}
-  \item{after}{See \code{\link[cwhstring]{formatFix}}, the number of decimals after ".".}
+  \item{before}{See \code{formatFix}, the number of decimals before "."}
+  \item{after}{See \code{formatFix}, the number of decimals after ".".}
   \item{rownam}{Should row names be printed.}
   \item{colnam}{Should column names be printed.}
   \item{xsv}{A string representing a vector expression.}
@@ -107,9 +107,6 @@ prinP("y ")
 options(digits=xx$digits)
 }
 
-\note{
- Uses \code{\link[cwhstring]{formatFix}} in package "cwhstring"
-}
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
   \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}

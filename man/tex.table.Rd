@@ -6,7 +6,7 @@
 \alias{tex.tab.tail}
 \title{Convert a data matrix into LaTeX code.}
 \description{
-  These functions convert a data matrix into \LaTeX code
+  These functions convert a data matrix into  \if{latex}{\out{\LaTeX};}{LaTeX}.
 }
 \usage{
 exact(x, prec)
@@ -48,8 +48,6 @@ tex.tabelle(datmat, precision = 2, rnames = NULL, cnames = NULL,
   These functions are called for their side effect to write to a file.
 }
 \seealso{\code{\link[xtable]{xtable}} in package "xtable"
-}
-\examples{
 }
 \author{
 Adapted by:

@@ -28,7 +28,7 @@ Functions are supplied for
 \item printing
 \item data manipulation, statistics, 
 \item string manipulation
-\item Miscellaneous
+\item miscellaneous
 \end{itemize}
 
 

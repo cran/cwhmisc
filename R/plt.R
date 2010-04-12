@@ -44,7 +44,7 @@ histRCT <- function (data, rows = round(sqrt(ncol(data))),
     if (ncol(data) > nc) {
       rows <- round(sqrt(nc)); cols <- ceiling(nc/rows)
     }
-    pltRCT(rows, cols, mainL, stampl = file, {
+    pltRCT(rows, cols, mainL, {
       for (ii in seq(nc)) {
         hist(dt[,ii], main = mainC[ii], xlab = "", breaks = breaks)
       }

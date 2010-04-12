@@ -8,8 +8,8 @@
 delstr(str,del)
 }
 \arguments{
-  \item{str} {a string, may be empty.}
-  \item{del} {a string, may be empty.}
+  \item{str}{a string, may be empty, string to be edited}
+  \item{del}{a string, may be empty, string to be taken out.}
 }
 \value{
  A string

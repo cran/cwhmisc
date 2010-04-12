@@ -5,11 +5,11 @@
   Prepare data to conform to structure of data used in a model, for use as new data
 }
 \usage{
- like(X, ...)
+ like(X, \dots)
 }
 \arguments{
-  \item{X} {Data used in linear model like \code{lm}}
-  \item{...} {List of other arguments to model to be used for prediction}
+  \item{X}{Data used in linear model like \code{lm}}
+  \item{\ldots}{List of other arguments to model to be used for prediction}
 }
 \value{
 	Data usable for  \code{predict} which are now compatible, all factors have the same level set, and so forth.

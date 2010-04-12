@@ -5,7 +5,7 @@
 \alias{SplomT}
 \title{Plot depending on switch, Create multiple plots with title and time stamp}
 \description{
-- \code{pltCharMat} uses output from \code{\link[CWHstring]{charMat}} to plot numerical matrices as characters.
+- \code{pltCharMat} uses output from \code{\link{charMat}} to plot numerical matrices as characters.
 - \code{pltRCT} executes a (series of) plotting function(s) under the control of some useful switches, may be useful in \code{\link{source}}.
 - \code{histRCT} creates a (series of) histogram(s), uses \code{pltRCT}.
 - \code{SplomT} creates a scatterplot matrix,
@@ -54,7 +54,7 @@ SplomT(data, mainL = deparse(substitute(data)), xlabL = "",
 }
 \note{
 	oldpar <- par(mfrow = c(rows, cols),oma=oma,mar=mar) is called at the
-beginning of pltRCT. Uses \code{\link[lattice]{splom}}, [lattice:extend.limits]{extend.limits}, and \code{\link[CWHstring:datetime]{datetime} }.
+beginning of pltRCT. Uses \code{\link[lattice]{splom}}, [lattice:extend.limits]{extend.limits}, and \code{\link{datetime} }.
 
 If you have \code{n} panels you want to plot in a nearly quadratic arrangement, use \code{rows = round(sqrt(n)), cols=ceiling(n/rows)} (tending to slightly "landscape").  This is very similar to \code{\link{n2mfrow}}.
   histRCT drops columns with less than 2 legal (non-NA)
