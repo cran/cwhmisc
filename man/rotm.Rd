@@ -45,7 +45,6 @@
   \code{rotangle}: Walter Gander, \email{gander@inf.ethz.ch}, \cr
  \url{http://www.inf.ethz.ch/personal/gander/} \cr
 adapted by:
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{algebra}

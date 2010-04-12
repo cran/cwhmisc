@@ -25,7 +25,6 @@ A numeric vector (or matrix, when beside = TRUE), say mp, giving the coordinates
 \dontrun{p.screeplot.princomp(princomp(m),main="Screeplot",ylab="Variances",cex=0.6)}
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{multivariate}

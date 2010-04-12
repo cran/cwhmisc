@@ -21,32 +21,36 @@
 
 	\code{adapt...(f,a,b,tol)} integrates to a \emph{relative} error of tol.
 
-  \code{adapt...(f,a,b,tol,trace)} displays the left end point of the current interval, the interval length, and the partial integral.
-
-  \code{adapt...(f,a,b,tol,trace,P1,P2,...)} allows coefficients P1,
+  \code{adapt...(f,a,b,tol,trace=TRUE)} displays the stepwise left end point of the current interval, the interval length, and the partial integral.  \code{adapt...(f,a,b,tol,trace,P1,P2,...)} allows coefficients P1,
 	... to be passed directly to the function f: g <-
 	f(x,P1,P2,...)
 }
 \usage{
-adaptsim(f,a,b,tol=.Machine$double.eps,trace=FALSE,...)
-adaptlob(f,a,b,tol=.Machine$double.eps,trace=FALSE,...)
+adaptsim(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
+adaptlob(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
 }
 \arguments{
   \item{f}{function to be integrated.}
   \item{a}{starting abscissa of integral.}
   \item{b}{ending abscissa of integral.}
-  \item{tol}{error tolerance > 0.}
+  \item{tol}{error tolerance > 0 of the final result.}
   \item{trace}{if TRUE then trace will be displayed.}
   \item{...}{additional coefficients for function  \code{f}  if necessary.}
 }
 \value{
-  The approximate value of the integral. 
+  List (Q, term) with Q = the approximate value of the integral and term = the information, whether the tolerance given was too small. 
 }
 \examples{
+options(digits=7)
 FexGander <- function(xx) ifelse(xx < 1,xx+1,ifelse(xx <= 3, 3 - xx, 2 ))
-adaptsim(FexGander,0,5,2.0e-6,TRUE) # 7.499949 instead of 7.5
+adaptsim(sin,0,pi,2.0e-3,TRUE)$Q - 2.0 #   -1.686905e-05
+adaptsim(sin,0,pi,2.0e-23)$Q - 2.0  # 0
+adaptsim(FexGander,0,5)$Q - 7.5 # -7.993606e-15 instead of 0
 adaptlob(FexGander,0,5,2.0e-6,TRUE) # 7.500002 instead of 7.5
-adaptsim(FexGander,0,5)-7.5 # -7.993606e-15 instead of 0
+adaptlob(FexGander,0,5,2.0e-6)$Q - 7.5 #  1.781274e-06 instead of 0
+adaptlob(FexGander,0,5)$Q-7.5 #   instead of  -8.881784e-16, with warnings
+#  that required tolerance is too small.
+adaptlob(FexGander,0,5,5.0*.Machine$double.eps)$Q-7.5 #  -5.329071e-15
 }
 \source{
  	Walter Gautschi, 08/03/98.
@@ -56,7 +60,7 @@ adaptsim(FexGander,0,5)-7.5 # -7.993606e-15 instead of 0
 Gander, W., Gautschi, W., 2000. Adaptive Quadrature - Revisited. ETH Zurich, DI IWR technical report 306. BIT 40, 1, 84--101.
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{math}
+

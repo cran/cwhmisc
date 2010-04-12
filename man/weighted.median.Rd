@@ -23,8 +23,7 @@ weighted.median(x, w=NULL, na.rm=FALSE)
   closely as possible, see code.
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN?-C=&n} \cr
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \seealso{\code{\link{median}}, \code{\link{quantile}}}
 \examples{

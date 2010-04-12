@@ -85,6 +85,7 @@ select.range            Select values from a vector depending on a
                         range in a second vector.
 seqm                    sequences, empty if "by" not conforming
 setPowerPointStyle      Set PowerPoint style
+setupInterp             Polynomial and rational interpolation
 shapiro.wilk.test       Shapiro-Wilk Normality Test
 signp                   Sign Function
 smoothed.df             Fit cumulative distribution from kernel

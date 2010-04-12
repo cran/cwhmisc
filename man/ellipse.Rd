@@ -38,8 +38,7 @@
   book "A First Course in Multivariate Statistics" (Springer 1997).
   Of conf.ellipse: Roger Koenker \cr
   \email{roger@ysidro.econ.uiuc.edu}, \url{http://www.econ.uiuc.edu} May 19, 1999. \cr
- Refined by: Christian W. Hoffmann <christian.hoffmann@wsl.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+ Refined by: Christian W. Hoffmann <christian.hoffmann@wsl.ch>
 }
 \examples{
 A <- matrix(c(1,1,1,2), ncol = 2)		 # define matrix A

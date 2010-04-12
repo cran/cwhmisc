@@ -56,8 +56,7 @@ formula2term.names(a ~ b1 + c,"left")  #   "a"
 formula2Rterm.names(a ~ b1 + c)        #   "b1" "c"
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{character}
 \keyword{manip}

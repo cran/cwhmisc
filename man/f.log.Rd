@@ -34,7 +34,6 @@
   }
 \author{W.Stahel, ETH Zuerich, \email{werner.stahel@stat.math.ethz.ch}
 adapted by:
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{distribution}

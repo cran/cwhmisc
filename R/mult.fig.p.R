@@ -25,10 +25,10 @@ mult.fig.p <- function(nr.plots, mfrow, mfcol,
       else  mfrow <- n2mfrow (nr.plots)
     }
   oma <- c(tit.wid, 0, tit.wid, 0)
-  old.par <<-
+  old.par <-
     if(use.row) par(mfrow = mfrow, oma= oma, mar = mar, mgp= mgp)
     else        par(mfcol = mfcol, oma= oma, mar = mar, mgp= mgp)
-  if(!quiet) cat("Execute\n\t par(old.par) \n later to restore graphical par\n")
+  if(!quiet) cat("Execute\n\t par(result$old.par) \n later to restore graphical par\n")
   ##---- now go ahead :
   if(!is.R())
       frame()

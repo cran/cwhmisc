@@ -4,7 +4,6 @@
 \alias{qres.invgauss}
 \alias{qres.nbinom}
 \alias{qres.pois}
-\alias{qres.tweedie}
 \title{Randomized quantile residuals}
 \description{
   Computes randomized quantile residuals for binomial, Poisson, negative

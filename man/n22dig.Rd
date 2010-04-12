@@ -37,7 +37,6 @@ n22dig(cor(matrix(rnorm(100),10)),TRUE)
 # [10,] "66" "51" "48" "16" "20" "27" "28" "20" "16" " I" 
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{print}

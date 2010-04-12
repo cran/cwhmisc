@@ -82,9 +82,7 @@ If you have \code{n} panels you want to plot in a nearly quadratic arrangement, 
   \code{\link{postscript}}, because this would try to open another ps device without closing the old one!
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
-, with the assistance of
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, with the assistance of
   Deepayan Sarkar \email{deepayan@cs.wisc.edu}.
 }
 \keyword{hplot}

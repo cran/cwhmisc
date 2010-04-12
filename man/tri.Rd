@@ -1,5 +1,6 @@
 \name{tri}
 \alias{tri}
+\alias{trigrid}
 \title{Ternary or Triangular Plots.}
 \description{
   \code{plotCI} plots in a triangle the values of three variables. Useful for mixtures 
@@ -23,7 +24,7 @@ tri(a, f, m, symb=2, grid=FALSE, ...)
 \author{
   Colin Farrow
 Computing Service, University of Glasgow, Glasgow G12 8QQ
-Tel: 0141 330 4862, \email{c.farrow@compserv.gla.ac.uk}
+, \email{c.farrow@compserv.gla.ac.uk}
 }
 \examples{
 # some random data in three variables

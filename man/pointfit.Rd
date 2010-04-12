@@ -28,8 +28,7 @@
 \references{"Least squares fit of point clouds" in: W. Gander and J. Hrebicek, ed., Solving Problems in Scientific Computing using Maple and Matlab, Springer Berlin Heidelberg New York, 1993, third edition 1997.}
 \author{Walter Gander, \email{gander@inf.ethz.ch}, \cr
  \url{http://www.inf.ethz.ch/personal/gander/}
-adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN} 
+adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> 
 }
 \seealso{ \code{\link{rotm}} to generate rotation matrices (mathlib),
  \code{\link{rotangle}} to determine them from orthogonal matrix.}

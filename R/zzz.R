@@ -1,5 +1,5 @@
 ".First.lib" <- function(lib, pkg) {
-  require("lattice")
+#  require("lattice")
 spacC <- "  "  ## extra space in indexLine and charMat
 
 ASCII <- c(NA, sapply(1:255, function(i) parse(text=paste("\"\\", structure(i,class="octmode"), "\"", sep=""))[[1]]));

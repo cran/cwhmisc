@@ -17,8 +17,7 @@
 \note{ Uses \code{\link{FC.lm}} and \code{\link{s.lm}}
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{models}
 \keyword{regression}

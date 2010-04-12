@@ -37,8 +37,7 @@ data.frame(x,F,ch,x) # the same
 cbind.colnames(NULL) # NULL
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{manip}
 

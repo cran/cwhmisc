@@ -102,8 +102,7 @@ rtf:
   \item{delay}{delay}
 }
 \author{Henrik Aalborg Nielsen, IMM, DTU, \email{han@imm.dtu.dk}
-adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{math}
 \keyword{array}

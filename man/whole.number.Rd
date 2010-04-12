@@ -18,8 +18,7 @@ whole.number(c(pi,2,3)) # FALSE
 whole.number(c(1,2,3))  # TRUE
 }
 \author{Bill Venables
-adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN?-C=&n}
+adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{data}
 

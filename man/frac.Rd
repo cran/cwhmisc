@@ -22,7 +22,6 @@ frac(c(0,pi,2*pi,30*pi))    # 0.000000 0.141593 0.283185 0.247780
 frac(c(0,pi,2*pi,30*pi),3)  # 0 142 283 248
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{arith}

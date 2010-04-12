@@ -21,8 +21,7 @@ If \code{trim} is non-zero, a symmetrically trimmed mean is computed
 with a fraction of trim observations deleted from each end before the mean is computed.
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN?-C=&n} \cr
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \seealso{\code{\link{weighted.mean}}, \code{\link{mean}}, \code{\link{quantile}}}
 \examples{

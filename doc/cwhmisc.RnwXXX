@@ -1,4 +1,4 @@
-%% cwhmisc.Rnw   2012-01-18, 18:15   CWHoffmann
+%% cwhmisc.Rnw   2008-11-19, 10:56,   CWHoffmann
 \documentclass[a4paper,11pt,leqno]{scrartcl}
 \sloppy 
 \usepackage{Sweave}
@@ -15,7 +15,7 @@
 \begin{document}
 
 \title{\textbf{The package "cwhmisc", a short overview}}
-\author{Christian W. Hoffmann}
+\author{Christian W. Hoffmann\\Swiss Federal Research Institute WSL}
 \maketitle
 
 This package contains material which has been developed and collected as useful and handy. Own ideas and those from others have been used to ease my work. In some cases I incorporated material as is, and references to its author(s) may have to be updated from the web, or may even be lost.
@@ -32,54 +32,9 @@ Functions are supplied for
 \end{itemize}
 
 
-\begin{Stable}{|p{35mm}p{115mm}|}{Functions for mathematical use}{t:math}
-\hline
-adaptlob             &  Numerically evaluate integral using adaptive rule \\
-numericString           & Test whether the elements of a character vector
-	represent legal numbers only. \\
-allDigits           & Test whether the elements of a character vector consist of digits only. \\
-intToASCII           & Show character or octal representation at a place in the ASCII sequence. \\
-intToBase           & Convert an integer number to string representation in a base between 2 and 16 inclusive. \\
-intToOct           & Convert an integer number to string representation in octal. \\
-intToHex             & Convert an integer number to string representation in hexadecimal. \\
-rec.prot             &  Protected division \\
-ellipse              &  Generate ellipses \\
-frac                 &  Fractional part of number \\
-is.constant          &  is a constant identical value\\
-lengths.angle        &  Lengths of two vectors and angle between them \\
-normalize            &  Normalize vectors \\
-num.ident            &  Check numerical values for identity \\
-persp2               &  Central perspective from 3 to 2 dimensions along specified axis \\
-pointfit             &  Least squares fit of point clouds, or the "Procrustes problem" \\
-rotangle             &  Compute rotation angles from orthogonal matrix \\
-rotm                 &  Rotation matrix \\
-rtf                  &  Rational Transfer Function objects for R \\
-seqm                 &  sequences, empty if "by" not conforming \\
-signp                &  Sign Function \\
-whole.number         &  Check an array on whole numbers (x in I) \\
-\hline
-\end{Stable}
-
-
-\begin{Stable}{|p{35mm}p{115mm}|}{Functions for plotting}{t:plot}
-\hline
-T3plot               &  T3plot \\
-lowess.bygroup       &  Plot data in groups, each with lowess or loess smoothing \\
-lpr                  &  Print an object or plot \\
-mult.fig.p           &  Plot Setup for MULTiple FIGures, incl. Main Title \\
-p.screeplot.princomp &  Plot screeplot \\
-panel.cor            &  Alternative panel functions for lattice plots \\
-plotSymbols          &  Plot symbols, colours, and allow to choose \\
-pltCharMat           &  Plot depending on switch, Create multiple plots with title and time stamp \\
-setPowerPointStyle   &  Set PowerPoint style \\
-tri                  &  Ternary or Triangular Plots \\
-\hline
-\end{Stable}
-
 
 \begin{Stable}{|p{35mm}p{115mm}|}{Functions for printing}{t:print}
 \hline
-heading              &  Write a line of text with underlining and blank lines \\
 prinE(xsv, \dots)     & Print a string expression and its evaluation in the form "xsv = evaluation". \cr
 prinL(xs, \dots)}   & Print a string expression and its evaluation in the form "xs \\newline evaluation". \cr
 printP               &  Print without square brackets, expression values together with their call strings \\
@@ -130,11 +85,7 @@ dc                   &  Convert number for table columns, for equations \\
 delstr               &  Delete a substring from a string \\
 dt2str               &  Convert time difference to string \\
 formatFix            &  Format to a fixed format representation \\
-term.names2formula   &  Combine two vectors of strings into a formula.
-formula2string       &  Return the left and the right hand sides of a
-	formula
-formula2term.names    &  Return one chosen side of a formula.
-formula2Rterm.names   &  Return the right hand side of a formula.
+formula2string       &  Extract sides of a formula to strings \\
 n22dig               &  Show vector or matrix (of 0 <= x <=1) in a compact way \\
 n2c                  &  Show absolute values as characters, prepare for plotting \\
 num2Latex            &  Convert numeric containing e+-power \\

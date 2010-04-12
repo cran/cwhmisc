@@ -30,8 +30,7 @@ plotSymbolsFonts(fn=1)
   plotSymbols(3)
 }
 \author{Henrik Bengtsson \email{hb@maths.lth.se}, adapted by
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{color}
 \keyword{hplot}

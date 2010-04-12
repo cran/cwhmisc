@@ -27,8 +27,7 @@ The concatenation of \code{a} and \code{b}, same as \code{ paste(a, b, sep="") }
 "I am" \%&\% " hungry" # [1] "I am hungry"
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{misc}
 \keyword{documentation}

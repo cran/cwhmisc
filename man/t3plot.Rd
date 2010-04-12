@@ -28,7 +28,6 @@
 \author{Sucharita Ghosh, \email{rita.ghosh@wsl.ch}, \cr
   \url{http://www.wsl.ch/personal_homepages/ghosh/index_EN?redir=1&}, \cr
  with cosmetics by 
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN?-C=&n}
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{distribution}

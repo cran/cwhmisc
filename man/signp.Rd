@@ -21,8 +21,7 @@ signp(-2:3)# -1 -1 1 1 1 1
 m \%*\% diag(signp(diag(m)))
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN?-C=&n}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{arith}
 

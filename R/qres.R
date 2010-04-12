@@ -73,23 +73,3 @@ qres.nbinom <- function(glm.obj)
         u <- runif(n = length(y), min = a, max = b)
         qnorm(u)
 }
-
-qres.tweedie <- function(glm.obj, dispersion = NULL)
-{
-# Quantile residuals for Tweedie glms
-# GKS  29 April 98, 20 April 99
-#
-        mu <- fitted(glm.obj)
-        y <- glm.obj$y
-        df <- glm.obj$df.residual
-        w <- glm.obj$prior.weights
-        if(is.null(w))
-                w <- 1
-        p <- eval(glm.obj$call[[3]][[2]], local = sys.parent())
-        if(is.null(dispersion))
-                dispersion <- sum((w * (y - mu)^2)/mu^p)/df
-        u <- ptweedie(y, fitted(glm.obj), dispersion/w, p)
-        if(p>1&&p<2)
-                u[y == 0] <- runif(sum(y == 0), min = 0, max = u[y == 0])
-        qnorm(u)
-}

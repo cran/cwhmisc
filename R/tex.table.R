@@ -1,19 +1,3 @@
-"exact" <- function(x, prec)
-  {  ## should be internal to tex.table, but unknoen problem ????
-     # tex.table.s
-    if (!is.na(prec) & is.numeric(x)) {
-      x <- round(x, prec)
-      for (i in prec:1) {
-        if ((i == prec) & ((x * 10^prec) %% (10^prec) == 0))
-          return(cat(" & ", x, ".", rep(0, prec), sep = ""))
-        else if(round((x * 10^prec) %% (10^i), 5) == 0)
-          return(cat(" & ", x, rep(0, i), sep = ""))
-      }
-      return(cat(" & ", x, sep = ""))
-    }
-    return(cat(" & ", x, sep = ""))
-  } # exact
-
 "tex.table" <- 
   function(datmat, bare=FALSE, precision = if (bare) "NA" else 2, rnames = if (bare) "-1" else dimnames(datmat)[[1]], cnames = if (bare) "-1" else dimnames(datmat)[[2]], caption = NULL, label = NULL, tpos = "b", stretch = NULL, adjust = "r", file = NULL)
 {  # tex.table.s
@@ -44,20 +28,20 @@
 ## LATEX-Code 
 ##
 ##
-# see outside *   exact <- function(x, prec)
-# see outside *   {
-# see outside *     if (!is.na(prec) & is.numeric(x)) {
-# see outside *       x <- round(x, prec)
-# see outside *       for (i in prec:1) {
-# see outside *         if ((i == prec) & ((x * 10^prec) %% (10^prec) == 0))
-# see outside *           return(cat(" & ", x, ".", rep(0, prec), sep = ""))
-# see outside *         else if(round((x * 10^prec) %% (10^i), 5) == 0)
-# see outside *           return(cat(" & ", x, rep(0, i), sep = ""))
-# see outside *       }
-# see outside *       return(cat(" & ", x, sep = ""))
-# see outside *     }
-# see outside *     return(cat(" & ", x, sep = ""))
-# see outside *   } # exact
+   exact <- function(x, prec)
+   {
+     if (!is.na(prec) & is.numeric(x)) {
+       x <- round(x, prec)
+       for (i in prec:1) {
+         if ((i == prec) & ((x * 10^prec) %% (10^prec) == 0))
+           return(cat(" & ", x, ".", rep(0, prec), sep = ""))
+         else if(round((x * 10^prec) %% (10^i), 5) == 0)
+           return(cat(" & ", x, rep(0, i), sep = ""))
+       }
+       return(cat(" & ", x, sep = ""))
+     }
+     return(cat(" & ", x, sep = ""))
+   } # exact
 
   printout <- function(datmat, rnames, precision) {
     for (i in 1:nrow(datmat)) {

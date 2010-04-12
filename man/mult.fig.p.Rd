@@ -48,23 +48,22 @@ mult.fig.p(nr.plots, mfrow, mfcol,
   \item{new.par}{the current \code{par} settings.}
   \item{old.par}{the \code{par} \emph{before} the call.}
 }
-\author{Martin Maechler, \email{maechler@stat.math.ethz.ch},\cr modified by   Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+\author{Martin Maechler, \email{maechler@stat.math.ethz.ch},\cr modified by   Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \seealso{\code{\link{par}}, \code{\link{layout}}.}
 \examples{
-mult.fig.p(5, main= "Sinus Funktionen verschiedener Frequenzen")
+AA <- mult.fig.p(5, main= "Sinus Funktionen verschiedener Frequenzen")
 x <- seq(0, 1, len = 201)
 for (n in 1:5)
   plot(x, sin(n * pi * x), ylab ="", main = paste("n = ",n))
-par(old.par)
+par(AA$old.par)
 
-rr <- mult.fig.p(mfrow=c(5,1), main= "Sinus Funktionen", cex = 1.5,
+rr <- mult.fig.p(mfrow=c(4,2), main= "Sinus Funktionen", cex = 1.5,
                marP = - c(0, 1, 2, 0))
-for (n in 1:5)
+for (n in 1:8)
   plot(x, sin(n * pi * x), type = 'l', col="red", ylab ="")
 str(rr)
-par(old.par)
+par(rr$old.par)
 ## Look at the par setting *AFTER* the above:
 str(do.call("par", as.list(names(rr$new.par))))
 }

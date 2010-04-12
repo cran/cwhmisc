@@ -1,15 +1,13 @@
 \name{tex.table}
-\alias{exact}
-\alias{tex.tabelle}
 \alias{tex.table}
 \alias{tex.tab.head}
 \alias{tex.tab.tail}
+\alias{tex.tabelle}
 \title{Convert a data matrix into LaTeX code.}
 \description{
   These functions convert a data matrix into  \if{latex}{\out{\LaTeX};}{LaTeX}.
 }
 \usage{
-exact(x, prec)
 tex.table(datmat, bare = FALSE, precision = if (bare) "NA" else 2,
  rnames = if (bare) "-1" else dimnames(datmat)[[1]], cnames = if (bare)
  "-1" else dimnames(datmat)[[2]], caption = NULL, label = NULL,
@@ -25,8 +23,6 @@ tex.tabelle(datmat, precision = 2, rnames = NULL, cnames = NULL,
   adjust = "r", file = NULL)
 }
 \arguments{
-  \item{x}{numeric item}
-  \item{prec}{decimal precision (?)}
   \item{datmat}{data matrix}
   \item{bare}{TRUE: \code{ precision,rnames,cnames} will get useful
 		defaults, FALSE: set these parameters yourself}
@@ -47,11 +43,9 @@ tex.tabelle(datmat, precision = 2, rnames = NULL, cnames = NULL,
 \value{
   These functions are called for their side effect to write to a file.
 }
-\seealso{\code{\link[xtable]{xtable}} in package "xtable"
-}
+
 \author{
 Adapted by:
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{interface}

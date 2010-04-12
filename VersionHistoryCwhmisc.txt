@@ -30,7 +30,9 @@ Documented arguments not in \usage in documentation object 'dt2str':
 \arguments{    *ohne* =0 !
  \item{dec}{Places in decimal fraction of seconds}
 
-like(X, \dots)  and \item{\ldots}{}
+\usage{   like(X, \dots)
+}
+\arguments{   \item{\ldots}{List of other arguments to model to be used for prediction}
 
 
 

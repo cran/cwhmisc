@@ -26,7 +26,6 @@ is.constant(x)
 }
 \author{
   Kjetil Brinchmann Halvorsen, \email{kjetil@acelerate.com}, expanded by
-  Christian W. Hoffmann <christian.hoffmann@wsl.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <christian.hoffmann@wsl.ch>
 }
 \keyword{logic}

@@ -25,7 +25,6 @@ loess.bygroup(x, y, group, lin=FALSE, col = par("col"), bg = NA,
  The procedure is called for its side effect of producing a plot
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{hplot}

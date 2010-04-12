@@ -22,8 +22,7 @@ mytime()    #[1] "15:24:12"
 }
 \note{These functions are implemented using POSIX}
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{chron}
 \keyword{print}

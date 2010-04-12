@@ -33,7 +33,6 @@ my.table.margin(v,w)
 }
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
   and   John Fox \email{jfox@mcmaster.ca} (my.table.margin)
 }
 \keyword{distribution}

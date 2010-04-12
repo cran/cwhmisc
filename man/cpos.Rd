@@ -30,8 +30,7 @@ substring.location("In,theese,housees,there,are,rats","ees")
 #$last   [1]  8 17
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{misc}
 \keyword{documentation}

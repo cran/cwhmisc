@@ -18,7 +18,6 @@ delstr(str,del)
 delstr("Ich gehen heuten in den Garten hinein","en")
 #  "Ich geh heut in d Gart hinein"}
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{print}
