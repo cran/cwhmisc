@@ -4,25 +4,30 @@
 \description{
   \code{progress.meter} writes a symbol to the output at each
 	invocation. The symbol is usually a ".", a "+" if i \%\% == 0,
-	and (ii \%\/\% 10) \%\% 10 if ii \%\% 10 == 0. If ii \%\% 50 == 0, a
+	and (i \%\/\% 10) \%\% 10 if i \%\% 10 == 0. If i \%\% 50 == 0, a
 	line break will be written and i printed.
 }
 \usage{
-progress.meter(i)
+  progress.meter(i) # inside a function or loop
 }
 \arguments{
-  \item{i}{An integer.}
+  \item{i}{Integer.}
 }
 \value{
 	invisible(NULL).
 }
 \examples{
-cat("\n    0")
-for (ii in seq(500)) {
-  # do something time consuming
-  progress.meter(ii)
-}
-cat("\n")
+  n <- 1 # adjust
+  for (i in 0:250) {
+    kk <- 0
+    for (mm in 1:10^n) {
+      kk <- kk+1  # do something time consuming
+    }
+    progress.meter(i)
+  }
+  cat("")
+#    0....+....1....+....2....+....3....+....4....+....
+#   50....+....6....+....7....+....8....+....9....+....
 }
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>

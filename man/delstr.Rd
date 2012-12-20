@@ -16,7 +16,9 @@ delstr(str,del)
 }
 \examples{
 delstr("Ich gehen heuten in den Garten hinein","en")
-#  "Ich geh heut in d Gart hinein"}
+#  "Ich geh heut in d Gart hinein"
+delstr("12345","x") # "12345" 
+}
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }

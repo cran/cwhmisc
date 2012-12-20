@@ -1,10 +1,16 @@
-"n22dig" <- function(x, symm = TRUE) {
-  n22dig0 <- function(y) { ifelse(y == "00", " I", y) }
+n22dig <- function(x, symm = TRUE) { ##
+  n0 <- function(y) { ifelse(y == "100", " I", y) }
+  s0 <- function(x) { if (nchar(x) >= 3 || substring(x,1,1)==" ") x <- substring(x, 2) else x }
   y <- format(round(100 * x))
-  if(nchar(y[1] == 3)) y <- substring(y, 2)
-  if (is.matrix(x))
-    y <- ifelse((row(x) < col(x)) & symm, " ", n22dig0(y))
-  else
-    y <- n22dig0(x)
-  y
+  y1 <- n0(y)
+  y2 <- matrix(sapply(y1,s0),nrow(x),ncol(x))
+  if (is.matrix(x)) {
+    if (symm) y2[row(x) < col(x)] <- "  "
+    y2[y2=="I" ] <- " I"  # cosmetics
+    y <- matrix(y2,nrow(x),ncol(x))  # should be unnecessary
+  }  else {
+    y2 <- n0(x)
+}
+  attr(y2,"names") <- NULL  ## names are a nuisance
+  return(y2)
 }

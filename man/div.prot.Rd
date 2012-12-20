@@ -2,18 +2,22 @@
 \alias{div.prot}
 \title{Protected division}
 \description{
-  1/x, but 1/0 -> 0
+  num/den, but num/0 -> .Machine$double.xmax^(3/4)
 }
 \usage{
-  div.prot(x, eps = .Machine$double.eps)
+  div.prot(num,den)
 }
 \arguments{
-  \item{x}{array to invert.}
-  \item{eps}{limit: if abs(x) < eps then 1/x -> 0.}
+  \item{den,num}{real, numerator and denominator}
+}
+\value{
+  num/den, if is.infinite(num/den) then .Machine$double.xmax^(3/4), the ^(3/4) for getting something well below Inf.
 }
 \examples{
-  div.prot(c(0,.Machine$double.eps,1.0e-10,1,1.0e100))
-  div.prot(c(0,.Machine$double.eps,1.0e-10,1,1.0e100), 100*.Machine$double.eps)
+  de <- .Machine$double.eps
+  v<-c(0,de/c(1,2,4,8))
+  div.prot(1,v)
+ #  1.55252e+231  4.50360e+15  9.00720e+15  1.80144e+16  3.60288e+16
 }
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>

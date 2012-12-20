@@ -1,4 +1,4 @@
-setPowerPointStyle <- function() {
+setPPT <- function() {
     NORMAL <- 1
     BOLD <- 2
     par(font=BOLD);

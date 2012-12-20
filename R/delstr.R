@@ -1,13 +1,13 @@
-"delstr" <- function(str,del) {
+delstr <- function(str,del) {
   ## delete the character sequence del from string str, if contained
   if ((nchar(str)<nchar(del)) | (nchar(del)==0)) str
   else if (str==del) ""
   else {
     n1 <- nchar(del)-1
     ns <- nchar(str)
-    ss <- substring(str,1:ns,c((1+n1):ns,rep(ns,n1)))
+    ss <- substring(str,1:(ns-n1),c((1+n1):ns))
     ind <- seq(1:ns)[ss == del]
-    if (is.na(ind > 0)) # test if ind exists
+    if (length(ind) == 0) # no deletion possible
       str
     else {
       for (i in length(ind):1) { # backwards !!

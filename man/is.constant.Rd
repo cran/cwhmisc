@@ -10,7 +10,7 @@ is.constant(x)
     \item{x}{a vector}
 }
 \value{ TRUE if x is numerical and 
-   \if{latex}{\out{$\max(x) = \min(x)$}}{max(x) = min(x)}.
+   \out{$\max(x) == \min(x)$}.
 }
 \seealso{
   \code{\link{identical}},   \code{\link{all.equal}}

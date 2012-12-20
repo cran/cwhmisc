@@ -18,7 +18,7 @@
 \examples{
   x <- c(rep(0,20), exp(rnorm(1000)))
   fx <- f.log(x)
-\dontrun{  oldpar <- par(mfrow = c(2, 3))
+  oldpar <- par(mfrow = c(2, 3))
   plot(x)
   qqnorm(x)
   T3plot(x)
@@ -26,7 +26,6 @@
   qqnorm(fx)
   T3plot(fx)
   par(oldpar)
-}
 }
 \note{
   The value for the offset \code{s} is optimized to render the transformed

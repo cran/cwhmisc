@@ -1,5 +1,5 @@
-\name{tri}
-\alias{tri}
+\name{triplot}
+\alias{triplot}
 \alias{trigrid}
 \title{Ternary or Triangular Plots.}
 \description{
@@ -7,8 +7,8 @@
 	(chemistry etc.).
 }
 \usage{
-tri(a, f, m, symb=2, grid=FALSE, ...)
-}
+triplot(a, f, m, symb=2, grid=FALSE, ...)
+trigrid(grid = FALSE)}
 \arguments{
   \item{a}{Vector of first variable.}
   \item{f}{Vector of second variable.}
@@ -23,17 +23,18 @@ tri(a, f, m, symb=2, grid=FALSE, ...)
 }
 \author{
   Colin Farrow
-Computing Service, University of Glasgow, Glasgow G12 8QQ
+Computing Service, University of Glasgow, Glasgow G12 8QQ\cr
 , \email{c.farrow@compserv.gla.ac.uk}
 }
 \examples{
 # some random data in three variables
-c1 <- runif(5, 10, 20)
-c2 <- runif(5, 1, 5)
-c3 <- runif(5, 15, 25)
+c1 <- runif(25)
+c2 <- runif(25)
+c3 <- runif(25)
 # basic plot
-tri(c1,c2,c3)
+par(mfrow=c(1,2))
+triplot(c1,c2,c3)
 # plot with different symbols and a grid
-tri(c1,c2,c3, symb=7, grid=TRUE)
+triplot(c1,c2,c3, symb=7, grid=TRUE)
 }
 \keyword{hplot}

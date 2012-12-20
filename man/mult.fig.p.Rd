@@ -1,6 +1,6 @@
 \name{mult.fig.p}
 \alias{mult.fig.p}
-\title{Plot Setup for MULTiple FIGures, incl. Main Title}
+\title{Plot Setup for multiple plot, incl. main title}
 \description{
   Easy Setup for plotting multiple figures (in a rectangular layout) on
   one page.  It allows to specify a main title, a bottom line, and uses \emph{smart}
@@ -52,13 +52,13 @@ mult.fig.p(nr.plots, mfrow, mfcol,
 }
 \seealso{\code{\link{par}}, \code{\link{layout}}.}
 \examples{
-AA <- mult.fig.p(5, main= "Sinus Funktionen verschiedener Frequenzen")
+AA <- mult.fig.p(5, main= "Sine functions of different frequencies")
 x <- seq(0, 1, len = 201)
 for (n in 1:5)
   plot(x, sin(n * pi * x), ylab ="", main = paste("n = ",n))
 par(AA$old.par)
 
-rr <- mult.fig.p(mfrow=c(4,2), main= "Sinus Funktionen", cex = 1.5,
+rr <- mult.fig.p(mfrow=c(4,2), main= "Sine functions", cex = 1.5,
                marP = - c(0, 1, 2, 0))
 for (n in 1:8)
   plot(x, sin(n * pi * x), type = 'l', col="red", ylab ="")

@@ -16,9 +16,9 @@ none
 character string 
 }
 \examples{
-datetime()  #[1] "2001-02-07, 15:24:51"
-mydate()    #[1] "2001-02-07"
-mytime()    #[1] "15:24:12"
+datetime()  #[1] "2012-09-27, 13:56:38"
+mydate()  #[1] "2012-09-27"
+mytime()  #[1] "13:56:39"
 }
 \note{These functions are implemented using POSIX}
 \author{

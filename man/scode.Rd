@@ -13,7 +13,7 @@
 	Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 }
 \examples{
-  for (ii in c(0.005, 0.02,0.0501,0.2)) { scode(ii) }
+  for (ii in c(0.005, 0.02,0.0501,0.2)) { print(scode(ii)) }
 }
 \note{
   lifted from stats::printCoefmat

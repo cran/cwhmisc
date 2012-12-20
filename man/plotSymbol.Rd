@@ -27,7 +27,9 @@ plotSymbolsFonts(fn=1)
   \item{oct}{octal value of symbol}
 }
 \examples{
-  plotSymbols(3)
+  # A first impression:
+  n<-1:34; plot(n,pch=n) # There is a gap between 25 and 34
+  plotSymbols(TRUE)
 }
 \author{Henrik Bengtsson \email{hb@maths.lth.se}, adapted by
   Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}

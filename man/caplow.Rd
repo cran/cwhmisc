@@ -5,6 +5,7 @@
 \alias{lower}
 \alias{lowerize}
 \alias{CapLeading}
+\alias{XXXcl}
 \title{Change case of strings}
 \description{
   \code{capply} apply function to elements in character vector (utility function)
@@ -12,20 +13,22 @@
   \code{lower} and \code{lowerize} change to lower case letters.
   \code{CapLeading} Capitalizes the first character of each element of a
 	character vector
+  \code{XXXcl} used in capitalize and lowerize
 }
 \usage{
-capply(str,ff,\ldots)
+capply(str,ff,...)
 cap(char)
 capitalize(str)
 lower(char)
 lowerize(str)
 CapLeading(str)
+XXXcl(str, ff)
 }
 \arguments{
   \item{str}{a character vector.}
   \item{ff}{a function.}
   \item{char}{a single letter.}
-  \item{\ldots}{a function .}
+  \item{...}{additional parameters for function ff.}
 }
 \value{
 The same as the argument.
@@ -46,7 +49,6 @@ capply(c("abc", "elephant"), rev)  # "cba"    "tnahpele"
 	be written as  capply(x, rev)
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
-  \url{http://www.wsl.ch/personal_homepages/hoffmann/index_EN}
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 }
 \keyword{print}

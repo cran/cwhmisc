@@ -12,15 +12,16 @@
   \item{verbose}{If \code{TRUE}, then delimited by "hours minutes seconds", else by ":"}
 }
 \value{
-  String representing the time difference.
+  String representing the time difference, with \code{dec} decimals in seconds.
 }
 \examples{
-  time1 <- Sys.time()
-  x <- 0
-  for (i in 1:100000) x <- x+1
-  time2 <- Sys.time()
-  dt2str(unclass(time2)-unclass(time1))
-  dt2str(unclass(time2)-unclass(time1),,TRUE)
+  t1 <- unclass(Sys.time())
+  x <- 0;  for (i in 1:1.e6) x <- x+1
+  t2 <- unclass(Sys.time())
+  dt2str(t2-t1,3) # 00:00:2.835
+}
+\note{
+  Enclosing the above statements in a function is likely to show zero time.
 }
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>

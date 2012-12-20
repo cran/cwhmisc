@@ -1,41 +1,37 @@
-numericString <- function(str) {
+isNumeric <- function(str) {
   oldop <- options(warn = -1)
   on.exit(options(oldop))
   !is.na(as.numeric(str))
 } 
 
-allDigits <- function(str) {
-  k <- length(str)
-  result <- logical(k)
-  for(i in 1:k) {
-    st <- str[i]
-    ls <- nchar(st)
-    ex <- substring(st, 1:ls, 1:ls)
-    result[i] <- all(match(ex,c('0','1','2','3','4','5','6','7','8','9'),nomatch=0)>0)
-  }
-  result
+scm <- function( m, n ) {n*m/gcd(m,n)}  ## Smallest Common Multiple
+
+EulerPhi <- function(n) {sum(unlist(lapply(1:n,function(x) gcd(x,n)==1)))}
+
+gcd <- function( m, n ) {
+  x <- EuclidExtended(m,n)
+  return( x[1]*m + x[2]*n )
 }
 
-intToASCII <- function(i) {
-  ASCII[i %% 256];
+EuclidExtended <- function( m, n ) {
+  ## http://de.wikipedia.org/wiki/Erweiterter_euklidischer_Algorithmus
+    x <- 0;    lastx <- 1
+    y <- 1;    lasty <- 0
+    while (n != 0) {
+        (quotient <- m %/% n)
+        (m0 <- n);  (n <- m %% n); (m <- m0)
+        x0 <- lastx - quotient*x; lastx <- x; x <- x0; 
+        y0 <- lasty - quotient*y; lasty <- y; y <- y0; 
+    }
+  return (c(lastx, lasty))
 }
 
-intToBase <- function(i,Base=2) {
-  stopifnot(2 <= Base & Base <= 16)
-  res <- HexDig[i %% Base + 1]
-  i <- i - i %% Base
-  while (i > 0) {
-    i <- i %/% Base
-    res <- paste(HexDig[i %% Base + 1],res,sep="")
-    i <- i - i %% Base
-  }
-  res
-}
-
-intToOct <- function(i) {
-  intToBase(i,8)
-}
-
-intToHex <- function(i) {
-  intToBase(i,16)
+modexp <- function(a, b, n)  {  ## a^b mod n  using repeated squaring ## from http://mvngu.wordpress.com/2008/08/01/parigp-programming-for-basic-cryptography/
+    bin <- intToBase( b )
+    d <- a;
+    for (ii in seqm(2,nchar(bin))) {
+        d <- (d*d) %% n
+        if (substr(bin,ii,ii) == "1")  d <- (d*a) %% n
+    }
+    return(d);
 }

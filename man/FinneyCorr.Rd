@@ -6,7 +6,7 @@
 \title{Finney's correction to log normally distributed data, r-squared
   and standard deviation of a linear model.}
 \description{
-  FinneyCorr: Finney's correction factor K in \eqn{x = e^{\ln x} * K} (see \code{Note}), to be used if \eqn{\ln x} is normally distributed with standard deviation \eqn{s_{\ln x}}.
+  FinneyCorr: Finney's correction factor K in \eqn{latex}{x = e^{\ln x} * K} (see \code{Note}), to be used if \eqn{\ln x} is normally distributed with standard deviation \eqn{latex}{s_{\ln x}}.
 	FC.lm, R2.lm, s.lm:  Finney's correction, \eqn{R^2} and standard deviation extracted from an object of class "lm".
 }
 \usage{
@@ -16,12 +16,12 @@
   s.lm(lmobj)
 }
 \arguments{
-  \item{s}{Standard deviation of log data.}
+  \item{s}{Standard deviation of log data, {\eqn{s_{\ln}} in note.}}
   \item{n}{Number of data points.}
   \item{lmobj}{An object of class "lm".}
 }
 \note{
-  \eqn{K := e^{s_{\ln}^2/2} \,
+  \eqn{latex}{K := e^{s_{\ln}^2/2} \,
 	\left\{1-\frac{s_{\ln}^2}{4n}(s_{\ln}^2+2)+\frac{s_{\ln}^4}{96n^2}(3s_{\ln}^4+44s_{\ln}^2+84) \right\}}
 }
 \examples{

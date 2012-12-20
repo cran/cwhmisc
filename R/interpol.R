@@ -3,23 +3,21 @@ setupInterp <- function(x, y, doPoly=TRUE ) {
 ##    Preparation of Newton's (doPoly=TRUE)
 ##    or rational (doPoly=FALSE) Interpolation.
 ## Rational Interpolation is more flexible in
-##  approximating poles and asymptotes
+##  approximating functions with poles and asymptotes
 ##  Change of vectors [0..lengthX] to [1..lengthX+1]
   lengthX <- length( x )
   if (lengthX != length(y)) {
     stop(paste("vectors have different lengths: x:",lengthX,", y:",length(y)))
   }
   if ( doPoly )  { # mode <- Newton
-    ks <- sort.list(x)
-    x <- x[ks];  f <- y[ks] 
     ii <- 1;  jj <- 1;  kk <- lengthX
     X <- Q <- T <- rep(NA,lengthX)
     while ( jj < kk ) { # interleave from below and above
-      X[ii] <- x[jj];  Q[ii] <- f[jj];  ii <- ii+1;  jj <- jj+1
-      X[ii] <- x[kk];  Q[ii] <- f[kk];  ii <- ii+1;  kk <- kk-1
+      X[ii] <- x[jj];  Q[ii] <- y[jj];  ii <- ii+1;  jj <- jj+1
+      X[ii] <- x[kk];  Q[ii] <- y[kk];  ii <- ii+1;  kk <- kk-1
     }
         ## uneven lengthX
-    if ( jj == kk ) { X[ii] <- x[kk];  Q[ii] <- f[kk] }
+    if ( jj == kk ) { X[ii] <- x[kk];  Q[ii] <- y[kk] }
     for ( ii in 1:lengthX)  { 
       y <- X[ii];  T[ii] <- Q[ii]
       for ( kk in cwhmisc:::seqm(ii-1,1,-1) ) {

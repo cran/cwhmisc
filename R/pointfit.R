@@ -12,4 +12,3 @@ pointfit <- function(xi,x) {  # row vectors
   Qf   <- Q*f
   list(Q = Qf, tr = as.vector(xiq - xq %*% Qf), factor = f, res = B - A %*% t(Qf))
 }
-

@@ -10,8 +10,15 @@ cap <- function(char) {
   else char
 }
 
+XXXcl <- function(str, ff) { # used in capitalize and lowerize
+  x <- strsplit(str, NULL)
+  y <- unlist(x)
+  z <- lapply(y, ff)
+  paste(z, collapse="")
+}
+
 capitalize <- function(str) { # vector of words
-  capply(str,caplow.ff,cap)
+  capply(str,XXXcl,cap)
 }
        
 lower <- function(char) {
@@ -21,7 +28,7 @@ lower <- function(char) {
 }
 
 lowerize <- function(str) {
-  capply(str,caplow.ff,lower)
+  capply(str,XXXcl,lower)
 }
 
 CapLeading <- function(str) {

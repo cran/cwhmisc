@@ -3,19 +3,14 @@
 \title{Format to a fixed format representation}
 \description{
   \code{formatFix} formats to fixed point number format.
-  It 'writes' x with sign (" " or "-") and 'before' decimals before the "." and
-  with 'after' decimals after the ".". If 'after'==0 then the "." will
-	be omitted.
-
-	There will always be at least one decimal digit before the "."
-
-	If 'before' is too small to represent \code{x}: if
-	\code{extend==TRUE}, the string will be 	extended, else a string
-	consisting of "*" of length \code{before+after} will be given.
-
-	If $abs(x) >= 10^8$ values very near $10^k$ cannot be represented
-	exactly, so the normal \code{format} will be used.
-
+  It 'writes' \code{x} with sign (" " or "-"), with \code{before} decimals before the "." and  with \code{after} decimals after the ".". If \code{after == 0} then the "." will
+	be omitted.\cr
+	There will always be at least one decimal digit before the "."\cr
+	If \code{before} is too small to represent \code{x}: if
+	\code{extend==TRUE}, the string will be extended, else a string
+	consisting of "*" of length \code{before+after} will be given.\cr
+	If \eqn{abs(x) >= 10^8}, values very near \eqn{10^k} cannot be represented
+	exactly, so the normal \code{\link{format}} will be used.\cr
 	Names are retained.
 }
 \usage{

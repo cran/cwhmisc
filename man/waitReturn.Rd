@@ -5,10 +5,11 @@
   Wait for the user to type <Return>, depending on argument.
 }
 \usage{
-  waitReturn(ask=TRUE)
+  waitReturn(q="",ask=TRUE)
 }
 \arguments{
   \item{ask}{ \code{TRUE} will generate the interruption, \code{FALSE} will not.}
+  \item{q}{ String for prompt}
 }
 \details{
   The interruption will only be generated for the interactive use of R and

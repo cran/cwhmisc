@@ -1,15 +1,10 @@
-# last revised  2008-09-22,  16:54,  CWH
-# pltCharMat  unchanged
-# plt         abolished
-# plotTitStamp -> pltRCT  (neu)
-# pltHist      -> histRCT 
-# pltSplomT    -> SplomT   
+# last revised  2012-10-22,  15:34,  CWH
 
-pltCharMat <- function(m,tit) {
+pltCharMat <- function(m,...) {
   n22 <- n2cCompact(m)
   cM  <- charMat(n22)
-  xl  <- lattice:::extend.limits(range(cM$x),prop=0.07)
-  plot(xl,range(cM$y),type="n",main=paste(tit,", ",rev(n22)[1],sep=""))
+  xl  <- lattice:::extend.limits(range(cM$x),prop=0.07) ????
+  plot(xl,range(cM$y),type="n",...)
   text(cM$x,cM$y,cM$tx)
 }  ## pltCharMat
 
@@ -25,7 +20,7 @@ pltRCT <- function (rows, cols, tit="", f = function(x) 0, cex = 1.5,
   mtext(tit[L], side = 3, line = 2-L, outer = outer, cex = cex, adj = 0.5)
   mtext(datetime(), side = 1, line = 0, outer = outer, cex = 0.5, adj = 1)
   invisible()
-}  # end pltRCT,  was plotTitStamp inside plt
+}  # end pltRCT
 
 histRCT <- function (data, rows = round(sqrt(ncol(data))), 
     cols = ceiling(ncol(data)/rows), breaks = "Sturges", mainL = deparse(substitute(data)), mainC = colnames(eval(substitute(data)))) 
@@ -59,11 +54,11 @@ SplomT <- function (data, mainL = deparse(substitute(data)), xlabL = "",
   data  <- data.frame(data)
   mxnam <- max(nchar(names(data)))
   lnam  <- ncol(data)
-  ce    <- 100*cex.diag*get.gpar()$cex/lnam
+  ce    <- 100*cex.diag/lnam # *get.gpar()$cex/lnam
   cexd  <- ce/mxnam
   cexn  <- ce/5
   print(splom(~data, as.matrix = TRUE, main = mainL, xlab = paste(xlabL, 
-    datetime(), sep = if (nchar(xlabL) > 0) ", " else ""),
+    datetime(), sep = if (nchar(xlabL) > 0) ", " else " "),
     upper.panel = function(x, y, breaks = NULL, ...) {
       minS <- 0.05
       ccr <- cor(x, y, use = "complete.obs")

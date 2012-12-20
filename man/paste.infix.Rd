@@ -9,8 +9,8 @@
 a \%&\% b
 }
 \arguments{
-  \item{a}{an \R objects, to be coerced to character vectors.}
-  \item{b}{an \R objects, to be coerced to character vectors.}
+  \item{a}{an \R object, to be coerced to character vectors.}
+  \item{b}{an \R object, to be coerced to character vectors.}
 }
 \value{
 The concatenation of \code{a} and \code{b}, same as \code{ paste(a, b, sep="") }

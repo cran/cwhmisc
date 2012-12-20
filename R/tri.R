@@ -1,9 +1,8 @@
-"tri" <- function(a, f, m, symb = 2, grid = FALSE, ...)
+"triplot" <- function(a, f, m, symb = 2, grid = FALSE, ...)
 {
 	ta <- paste(substitute(a))
 	tf <- paste(substitute(f))
 	tm <- paste(substitute(m))
-	
 	tot <- 100/(a + f + m)
 	b <- f * tot
 	y <- b * .878

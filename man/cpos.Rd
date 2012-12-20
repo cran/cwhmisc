@@ -12,15 +12,15 @@ cpos(str,sub,start=1)
 substring.location(str, sub, restrict)
 }
 \arguments{
-  \item{str}{string (1-dim)}
-  \item{sub}{string (1-dim)}
+  \item{str}{string)}
+  \item{sub}{string)}
   \item{start}{integer}
   \item{restrict}{vector of lower and upper index the search should be
 		restricted to}
 }
 \value{
-  number, if found, NA otherwise.
-  list(first,last)
+  \code{cpos} number, if found, NA otherwise.\cr
+  \code{substring.location} list(first,last) for each occurrence\cr If there is none first=NA,last=NA.
 }
 \examples{
 cpos(" Baldrian","a",5) #  8

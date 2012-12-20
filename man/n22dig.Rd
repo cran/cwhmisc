@@ -1,16 +1,16 @@
 \name{n22dig}
 \alias{n22dig}
-\title{Show vector or matrix (of 0 <= x <=1) in a compact way
+\title{Show vector or matrix (of 0 <= x <=10) in a compact way
 }
 \description{
-  \code{n22dig} shows	"0.ab" as "ab", "1.00" as " I", "0" as " 0".
+  \code{n22dig} shows as two characters: "0.ab" as "ab", "1.00" as " I", "0" as " 0".
 }
 \usage{
 n22dig(x, symm = TRUE)
 }
 \arguments{
-  \item{x}{A numerical vector or matrix.}
-  \item{symm}{If \code{symm = TRUE} then upper triangle will be suppressed.}
+  \item{x}{A numerical vector or matrix with elements <= 1.}
+  \item{symm}{If \code{symm = TRUE} then upper triangle will be shown as " ".}
 }
 \value{
 	Representation of \code{x} as two-digit vector or matrix.

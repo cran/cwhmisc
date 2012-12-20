@@ -11,7 +11,7 @@
   \item{x, y}{Variables to check for identity, may be arrays.}
 }
 \value{
-  TRUE or FALSE
+	\code{\link{TRUE}}, \code{\link{FALSE}}
 }
 \note{No check is made whether \code{x} or \code{y} are numeric}
 \examples{

@@ -73,7 +73,7 @@ T3plot <- function(x,lab=paste("T3 plot of ",deparse(substitute(x))),legend.pos=
   # plot of T3 and confidence limits
   ym <- min(Tsimul,-Tz1)
   plot(v,Tsimul,ylim=c(ym,max(Tsimul,Tz1)),type="l",
-  xlab="t",ylab="T3",main=lab)
+  xlab="t",ylab="T3",main=lab,cex=0.8)
   lines(v,Tz1,lty=2,col=2)
   lines(v,-Tz1,lty=2,col=2)
   lines(v,Tz5,lty=4,col=3)

@@ -8,7 +8,7 @@ pasteRound <- function (..., digits=16, sep=" ", collapse=NULL) {
     for(i in seq(along=args))
       if(is.numeric(args[[i]])) args[[i]] <-  as.character(round(args[[i]], digits))
       else args[[i]] <- as.character(args[[i]])
-   .Internal(paste(args, sep, collapse))
+   paste(args, sep, collapse)
   }
 }
 

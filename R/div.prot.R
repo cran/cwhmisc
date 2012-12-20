@@ -1,8 +1,5 @@
-"div.prot" <- function(x, eps = .Machine$double.eps)
-{
-        index <- abs(x/max(abs(x))) > eps
-        result <- x
-        result[index] <- 1/result[index]
-        result[!index] <- 0
-        result
+div.prot <- function(num,den) {
+  res <- num/den
+  res[is.infinite(res)] <- .Machine$double.xmax^(3/4)
+  return(res)
 }

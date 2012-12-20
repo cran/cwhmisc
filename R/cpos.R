@@ -23,7 +23,7 @@
   is <- 1:(l.str-l.sub+1)
   ss <- substring(str, is, is+l.sub-1)
   k <- ss==sub
-  if(!any(k)) return(list(first=0,last=0))
+  if(!any(k)) return(list(first=NA,last=NA))
   k <- is[k]
   if(!missing(restrict)) k <- k[k>=restrict[1] & k<=restrict[2]]
   if(length(k)==0) return(list(first=0,last=0))

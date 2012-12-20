@@ -21,6 +21,7 @@ replacechar("my_queer_file,name") # "my.queer.file,name"
 replacechar("my_queer_file,name","m","M") # "My.queer.file,naMe"
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> adapted from 
+  tjoelker@redwood.rt.cs.boeing.com (Rod Tjoelker 865-3197)
 }
 \keyword{character}

@@ -1,25 +1,13 @@
-lowess.bygroup <- function(x, y, group, lin=FALSE, col = par("col"), bg = NA, pch = par("pch"), cex = 1, ...) {
+lowess.bygroup <- function(x, y, group, span=2/3, col=seq(along=x), lty=seq(along=x)) {
+  ind <- sort.list(x)
+  x <- x[ind]; y <- y[ind]
+  lc <- length(col); lt <- length(lty)
+  ly <- length(y)
+  if (lc == 1) col <- rep(col,ly)
+  if (lt == 1) col <- rep(lty,ly)
   for (ii in unique(group)) {
-    ind <- complete.cases(x[ii == group],y[ii == group])
-    cc  <- cbind(x[ii == group][ind],y[ii == group][ind])
-    oi  <- order(cc[,1])
-    cat(paste(ii,length(oi),"\n"))
-    if (lin) lines(x[oi],y[oi],lty=2)
-    if (length(oi)>0) lines(lowess(x[oi],y[oi]))
+    iig <- ii == group
+    xi  <- x[iig]; yi <- y[iig]
+    lines(lowess(xi,yi,f=span),col=col[ii],lty=lty[ii])
   }
-  invisible()
-} 
-
-loess.bygroup <- function(x, y, group, lin=FALSE, col = par("col"), bg = NA, pch = par("pch"), cex = 1, ...) {
-  for (ii in unique(group)) {
-    ind <- complete.cases(x[ii == group],
-                          y[ii == group])
-    cc  <- cbind(x[ii == group][ind],y[ii == group][ind])
-    oi  <- order(cc[,1])
-    cat(paste(ii,length(oi),"\n"))
-    if (lin) lines(x[oi],y[oi],lty=2)
-    if (length(oi)>0) lines(x[oi],predict(loess(y[oi]~x[oi]),x[oi]))
-  }
-  invisible()
 }
-

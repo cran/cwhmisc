@@ -4,7 +4,7 @@
 \description{
   Find a transformation which consists of a translation \code{tr} and a
 	rotation \code{Q} multiplied by a positive scalar \code{f} which maps
-	a set of points \code{x} into the set of points \eqn{xi: xi = f \dot Qx + tr}. The resulting error is minimized by least squares.
+	a set of points \code{x} into the set of points \eqn{xi: xi = f * Q * x + tr + error}. The resulting \code{error} is minimized by least squares.
 }
 \usage{
   pointfit(xi,x)
@@ -14,7 +14,7 @@
   \item{xi}{Matrix of target points. Each row corresponds to one point.}
 }
 \details{
-  The optimisation is least squares for the problem \eqn{xi: xi = f \dot Qx + tr}. The expansion factor \code{f} is computed as the
+  The optimisation is least squares for the problem \eqn{xi: xi = f * Q * x + tr}. The expansion factor \code{f} is computed as the
 	geometric mean of the quotients of corresponding
 	coordinate pairs. See the program code.
 }
@@ -23,15 +23,15 @@
   \item{Q}{The rotation.}
   \item{f}{The expansion factor.}
   \item{tr}{The translation vector.}
-  \item{res}{The residuals xi - f * Q \%*\% x + tr.}
+  \item{res}{The residuals xi - f * Q * x + tr.}
 }
 \references{"Least squares fit of point clouds" in: W. Gander and J. Hrebicek, ed., Solving Problems in Scientific Computing using Maple and Matlab, Springer Berlin Heidelberg New York, 1993, third edition 1997.}
 \author{Walter Gander, \email{gander@inf.ethz.ch}, \cr
  \url{http://www.inf.ethz.ch/personal/gander/}
 adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> 
 }
-\seealso{ \code{\link{rotm}} to generate rotation matrices (mathlib),
- \code{\link{rotangle}} to determine them from orthogonal matrix.}
+\seealso{ \code{\link{rotL}} to generate rotation matrice
+}
 \examples{
   # nodes of a pyramid
   A <- matrix(c(1,0,0,0,2,0,0,0,3,0,0,0),4,3,byrow=TRUE)
@@ -40,13 +40,14 @@ adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
 #  plot
   # points on the pyramid
   x <-
-matrix(c(0,0,0,0.5,0,1.5,0.5,1,0,0,1.5,0.75,0,0.5,2.25,0,0,2,1,0,0),
+matrix(c(0,0,0,0.5,0,1.5,0.5,1,0,0,1.5,0.75,0,0.5,
+2.25,0,0,2,1,0,0),
     7,3,byrow=TRUE)
   # simulate measured points
-  # thetar <- runif(3)
-  thetar <- c(pi/4, pi/15, -pi/6)
+  # theta <- runif(3)
+  theta <- c(pi/4, pi/15, -pi/6)
   # orthogonal rotations to construct Qr
-  Qr <- rotm(3,1,2,thetar[3]) \%*\% rotm(3,1,3,thetar[2]) \%*\% rotm(3,2,3,thetar[1])
+  Qr <- rotL(theta[3]) \%*\% rotL(theta[2],1,3) \%*\% rotL(theta[1],2,3)
   # translation vector
   # tr <- runif(3)*3
   tr <- c(1,3,2)
@@ -60,13 +61,11 @@ matrix(c(0,0,0,0.5,0,1.5,0.5,1,0,0,1.5,0.75,0,0.5,2.25,0,0,2,1,0,0),
 3.3987,1.9054),7,3,byrow=TRUE)
   (pf <- pointfit(xi,x))
   # the fitted pyramid
-  (C <- A \%*\% pf$Q + outer(rep(1,nrow(A)),pf$tr))
-  (theta <- rotangle(pf$Q))
-  thetar
+  (C <- A \%*\% pf$Q + outer(rep(1,nrow(A)),pf$tr))  ## !!!!!!  \%*\% instead of %*%
   # as a final check we generate the orthogonal matrix S from the computed angles
   # theta and compare it with the result pf$Q
-  Ss <- rotm(3,1,2,theta[3]) \%*\% rotm(3,1,3,theta[2]) \%*\% rotm(3,2,3,theta[1])
-  max(svd(Ss*pf$factor-pf$Q)$d) #>  4.84082e-16  but why pf$factor ??
+  Ss <- rotL(theta[3]) %*% rotL(theta[2],1,3) %*% rotL(theta[1],2,3)
+  range(svd(Ss*pf$factor-pf$Q)$d) #  6.652662e-17 1.345509e-01
 }
 \keyword{algebra}
 

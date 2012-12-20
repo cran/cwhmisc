@@ -33,8 +33,9 @@
   nn <- c(0, 1, 0.1, pi,2*pi,-30*pi)
   dc(nn,3)    # "0&0"     "1&0"     "0&100"   "3&142"   "6&283"   "-94&248"
   dcn(nn,3)   # "0&000"   "1&000"   "0&100"   "3&142"   "6&283"   "-94&248"
+  mpf(pi,5); mpf(-pi,5)  # "+ 3.14159" "- 3.14159"  Note the space after the sign.
 
-#### In file  T.Rnw:
+#### In example file 'T.Rnw':
 ##  <<echo=TRUE>>=
 a <- -2; b <- -4; c <- 7
 ##  @ 
@@ -47,8 +48,6 @@ a <- -2; b <- -4; c <- 7
 #### end T.Rnw
 ###  Sweave: T.Rnw .. T.tex .. T.dvi
 
-
-  mpf(pi,5); mpf(-pi,5)  # "+ 3.14159" "- 3.14159"  Note the space after the sign.
 }
 \author{
   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>

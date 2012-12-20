@@ -1,6 +1,6 @@
 \name{jitterNA}  % only alphanumeric
 \alias{jitterNA}
-\title{Jitter entities with NA}
+\title{Jitter vector containing NA}
 \description{
   Extension of \code{\link[base]{jitter}} to deal with NA entries
 }

@@ -1,41 +1,49 @@
 \name{adaptlob}
 \alias{adaptlob}
 \alias{adaptsim}
-\title{Numerically evaluate integral using adaptive rule.}
+\alias{XXXadaptsimstp}
+\alias{XXXadaptlobstp}
+\title{Numerically evaluate integral using adaptive rules.}
 \description{
   \code{adaptsim} and \code{adaptlob} approximate the integral of the
 	function \code{f} using \emph{adaptive} Simpson and Lobatto rule.
-	Both methods can deal with discontinuous functions.
-	
-	\code{adaptlob} is more efficient than \code{adaptsim} when the accuracy requirement 
-	is high. For lower tolerances, \code{adaptsim} is generally (but not
-	always) more efficient than \code{adaptlob}, but less reliable.
-
-	Both routines show excellent response to changes in the tolerance.
-	
+	Both methods can deal with discontinuous functions.\cr
+  \code{adaptlob} is more efficient than \code{adaptsim} when the accuracy
+        requirement is high. For lower tolerances, \code{adaptsim} is
+        generally (but not always) more efficient than \code{adaptlob},
+        but less reliable.
+	Both routines show excellent response to changes in the tolerance.\cr
   The function \code{f} must return a vector of output values if given a
-	vector of input values.
+	vector of input values.\cr
+  \code{adapt...(f,a,b)} approximates the integral of \code{f(x)} from 
+        \code{a} to \code{b} to \emph{machine} precision.\cr 
+  \code{adapt...(f,a,b,tol)} integrates to a \emph{relative} error of tol.\cr
+  \code{adapt...(f,a,b,tol,trace=TRUE)} displays the stepwise left\cr
+        end point of the current interval, the interval length, and the
+        partial integral.\cr
+  \code{adapt...(f,a,b,tol,trace,P1,P2,...)} allows coefficients P1,
+	... to be passed directly to the function f: g <- f(x,P1,P2,...)
 
-	\code{adapt...(f,a,b)} approximates the integral of \code{f(x)} from \code{a} to \code{b}
-	to \emph{machine} precision.
-
-	\code{adapt...(f,a,b,tol)} integrates to a \emph{relative} error of tol.
-
-  \code{adapt...(f,a,b,tol,trace=TRUE)} displays the stepwise left end point of the current interval, the interval length, and the partial integral.  \code{adapt...(f,a,b,tol,trace,P1,P2,...)} allows coefficients P1,
-	... to be passed directly to the function f: g <-
-	f(x,P1,P2,...)
 }
 \usage{
 adaptsim(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
 adaptlob(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
+XXXadaptsimstp(f,term,a,b,fa,fm,fb,is,trace,...)
+XXXadaptlobstp(f,term,a,b,fa,fb,is,trace,...)
+}
+\note{
+ Functions \code{XXX..} are internal to \code{adapt..} and should not be used explicitely.
 }
 \arguments{
   \item{f}{function to be integrated.}
   \item{a}{starting abscissa of integral.}
   \item{b}{ending abscissa of integral.}
-  \item{tol}{error tolerance > 0 of the final result.}
-  \item{trace}{if TRUE then trace will be displayed.}
-  \item{...}{additional coefficients for function  \code{f}  if necessary.}
+  \item{tol}{tolerance for termination}
+  \item{trace}{should intermediate steps be traced}
+  \item{term}{whether the termination criterion is fulfilled}
+  \item{fa,fb,fm}{function values at a, b, (a+b)/2}
+  \item{is}{error representative}
+  \item{\ldots}{additional parameters for function f.}
 }
 \value{
   List (Q, term) with Q = the approximate value of the integral and term = the information, whether the tolerance given was too small. 
@@ -60,7 +68,7 @@ adaptlob(FexGander,0,5,5.0*.Machine$double.eps)$Q-7.5 #  -5.329071e-15
 Gander, W., Gautschi, W., 2000. Adaptive Quadrature - Revisited. ETH Zurich, DI IWR technical report 306. BIT 40, 1, 84--101.
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
+  Christian W. Hoffmann \email{c-w.hoffmann@sunrise.ch}
 }
 \keyword{math}
 

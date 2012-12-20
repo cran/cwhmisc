@@ -23,7 +23,7 @@
 -  \code{prinM}   prints a matrix without \[\], in fix format. \cr
 -  \code{prinT}   prints an array, TAB delimited. \cr
 -  \code{prinE(xsv, \dots)}   prints a string expression and its evaluation in the form "xsv = evaluation", in vector form. The string may contain "'commenting text'; expression(s)", but only the last expression will be evaluated. \cr
--  \code{prinL(xs, \dots)}    prints a string expression and its evaluation in the form "xs \\newline evaluation". \cr
+-  \code{prinL(xs, \dots)}    prints a string expression and its evaluation in the form "xs" newline evaluation". \cr
 -  \code{prinP(xs)}   prints a string argument and evaluates it i.e. the body of the function evaluated should contain print and cat statements. \cr
 --  The variants N\ldots prepend a linefeed. \cr
 }
@@ -81,7 +81,6 @@ prinT(c(c1=5,c2=7,c3=1,c4=3),TRUE)
 
 ####prinE("'This is a comment: ';3+5;pi-3",digits=4)
 # 'This is a comment: ';3+5;pi-3 =[1] 0.1416
-
 prinL("x")
 # x 
 #  	 c1       c2        c3
