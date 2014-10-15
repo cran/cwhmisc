@@ -11,10 +11,10 @@
 	consisting of "*" of length \code{before+after} will be given.\cr
 	If \eqn{abs(x) >= 10^8}, values very near \eqn{10^k} cannot be represented
 	exactly, so the normal \code{\link{format}} will be used.\cr
-	Names are retained.
+	Names are retained. The vector or array structure will be preserved
 }
 \usage{
-formatFix(x,after,before=2,extend=TRUE)
+formatFix(x,after=2,before=1,extend=TRUE)
 }
 \arguments{
   \item{x}{The number to be represented.}
@@ -47,6 +47,7 @@ formatFix(c(-rev(xxbig),-rev(xx),0,NA,xx,xxbig),6,3,FALSE)
 #> [16] "  3.51e+23" " 6.72e+120" "       NaN"
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
+  2013-08-19: added restore dimensions
 }
 \keyword{print}

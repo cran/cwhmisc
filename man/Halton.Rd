@@ -23,15 +23,19 @@
  q2 <- HS247(2,400,c(2,3))
  q3 <- HS247(2,400,c(2,5))
  q4 <- HS247(2,400,c(17,19)) # prone to correlations
- plot  (q1,pch="+",col="blue",cex=0.5)
- points(q2,pch=4,col="green",cex=0.5)
- plot  (q2,pch=4,col="green",cex=0.5)
+ q5 <- HS247(2,400,c(2,3),c(pi/10,pi/10))
+ of <- 0.2
+ q6 <- HS247(2,400,c(2,3),c(pi/10+of,pi/10+of))
+ plot  (q1,pch="+",col="blue",cex=0.5,xlab="roots = (2,2), +blue, green")
+ points(q2,pch=4, col="green",cex=0.5)
+ plot  (q2,pch=4,col="green",cex=0.5,xlab="roots = (2,3),
+          :green, (2,5) :red, (17,19) magenta")
  points(q3,pch=":",col="red")
  points(q4,pch=4,col="magenta",cex=0.5)
- plot  (q2,pch=4,col="green",cex=0.5)
- points(HS247(2,400,c(2,3),c(pi/10,pi/10)),pch=5,cex=0.5,col="red")
- plot  (HS247(2,400,c(2,3),c(pi/10,pi/10)),pch=5,cex=0.5,col="red")
- points(HS247(2,400,c(2,3),c(pi/10+0.2,pi/10+0.2)),pch="-")
+ plot  (q2,pch=4,col="green",cex=0.5,xlab="roots = 2, 2, green, red")
+ points(q5,pch=5,cex=0.5,col="red")
+ plot  (q5,pch=5,cex=0.5,col="red",xlab="roots = 2, 3, red")
+ points(q6,pch="-")
 }
 \source{
   J. H. Halton, 1964. Algorithm 247: Radical-inverse quasi-random point sequence, Communications of the ACM, Vol.7,12, pp. 701 - 702 .

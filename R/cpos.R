@@ -1,4 +1,4 @@
-"cpos" <- function(str,sub,start=1)
+cpos <- function(str,sub,start=1)
 {### find the first position of string sub in string str, starting from position start
   lstr  <- nchar(str)
   lsub1 <- nchar(sub)-1
@@ -12,7 +12,7 @@
   }
 }
 
-"substring.location" <- function(str, sub, restrict) {
+cposR <- function(str, sub, restrict) {
   if(length(str)>1) stop('only works with a single string str')
   l.str   <- nchar(str)
   l.sub <- nchar(sub)
@@ -26,7 +26,7 @@
   if(!any(k)) return(list(first=NA,last=NA))
   k <- is[k]
   if(!missing(restrict)) k <- k[k>=restrict[1] & k<=restrict[2]]
-  if(length(k)==0) return(list(first=0,last=0))
+  if(length(k)==0) return(list(first=NA,last=NA))
   list(first=k, last=k+l.sub-1)
 }
 

@@ -38,6 +38,6 @@ YX2LB ( yToEastBerne, xToNorthBerne ) # 7.439583333333334  4695240555555557
 YX2MK ( 600, 200) #  =   0
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> after H.Matthias, lecture 'Amtliche Vermessungswerke 1', ETH Zurich, 1986.
+  Christian W. Hoffmann <christian@echoffmann.ch> after H.Matthias, lecture 'Amtliche Vermessungswerke 1', ETH Zurich, 1986.
 }
 \keyword{arith}

@@ -4,7 +4,7 @@
 \description{
   \code{progress.meter} writes a symbol to the output at each
 	invocation. The symbol is usually a ".", a "+" if i \%\% == 0,
-	and (i \%\/\% 10) \%\% 10 if i \%\% 10 == 0. If i \%\% 50 == 0, a
+	and (i \%/\% 10) \%\% 10 if i \%\% 10 == 0. If i \%\% 50 == 0, a
 	line break will be written and i printed.
 }
 \usage{
@@ -30,6 +30,6 @@
 #   50....+....6....+....7....+....8....+....9....+....
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}

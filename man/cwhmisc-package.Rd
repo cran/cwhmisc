@@ -9,8 +9,8 @@ Useful functions and constants for
 \tabular{ll}{
 Package: \tab cwhmisc\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-12-27\cr
+Version: \tab 5.0\cr
+Date: \tab 2014-08-20\cr
 License: \tab GPL (>= 2)\cr
 Author: \tab  Christian W. Hoffmann <christian@echoffmann.ch>\cr
 Maintainer: \tab same

@@ -1,4 +1,3 @@
-% comment
 \name{replacechar}
 \alias{replacechar}
 \title{Replace a character in a string by another}
@@ -21,7 +20,7 @@ replacechar("my_queer_file,name") # "my.queer.file,name"
 replacechar("my_queer_file,name","m","M") # "My.queer.file,naMe"
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> adapted from 
+  Christian W. Hoffmann <christian@echoffmann.ch> adapted from 
   tjoelker@redwood.rt.cs.boeing.com (Rod Tjoelker 865-3197)
 }
 \keyword{character}

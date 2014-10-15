@@ -65,7 +65,7 @@ If you have \code{n} panels you want to plot in a nearly quadratic arrangement, 
 }
 \examples{
   x <- rnorm(100); y <- rnorm(100)+1; z <- y+rlnorm(100)
-  pltRCT(2,1,f={plot(x,y,xlab="this is my x");
+  pltRCT(1,1,f={plot(x,y,xlab="data with trend");
     abline(reg=lm(y~x),lty=2);points(x,z,pch=3)})
   nr <- 100; nc <- 8;
   data <- as.data.frame(matrix(rnorm(nr*nc),nrow=nr,ncol=nc))
@@ -74,18 +74,22 @@ If you have \code{n} panels you want to plot in a nearly quadratic arrangement, 
   colnames(data)<-paste("vw",letters[1:nc],sep="")
   SplomT(data,mainL="",hist="d",cex.diag=0.6,hist.col="green")
   SplomT(data,mainL="",hist="b",adjust=0.4,cex.diag = 0.5)
-  pltRCT(1, 1, tit="1 by 2 plot", f=plot(y,x-3*y) )
-  pltRCT(1, 2, f={plot(x,y,xlab="my x");
-    m <- matrix(rnorm(500),nrow=50,ncol=10)
-    pltCharMat(m,"Random example",xlab="rnorm(500)")
+  pltRCT(1, 1, tit="1 by 1 plot", f=plot(y,x-3*y) )
+  nr <- 25;  nc <- 16
+  pltRCT(1, 2, f={plot(x,y,xlab="my x")
+    m <- matrix(rnorm(nr*nc),nrow=25,ncol=nc)
+    pltCharMat(m,cex=0.5,col="red")
   })
+
 }
 \section{WARNING}{
   The sequence of functions contained in \code{f} MUST NOT contain any call to
   \code{\link{postscript}}, because this would try to open another ps device without closing the old one!
 }
 \author{
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}, with the assistance of
+  Christian W. Hoffmann, \email{christian@echoffmann.ch}, with the assistance of
   Deepayan Sarkar \email{Deepayan.Sarkar@r-project.org}.
 }
 \keyword{hplot}
+
+

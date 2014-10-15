@@ -5,7 +5,6 @@
 \alias{lower}
 \alias{lowerize}
 \alias{CapLeading}
-\alias{XXXcl}
 \title{Change case of strings}
 \description{
   \code{capply} apply function to elements in character vector (utility function)
@@ -13,7 +12,6 @@
   \code{lower} and \code{lowerize} change to lower case letters.
   \code{CapLeading} Capitalizes the first character of each element of a
 	character vector
-  \code{XXXcl} used in capitalize and lowerize
 }
 \usage{
 capply(str,ff,...)
@@ -22,7 +20,6 @@ capitalize(str)
 lower(char)
 lowerize(str)
 CapLeading(str)
-XXXcl(str, ff)
 }
 \arguments{
   \item{str}{a character vector.}
@@ -49,6 +46,6 @@ capply(c("abc", "elephant"), rev)  # "cba"    "tnahpele"
 	be written as  capply(x, rev)
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}

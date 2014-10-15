@@ -15,7 +15,7 @@ plotSymbols <- function(interactive=FALSE) {
   axis(3, at=0:15)
   axis(4, at =1:16, labels=0:15*16+15, las=2)
   if (interactive) {
-    title(main="Click on a symbol to add it to the resulting data frame. Click in margin to quit!", cex.main=0.8, line=3.5)
+    title(main="Click on a symbol to add it to the resulting data frame.\n (Double) Click in margin to quit!", cex.main=0.8, line=3.5)
   }
   if (interactive) {
     df <- list()

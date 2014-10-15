@@ -13,13 +13,11 @@ pn <- function() cat("\n")
 
 "prinM" <- function(x,after=2,before) {
   ## print matrices without []
-  for (ii in seq(dim(x)[1])) {
-    if (missing(before) || is.null(before))
-      cat(paste(formatFix(x[ii,],after),collapse=""),"\n")
-    else
-    cat(paste(formatFix(x[ii,],after,before),collapse=""),"\n")
-  }
-  invisible(x)
+  res <- x
+  res <- formatFix(x, after, before)
+  dim(res) <- dim(x)
+  print(res,quote=FALSE)
+  invisible(res)
 }
 
 "prinT" <- function(x,rownam=FALSE,colnam=FALSE) {  

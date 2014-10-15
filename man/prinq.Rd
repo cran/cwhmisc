@@ -19,8 +19,8 @@
   These functions may be helpful for documenting ongoing work using \code{sink()}. \cr
 -  \code{catn(\dots)} is shorthand for cat(\dots); cat("\\n") \cr
 -  \code{pn()}    is shorthand for cat("\\n") which is awkward for me to type. \cr
--  \code{prinV}   prints a vector without \[\], in fix format. \cr
--  \code{prinM}   prints a matrix without \[\], in fix format. \cr
+-  \code{prinV}   prints a vector without [], in fix format. \cr
+-  \code{prinM}   prints a matrix without [], in fix format. \cr
 -  \code{prinT}   prints an array, TAB delimited. \cr
 -  \code{prinE(xsv, \dots)}   prints a string expression and its evaluation in the form "xsv = evaluation", in vector form. The string may contain "'commenting text'; expression(s)", but only the last expression will be evaluated. \cr
 -  \code{prinL(xs, \dots)}    prints a string expression and its evaluation in the form "xs" newline evaluation". \cr
@@ -107,6 +107,6 @@ options(digits=xx$digits)
 }
 
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}

@@ -22,7 +22,7 @@
   # aaaa has TRUE only on the diagonal, i.e. identity works correctly
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{logic}
 \keyword{arith}

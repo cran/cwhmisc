@@ -16,13 +16,13 @@ none
 character string 
 }
 \examples{
-datetime()  #[1] "2012-09-27, 13:56:38"
-mydate()  #[1] "2012-09-27"
-mytime()  #[1] "13:56:39"
+datetime()  #[1] "2014-10-03, 16:00:03"
+mydate()  #[1] "2014-10-03"
+mytime()  #[1] "16:00:09"
 }
 \note{These functions are implemented using POSIX}
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{chron}
 \keyword{print}

@@ -11,7 +11,7 @@
   \item{x,w}{Real, data and weights}
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \seealso{\code{\link{median}}, \code{\link{quantile}}}
 \examples{

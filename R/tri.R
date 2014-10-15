@@ -13,7 +13,7 @@
 		 = c(-10, 110), type = "n", ...)
         points(x,y,pch=symb)
 	par(col = oldcol)
-	trigrid(grid)
+	.trigrid(grid)
 	text(-5, -5, ta)
 	text(105, -5, tm)
 	text(50, 93, tf)
@@ -21,7 +21,7 @@
 	invisible()
 }
 
-"trigrid" <- function(grid = FALSE)
+".trigrid" <- function(grid = FALSE)
 {
 	lines(c(0, 50, 100, 0), c(0, 87.8, 0, 0))	#draw frame
 	if(!grid) {

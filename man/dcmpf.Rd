@@ -50,6 +50,6 @@ a <- -2; b <- -4; c <- 7
 
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{arith}

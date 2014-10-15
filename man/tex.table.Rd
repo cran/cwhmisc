@@ -23,7 +23,7 @@ tex.tab0(dm, prec = 2, rnames = NULL, cnames = NULL,
   \item{cnames}{column names}
   \item{caption}{caption for LATEX table, default: no caption}
   \item{label}{LATEX label for the table,  default: no lable}
-  \item{tpos}{position of captions: "a" for above table, "b" for belowbelow table}
+  \item{tpos}{position of captions: "a" for above table, "b" for below table}
   \item{stretch}{optional vector with two entries, giving the baselinestretch for the caption (stretch[1]) and the colums of the table (stretch[2]);
   default: no adjustment of baselinestretch}
   \item{adjust}{adjusts the columns of the LATEX table, default: "r" (right), 
@@ -48,6 +48,6 @@ tex.tab0(dm, prec = 2, rnames = NULL, cnames = NULL,
 }
 \author{
 Adapted by:
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{interface}

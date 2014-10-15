@@ -18,7 +18,7 @@ whole.number(c(pi,2,3)) # FALSE
 whole.number(c(1,2,3))  # TRUE
 }
 \author{Bill Venables
-adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+adapted by   Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{data}
 

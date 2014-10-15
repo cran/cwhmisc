@@ -28,11 +28,13 @@ plotSymbolsFonts(fn=1)
 }
 \examples{
   # A first impression:
+    opar <- par(mfrow=c(1,2))
   n<-1:34; plot(n,pch=n) # There is a gap between 25 and 34
   plotSymbols(TRUE)
+  par(opar)
 }
 \author{Henrik Bengtsson \email{hb@maths.lth.se}, adapted by
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
+  Christian W. Hoffmann, \email{christian@echoffmann.ch}
 }
 \keyword{color}
 \keyword{hplot}

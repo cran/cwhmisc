@@ -34,7 +34,7 @@ heading("Just a line, not really a heading","","",0,0)
 #\#|Just a line, not really a heading
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}
             

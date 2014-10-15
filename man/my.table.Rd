@@ -32,7 +32,7 @@ my.table.margin(v,w)
   my.table.margin(matrix(1:24,4))
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> \cr
+  Christian W. Hoffmann <christian@echoffmann.ch> \cr
   and   John Fox \email{jfox@mcmaster.ca} (my.table.margin)
 }
 \keyword{distribution}

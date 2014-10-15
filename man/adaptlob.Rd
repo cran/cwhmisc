@@ -1,8 +1,6 @@
 \name{adaptlob}
 \alias{adaptlob}
 \alias{adaptsim}
-\alias{XXXadaptsimstp}
-\alias{XXXadaptlobstp}
 \title{Numerically evaluate integral using adaptive rules.}
 \description{
   \code{adaptsim} and \code{adaptlob} approximate the integral of the
@@ -28,11 +26,6 @@
 \usage{
 adaptsim(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
 adaptlob(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
-XXXadaptsimstp(f,term,a,b,fa,fm,fb,is,trace,...)
-XXXadaptlobstp(f,term,a,b,fa,fb,is,trace,...)
-}
-\note{
- Functions \code{XXX..} are internal to \code{adapt..} and should not be used explicitely.
 }
 \arguments{
   \item{f}{function to be integrated.}
@@ -40,9 +33,6 @@ XXXadaptlobstp(f,term,a,b,fa,fb,is,trace,...)
   \item{b}{ending abscissa of integral.}
   \item{tol}{tolerance for termination}
   \item{trace}{should intermediate steps be traced}
-  \item{term}{whether the termination criterion is fulfilled}
-  \item{fa,fb,fm}{function values at a, b, (a+b)/2}
-  \item{is}{error representative}
   \item{\ldots}{additional parameters for function f.}
 }
 \value{
@@ -68,7 +58,7 @@ adaptlob(FexGander,0,5,5.0*.Machine$double.eps)$Q-7.5 #  -5.329071e-15
 Gander, W., Gautschi, W., 2000. Adaptive Quadrature - Revisited. ETH Zurich, DI IWR technical report 306. BIT 40, 1, 84--101.
 }
 \author{
-  Christian W. Hoffmann \email{c-w.hoffmann@sunrise.ch}
+  Christian W. Hoffmann \email{christian@echoffmann.ch}
 }
 \keyword{math}
 

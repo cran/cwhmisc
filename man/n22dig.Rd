@@ -3,7 +3,7 @@
 \title{Show vector or matrix (of 0 <= x <=10) in a compact way
 }
 \description{
-  \code{n22dig} shows as two characters: "0.ab" as "ab", "1.00" as " I", "0" as " 0".
+  \code{n22dig} shows as two characters: "0.ab" as "ab", "1.00" as " I", "0" as " 0" (note the blank).
 }
 \usage{
 n22dig(x, symm = TRUE)
@@ -37,6 +37,6 @@ n22dig(cor(matrix(rnorm(100),10)),TRUE)
 # [10,] "66" "51" "48" "16" "20" "27" "28" "20" "16" " I" 
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}

@@ -1,19 +1,24 @@
 \name{pasteInfix}
-\alias{pasteInfix}
 \alias{\%&\%}
 \title{Paste(infix)}
 \description{
-  Paste as infix
+  Paste as infix in two variants
 }
 \usage{
-a \%&\% b
+  a \%&\% b
 }
 \arguments{
-  \item{a}{an \R object, to be coerced to character vectors.}
-  \item{b}{an \R object, to be coerced to character vectors.}
+  \item{a, b}{objects, will be coerced to character vectors.}
 }
 \value{
-The concatenation of \code{a} and \code{b}, same as \code{ paste(a, b, sep="") }
+  Same as \code{ paste(a, b, sep=)}
+}
+\examples{
+"I am" \%&\% " hungry" # [1] "I am hungry"
+}
+\details{
+  \code{\%&\%} is currently defined as \cr
+  \code{"\%&\%" <- function(a,b)  paste(a,b,sep="") }
 }
 \seealso{
   String manipulation with
@@ -23,11 +28,8 @@ The concatenation of \code{a} and \code{b}, same as \code{ paste(a, b, sep="") }
   writes to a file, and \code{\link{sprintf}} for C like string
   construction.
 }
-\examples{
-"I am" \%&\% " hungry" # [1] "I am hungry"
-}
-\author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+\author{christian@echoffmann.ch>
 }
 \keyword{misc}
-\keyword{documentation}
+\keyword{documentation}  
+

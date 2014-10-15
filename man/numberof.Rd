@@ -15,6 +15,6 @@ numberof(x, f)
   numberof(c(1:100,NA,NA,NaN),function(x) !is.na(x))
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{distribution}

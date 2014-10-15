@@ -1,7 +1,8 @@
 \name{functions}
 \alias{inrange}
-\alias{modulo}
-\alias{moduloSymm}
+\alias{mod}
+\alias{modS}
+\alias{modR}
 \alias{zero}
 \alias{one}
 \alias{onebyx}
@@ -12,67 +13,58 @@
 \alias{quotmean}
 \alias{safeDiv}
 \alias{solveQeq}
-\alias{IsCounterCl2}
-\alias{IsCounterCl3}
-\alias{CounterClock}
-\alias{NoneClock}
-\alias{Clockwise}
-\alias{ClockSense2}
-\alias{ClockSense3}
+\alias{chsvd}
 \title{Functions for testing and other}
 \description{
  Functions for testing on equality, exactly or with a tolerance, functions usable as parameters in other functions.
 }
 \usage{
-modulo( m, n  )
-moduloSymm( m, n )
+inrange(x,r)
+mod( m, n  )
+modS( m, n )
+modR( x, y )
 one ( x )
 onebyx( x )
 sqr( x )
 powr( a, x )
 equal( x, y )
-equalFuzzy( x, y, prec, rel=TRUE )
+equalFuzzy( x, y, prec=8*.Machine$double.eps, rel=TRUE )
 quotmean(x,y)
 safeDiv( num, den )
 solveQeq(a,b,c)
-inrange(x,r)
-IsCounterCl2( U, V, ref )
-IsCounterCl3( U, V, W, ref )
-ClockSense2( U, V, ref )
-ClockSense3( U, V, W, ref )
+chsvd(s)
 }
 \arguments{
   \item{m,n,num,den}{Integer}
-  \item{a,b,c,prec,r,ref,x,y,U,V,W}{Real}
+  \item{a,b,c,prec,x,y}{Real}
+  \item{r}{Real vactor}
   \item{rel}{Boolean}
+  \item{s}{square matrix}
 }
 \details{
-\code{modulo} m%%n\cr
-\code{moduloSymm} (m - (trunc( m/n )*n)), symmetric to 0.\cr
-\code{zero} Return 0.0\cr
-\code{one} Return 1.0\cr
-\code{onebyx} 1.0/x\cr
-\code{sqr} x^2\cr
-\code{powr} a^x, with  0^0 := 1, 0^x := 0\cr
+\code{mod} = m\%\%n\cr
+\code{modS} : modulo symmetric to 0.\cr
+\code{modR}: modulo for reals, towards negative infinity.\cr
+\code{zero} returns 0.0 on any argument\cr
+\code{one} returns 1.0 on any argument\cr
+\code{onebyx} = 1.0/x\cr
+\code{sqr} = x^2\cr
+\code{powr} = a^x, with  0^0 := 1, 0^x := 0\cr
 \code{equal} x == y\cr
 \code{equalFuzzy} One can choose between relative and absolute precision\cr
-\code{safeDiv} Compute quotient, safeguard >= cMAXREALBY3Q\cr
-\code{quotmean} Compute mean of non-NA elementsof x and y\cr
+\code{safeDiv} Compute quotient, set 0/0 -> 1,  and safeguard r/0 <- cMAXREALBY3Q otherwise  \cr
+\code{quotmean} Compute quotient of means of non-NA elements of x by y\cr
 \code{solveQeq} Solve the quadratic equation given by the coefficients, return two solutions if a != 0, else one solution, possibly NA\cr
 \code{inrange} Check if x is in the range r\cr
-\code{CounterClock, NoneClock, Clockwise} "clckws", "Cntclck","noneclck", "clckws"\cr
-\code{ClockSense2} Return the clock sense of U and V\cr
-\code{ClockSense3} Return the clock sense of U, V, W\cr
-\code{IsCounterCl2} Check if the directed angle from U towards W is counter clockwise, including U==W. Ref is the measure of a full circle, 360 for degrees, 2*Pi for radians, 400 for gon\cr
-\code{IsCounterCl3} Check if U, V, W form a counterclock wise sequence. 
+\code{chsvd} Check for \code{link{svd}} to reproduce matrix 
 }
 \examples{
-modulo((-3:5),4 ) # 1 2 3 0 1 2 3 0 1
-moduloSymm((-3:5),4) # -3 -2 -1  0  1  2  3  0  1
+mod((-3:5),4 ) # 1 2 3 0 1 2 3 0 1
+modS((-3:5),4) # -3 -2 -1  0  1  2  3  0  1
 x <- 200; y <- x + 0.1
 equalFuzzy(x,y,0.1*c(10^(-3:0))) # FALSE  TRUE  TRUE  TRUE
 equalFuzzy(x,y,0.1*c(10^(-3:0)),FALSE) # FALSE FALSE FALSE  TRUE
-safeDiv(1,0) # 1.552518e+231
+safeDiv(0:3,c(0,0:2)) # 1.552518e+231
 solveQeq(0,0,1) # NA NA
 solveQeq(0,1,0) # 0
 solveQeq(0,1,1) # -1
@@ -81,11 +73,12 @@ solveQeq(1,0,1) # 0-1i 0+1i
 solveQeq(1,1,0) #  -1  0
 solveQeq(1,1,1) #  -0.5-0.866025i  -0.5+0.866025i
 solveQeq(sample(1:4,1),sample(1:4,1),sample(1:4,1))
-ClockSense2(0,220,360) # "clckws"
-ClockSense2(0,170,360) # "Cntclck"
-ClockSense2(0,0,360) # "noneclck"
+  x <- matrix(rnorm(9),3,3)
+  s <- svd(x)
+  lV(s$d)
+  norm(chsvd(s) - x) # 9.4368957e-16
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{character,arith}

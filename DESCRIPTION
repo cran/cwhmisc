@@ -1,14 +1,15 @@
 Package: cwhmisc
-Version: 4.0
-Date: 2012-12-20
+Version: 5.0
+Date: 2014-10-15
 Title: Miscellaneous Functions for math, plotting, printing,
         statistics, strings, and tools
-Author: Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
-        <http://www.echoffmann.ch>
-Maintainer: Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+Author: Christian W. Hoffmann <christian@echoffmann.ch>
+    <http://www.echoffmann.ch>
+Maintainer: Christian W. Hoffmann <christian@echoffmann.ch>
 Depends: R (>= 2.0), lattice, grid
-Description: Miscellaneous useful functions collected over time
+Description: Miscellaneous useful or interesting functions. Some parameters of functions may have changed, so beware!
 License: GPL (>= 2)
-Packaged: 2013-01-03 14:38:29 UTC; hoffmann
+Packaged: 2014-10-15 14:05:48 UTC; hoffmann
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-01-03 16:14:07
+Date/Publication: 2014-10-15 23:37:39

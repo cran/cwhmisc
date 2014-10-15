@@ -69,6 +69,6 @@
 	Normal Distribution. Applied Statistics 37, 477-484.
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> 
+  Christian W. Hoffmann <christian@echoffmann.ch> 
 }
 \keyword{distribution}

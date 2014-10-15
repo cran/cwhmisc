@@ -1,7 +1,7 @@
 LongBerne <- 7.439583333333333 # [deg] =  7deg26'22.50"
 LatBerne  <- 46.95240555555556 # [deg] = 46deg57'08.66"
 xToNorthBerne  <- 200.0   ## [km] grid value 'North' of reference point
-yToEastBerne   <- 600.0   ## [km]  grid value 'East of reference point
+yToEastBerne   <- 600.0   ## [km]  grid value 'East' of reference point
 
 LB2MK <- function( long, lat ) {
   if (missing(lat)) { lat <- long[[2]]; long <- long[[1]] }

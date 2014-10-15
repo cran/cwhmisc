@@ -1,6 +1,6 @@
 \name{pointfit}
 \alias{pointfit}
-\title{Least squares fit of point clouds, or the Procrustes problem.}
+\title{Least squares fit of point clouds, or the 'Procrustes' problem.}
 \description{
   Find a transformation which consists of a translation \code{tr} and a
 	rotation \code{Q} multiplied by a positive scalar \code{f} which maps
@@ -28,9 +28,9 @@
 \references{"Least squares fit of point clouds" in: W. Gander and J. Hrebicek, ed., Solving Problems in Scientific Computing using Maple and Matlab, Springer Berlin Heidelberg New York, 1993, third edition 1997.}
 \author{Walter Gander, \email{gander@inf.ethz.ch}, \cr
  \url{http://www.inf.ethz.ch/personal/gander/}
-adapted by   Christian W. Hoffmann <c-w.hoffmann@sunrise.ch> 
+adapted by   Christian W. Hoffmann <christian@echoffmann.ch> 
 }
-\seealso{ \code{\link{rotL}} to generate rotation matrice
+\seealso{ \code{\link{rotL}} to generate rotation matrices
 }
 \examples{
   # nodes of a pyramid
@@ -47,7 +47,7 @@ matrix(c(0,0,0,0.5,0,1.5,0.5,1,0,0,1.5,0.75,0,0.5,
   # theta <- runif(3)
   theta <- c(pi/4, pi/15, -pi/6)
   # orthogonal rotations to construct Qr
-  Qr <- rotL(theta[3]) \%*\% rotL(theta[2],1,3) \%*\% rotL(theta[1],2,3)
+  Qr <- rotL(theta[3]) \%*\% rotL(theta[2],1,3) \%*\% rotL(theta[1],1)
   # translation vector
   # tr <- runif(3)*3
   tr <- c(1,3,2)
@@ -62,10 +62,10 @@ matrix(c(0,0,0,0.5,0,1.5,0.5,1,0,0,1.5,0.75,0,0.5,
   (pf <- pointfit(xi,x))
   # the fitted pyramid
   (C <- A \%*\% pf$Q + outer(rep(1,nrow(A)),pf$tr))  ## !!!!!!  \%*\% instead of %*%
-  # as a final check we generate the orthogonal matrix S from the computed angles
+  # As a final check we generate the orthogonal matrix S from the computed angles
   # theta and compare it with the result pf$Q
   Ss <- rotL(theta[3]) %*% rotL(theta[2],1,3) %*% rotL(theta[1],2,3)
-  range(svd(Ss*pf$factor-pf$Q)$d) #  6.652662e-17 1.345509e-01
+  range(svd(Ss*pf$factor - pf$Q)$d) #  6.652662e-17 1.345509e-01
 }
 \keyword{algebra}
 

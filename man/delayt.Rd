@@ -17,11 +17,13 @@
   the number of internal calls of Sys.time()
 	}
 \examples{
+\donttest{
   Sys.time(); nrof <- delayt(5); Sys.time()
   print(nrof) # 2620 on my machine
 }
+}
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{chron}
 

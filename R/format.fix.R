@@ -1,4 +1,5 @@
-"formatFix" <- function(x,after,before=2,extend=TRUE) {  # 2001-08-29, C.Hoffmann
+"formatFix" <- function(x,after=2,before=1,extend=TRUE) {  # 2001-08-29, C.Hoffmann
+ xx <- as.vector(x)
   stripform <- function(x,after,len) {
     st <- format(x,digits=min(max(1,after),22),trim=TRUE,nsmall=after)
     difflen <- nchar(st) - len
@@ -12,23 +13,24 @@
     }
     if (difflen) paste(rep("*",len),collapse="")
     else st
-  }
+  }  ### stripform
+  
   maxA  <- 1.0e8
   after <- max(after,0)
   withdot <- after>0
-  toobig  <- ifelse(is.na(x),TRUE,abs(x)>=maxA)
-  decim <- pmax(floor(log10(abs(x))*(1+.Machine$double.eps)),0)
-  reqbef  <- ifelse(is.na(x),2,pmax(decim,0) + as.numeric(x<0) + 1)
-  placesbefore <- ifelse(is.na(x),2,ifelse(rep(extend,length(x)),decim+2,pmin(before,reqbef)))
+  toobig  <- ifelse(is.na(xx),TRUE,abs(xx)>=maxA)
+  decim   <- pmax(floor(log10(abs(xx))*(1+.Machine$double.eps)),0)
+  reqbef  <- ifelse(is.na(xx),2,pmax(decim,0) + as.numeric(xx<0) + 1)
+  placesbefore <- ifelse(is.na(xx),2,ifelse(rep(extend,length(xx)),decim+2,pmin(before,reqbef)))
   placesbefore[toobig] <- 0
-  xx     <- round(abs(x)*10^after)  #  treat as integer
+  xx     <- round(abs(xx)*10^after)  #  treat as integer
   before <- max(before,placesbefore)
   filldot <- reqbef > before
   regular <- !filldot & !toobig
   len <- mlen <- before+after+1
   if (!withdot) mlen <- mlen-1
   if (extend & any(toobig)) {
-    ncc <- max(nchar(format(x[toobig],digits=min(max(1,after),22)))) - mlen
+    ncc <- max(nchar(format(xx[toobig],digits=min(max(1,after),22)))) - mlen
     if (ncc>0) {mlen <- mlen+ncc; len <- len+ncc}
   }
   str <- matrix("*",mlen,length(x))
@@ -46,11 +48,12 @@
       xx[regular] <- xx[regular] %/% 10
       kk <- kk+1
     }
-    str[cbind(len-after-placesbefore,seq(ncol(str)))[regular & (x<0),]] <- "-"
+    str[cbind(len-after-placesbefore,seq(ncol(str))) [regular & (x<0),]] <- "-"
   }
   res <- apply(str,2,paste,collapse="")
-  if (any(toobig)) res[toobig] <- sapply(x[toobig],stripform,after,mlen)
+  if (any(toobig)) res[toobig] <- sapply(xx[toobig],stripform,after,mlen)
   names(res) <- names(x)
-  res
+  if (is.array(x)) dim(res) <- dim(x)
+  return ( res )
 }
 

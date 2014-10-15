@@ -27,8 +27,6 @@
 }
 \references{Ghosh, S. (1996) A new graphical tool to detect non-normality. Journal of the Royal Statistical  Society B , 58, 691-702. }
 \author{Sucharita Ghosh, \email{rita.ghosh@wsl.ch}, \cr
-  \url{http://www.wsl.ch/personal_homepages/ghosh/index_EN?redir=1&}, \cr
- with cosmetics by 
-  Christian W. Hoffmann, \email{c-w.hoffmann@sunrise.ch}
+  with cosmetics by  Christian W. Hoffmann, \email{christian@echoffmann.ch}
 }
 \keyword{distribution}

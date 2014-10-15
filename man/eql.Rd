@@ -20,6 +20,6 @@ eql(x, y)
   eql(c(NA,NaN,2,NA,3),c(NA,NaN,1,2,3)) #>  TRUE  TRUE FALSE FALSE
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>, \cr
+  Christian W. Hoffmann <christian@echoffmann.ch>, \cr
 idea by Peter Dalgaard, \email{p.dalgaard@biostat.ku.dk} }
 \keyword{arith}

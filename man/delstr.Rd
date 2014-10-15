@@ -20,6 +20,6 @@ delstr("Ich gehen heuten in den Garten hinein","en")
 delstr("12345","x") # "12345" 
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{print}

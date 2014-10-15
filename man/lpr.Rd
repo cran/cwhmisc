@@ -16,6 +16,6 @@ pdfc(file = "Rplot.pdf", ...)
   \item{\dots}{Additional parameters for \code{\link{dev.copy}}.}
 }
 \author{Ray Brownrigg \email{ray@mcs.vuw.ac.nz} \cr
-modified by Christian W. Hoffmann  \email{c-w.hoffmann@sunrise.ch}
+modified by Christian W. Hoffmann  \email{christian@echoffmann.ch}
 }
 \keyword{device}

@@ -16,7 +16,7 @@
   }
   
 \examples{
-  x <- c(rep(0,20), exp(rnorm(1000)))
+  x <- c(rep(0,20), exp(rnorm(1000,0.05)))
   fx <- f.log(x)
   oldpar <- par(mfrow = c(2, 3))
   plot(x)
@@ -33,6 +33,6 @@
   }
 \author{W.Stahel, ETH Zuerich, \email{werner.stahel@stat.math.ethz.ch}
 adapted by:
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{distribution}

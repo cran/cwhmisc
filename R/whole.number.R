@@ -1,1 +1,3 @@
-whole.number <- function(x) all((x %% 1) == 0)
+whole.number <- function(x) {
+    all((x %% 1) == 0) #
+}

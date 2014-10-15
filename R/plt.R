@@ -1,11 +1,11 @@
 # last revised  2012-10-22,  15:34,  CWH
 
-pltCharMat <- function(m,...) {
+pltCharMat <- function( m, ... ) {
   n22 <- n2cCompact(m)
   cM  <- charMat(n22)
-  xl  <- lattice:::extend.limits(range(cM$x),prop=0.07) ????
-  plot(xl,range(cM$y),type="n",...)
-  text(cM$x,cM$y,cM$tx)
+  xl  <- extendrange(range(cM$x),f=0.07)
+  plot(xl,range(cM$y),type="n")
+  text(cM$x,cM$y,cM$tx, ...)
 }  ## pltCharMat
 
 pltRCT <- function (rows, cols, tit="", f = function(x) 0, cex = 1.5, 
@@ -88,6 +88,7 @@ SplomT <- function (data, mainL = deparse(substitute(data)), xlabL = "",
       }
       grid.text(varname,  y=unit(h.diag,"npc"), gp = gpar(cex = cexd))
       popViewport()
-    }, varnames = abbreviate(names(data)), pscales = 0 )
+    },
+    varnames = abbreviate(names(data)), pscales = 0 )
   )
 }  ## end SplomT  2008-06-02, 17:16

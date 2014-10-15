@@ -7,6 +7,6 @@ w.median <- function(x,w) {
   x <- x[ind]
   w <- w[ind]
   ind1 <- min(which(cumsum(w)/sum(w) >=0.5))
-  ind2 <- max(which(cumsum(w)/sum(w) <=0.5))
+  ind2 <- if( (w[1] / sum(w)) > 0.5 ) { 1 } else {max(which(cumsum(w)/sum(w) <=0.5))}
   max(x[ind1],x[ind2])
 }

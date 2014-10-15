@@ -20,7 +20,7 @@ setupInterp <- function(x, y, doPoly=TRUE ) {
     if ( jj == kk ) { X[ii] <- x[kk];  Q[ii] <- y[kk] }
     for ( ii in 1:lengthX)  { 
       y <- X[ii];  T[ii] <- Q[ii]
-      for ( kk in cwhmisc:::seqm(ii-1,1,-1) ) {
+      for ( kk in seqm(ii-1,1,-1) ) {
         T[kk] <- (T[kk+1] - T[kk]) / (y - X[kk] )
       }
       Q[ii] <- T[1]
@@ -58,7 +58,7 @@ minInterp <- function( x, y, add = FALSE, doPoly=TRUE ) {
   # Interpolate (doPoly=TRUE .= Newton) three points
   # or four points (x,y) (Thiele),
   # For add=TRUE one more point is used.
-  # Returns the numerical minimum if it exists,
+  # Returns the argument of the numerical minimum if it exists,
   #   or NA if too few points are given.
   ks <- sort.list(x)
   x  <- x[ks];  f <- y[ks] 

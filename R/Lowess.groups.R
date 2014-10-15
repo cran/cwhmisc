@@ -1,4 +1,4 @@
-lowess.bygroup <- function(x, y, group, span=2/3, col=seq(along=x), lty=seq(along=x)) {
+lowess.bygroup <- function(x, y, group, span=2/3, col=seq_along(x), lty=seq_along(x)) {
   ind <- sort.list(x)
   x <- x[ind]; y <- y[ind]
   lc <- length(col); lt <- length(lty)

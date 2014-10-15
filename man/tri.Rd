@@ -1,6 +1,5 @@
 \name{triplot}
 \alias{triplot}
-\alias{trigrid}
 \title{Ternary or Triangular Plots.}
 \description{
   \code{plotCI} plots in a triangle the values of three variables. Useful for mixtures 
@@ -8,7 +7,7 @@
 }
 \usage{
 triplot(a, f, m, symb=2, grid=FALSE, ...)
-trigrid(grid = FALSE)}
+}
 \arguments{
   \item{a}{Vector of first variable.}
   \item{f}{Vector of second variable.}
@@ -18,8 +17,7 @@ trigrid(grid = FALSE)}
   \item{\dots}{Additional parameters for \code{plot}}
 }
 \value{
-  The function \code{tri} is called for its side effect to produce a
-	plot. code{trigrid} is internal to \code{tri}.
+  The function \code{tri} is called for its side effect to produce a plot.
 }
 \author{
   Colin Farrow

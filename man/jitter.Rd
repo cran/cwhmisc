@@ -21,7 +21,7 @@
   jitterNA(d)
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{data}
 \keyword{NA}

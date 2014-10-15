@@ -28,6 +28,6 @@ clean.na(x,margin,drop=FALSE)
 # [1] 2 5
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{manip}

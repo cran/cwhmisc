@@ -56,5 +56,5 @@
   \code{DPY} = cDAYPJULCENT/100.0; Tage/jul.Jahr\cr
   \code{DAYINMONTH} = c(31,28,31,30,31,30,31,31,30,31,30,31,31)
 }
-\author{  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>}
+\author{  Christian W. Hoffmann <christian@echoffmann.ch>}
 \keyword{arith}

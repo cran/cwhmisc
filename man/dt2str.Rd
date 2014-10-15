@@ -24,7 +24,7 @@
   Enclosing the above statements in a function is likely to show zero time.
 }
 \author{
-  Christian W. Hoffmann <c-w.hoffmann@sunrise.ch>
+  Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{chron}
 
