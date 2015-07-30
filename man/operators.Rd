@@ -1,24 +1,24 @@
 \name{pasteInfix}
-\alias{\%&\%}
+\alias{\%+\%}
 \title{Paste(infix)}
 \description{
-  Paste as infix in two variants
+  Paste as infix
 }
 \usage{
-  a \%&\% b
+  a \%+\% b
 }
 \arguments{
   \item{a, b}{objects, will be coerced to character vectors.}
 }
 \value{
-  Same as \code{ paste(a, b, sep=)}
+  see Details.
 }
 \examples{
-"I am" \%&\% " hungry" # [1] "I am hungry"
+"I am" \%+\% "very" \%+\%" hungry" # [1] "I am hungry"
 }
 \details{
-  \code{\%&\%} is currently defined as \cr
-  \code{"\%&\%" <- function(a,b)  paste(a,b,sep="") }
+  \code{\%+\%} is currently defined as \cr
+  \code{"\%+\%" <- function(a,b)  paste0(a,b) }
 }
 \seealso{
   String manipulation with

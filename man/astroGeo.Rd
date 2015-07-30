@@ -32,7 +32,7 @@ YX2MK( yToEast, xToNorth )
 
 \examples{
 LB2MK( LongBerne, LatBerne) #  7.21188e-16 [gon]
-LB2MK( 9.132582913360895, 46.18669420448755) # somewhere in Switzerlan , 1.37472
+LB2MK( 9.132582913360895, 46.18669420448755) # somewhere in Switzerland , 1.37472
 LB2YX( LongBerne, LatBerne) # 600.0, 200.0
 YX2LB ( yToEastBerne, xToNorthBerne ) # 7.439583333333334  4695240555555557
 YX2MK ( 600, 200) #  =   0

@@ -13,7 +13,7 @@ dc <- function(x,d,ch="&") { # d=0: "x&0"
 dcn <- function(x,d,ch="&") { # d=0: no "&" !!
   d  <- max(d,1)
   s <- sapply(x,function(x) eval(parse(text = paste("sprintf('%.", d, "f',", x, ")", sep = ""))))
-  replacechar(s,".",ch)
+  gsub( ".",ch, s )
 }
 
 mpf <- function(r,after) {paste(if (r<0) "-" else "+", eval(parse(text = paste("sprintf('%.",after,"f',abs(",r,"))",sep=""))))}

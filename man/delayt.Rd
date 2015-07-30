@@ -19,7 +19,7 @@
 \examples{
 \donttest{
   Sys.time(); nrof <- delayt(5); Sys.time()
-  print(nrof) # 2620 on my machine
+  print(nrof) # 26596 on my machine (2.33 GHz MacBook Pro)
 }
 }
 \author{

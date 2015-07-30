@@ -1,8 +1,8 @@
 \name{numer}
-\alias{scm}
 \alias{EulerPhi}
 \alias{gcd}
 \alias{Euclid}
+\alias{scm}
 \alias{Inv}
 \alias{modexp}
 \title{Number theoretic functions}

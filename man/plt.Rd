@@ -8,8 +8,11 @@
 - \code{pltCharMat} uses output from \code{\link{charMat}} to plot numerical matrices as characters.
 - \code{pltRCT} executes a (series of) plotting function(s) under the control of some useful switches, may be useful in \code{\link{source}}.
 - \code{histRCT} creates a (series of) histogram(s), uses \code{pltRCT}.
-- \code{SplomT} creates a scatterplot matrix with a) covariances (with script size proportional to size) in the upper triangle, b) histograms (with smoothing) and variable names in the diagonal, and c) scatterplot with smoothes in y and x direction in the lower triangle, stressing high correlations by nearly parallel lines. 
-      \figure{SplomT.pdf}{SplomT}
+- \code{SplomT} creates a scatterplot matrix with a) covariances (with
+script size proportional to size) in the upper triangle, b) histograms
+(with smoothing) and variable names in the diagonal, and c) scatterplot
+with smoothes in y and x direction in the lower triangle, stressing high
+correlations by nearly parallel lines. See figure in other documentation.
 }
 \usage{
 pltCharMat(m,...)

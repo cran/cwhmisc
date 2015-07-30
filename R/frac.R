@@ -38,7 +38,7 @@ evalcfr <- function( cf ) {
 
 toCFrac <- function( x, depth=5) {
     .Machine$double.xmax^0.75
-  cMAXREALBY38 <- .Machine$double.xmax^(3/8)
+  c38 <- .Machine$double.xmax^(3/8)
   sig  <- sign(x);
   x    <- abs(x);
   minr <- 1.0/.Machine$integer.max;
@@ -49,7 +49,7 @@ toCFrac <- function( x, depth=5) {
   dif2 <- .Machine$integer.max;
   dif1 <- abs(val1-val2);
   r    <- x - num;
-  while ((n < depth) & (r > cMAXREALBY38) < (r >= minr)) {
+  while ((n < depth) & (r > c38) < (r >= minr)) {
 #  while ((n < depth) & (dif1 < dif2) & (r >= minr)) {
     ## avoid division by 0 *)
    n <- n+1;
@@ -70,7 +70,7 @@ toCFrac <- function( x, depth=5) {
 
 toCFrac2 <- function( x, depth=5) {
     .Machine$double.xmax^0.75
-  cMAXREALBY38 <- .Machine$double.xmax^(3/8)
+  c38 <- .Machine$double.xmax^(3/8)
   sig  <- sign(x);
   x    <- abs(x);
   minr <- 1.0/.Machine$integer.max;
@@ -81,7 +81,7 @@ toCFrac2 <- function( x, depth=5) {
   dif2 <- .Machine$integer.max;
   dif1 <- abs(val1-val2);
   r    <- x - num[2];
-  while ((n <= depth) & (r > cMAXREALBY38) < (r >= minr)) {
+  while ((n <= depth) & (r > c38) < (r >= minr)) {
    n <- n+1;
    onebyr <- 1/r + 8.*minr;  # force some rounding
    b <- int(onebyr);

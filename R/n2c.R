@@ -1,3 +1,5 @@
+.spacC <- "  "  ## extra space in indexLine and charMat
+
 n2c <- function(x, symm = FALSE){
   n2c0 <- function(y) {
     ifelse(y >= 10e10, "X", ifelse(y >= 1.0, 
@@ -15,7 +17,7 @@ n2c <- function(x, symm = FALSE){
 }  ## n2c
 
 indexLine <- function(n) {
-  L <- c(rep(".",n),spacC)  # extra space needed for charMat
+  L <- c(rep(".",n),.spacC)  # extra space needed for charMat
   if (n>=5) {
     T <- seq(n%/%5)
     L[5*T] <- ";"
@@ -30,13 +32,13 @@ indexLine <- function(n) {
 n2cCompact <- function(x, symm=FALSE) {
   nB <- n2c(x, symm=symm)
   cc <- indexLine(ncol(x))
-  c(cc,paste(apply(nB,1,paste,collapse=""),spacC,if (is.null(rownames(x))) seq(nrow(x)) else abbreviate(rownames(x),minlength = 10),sep=""),cc,paste("legend: ",attr(nB,"legend"),sep=""))
+  c(cc,paste(apply(nB,1,paste,collapse=""),.spacC,if (is.null(rownames(x))) seq(nrow(x)) else abbreviate(rownames(x),minlength = 10),sep=""),cc,paste("legend: ",attr(nB,"legend"),sep=""))
 } ## n2cCompact
 
 charMat <- function(cc) { ## lines of type n2cCompact
   rows <- length(cc)-3    ## strip lines 1 and -2, -1
   colP <- nchar(cc[1])
-  colS <- colP-nchar(spacC)     ## without extra space in indexLine
+  colS <- colP-nchar(.spacC)     ## without extra space in indexLine
   cc1  <- substring(cc,1,colP)  ## proper lines of character matrix
   cc2  <- substring(cc,colP+1)  ## column numbers
   cm1  <- rev(rev(cc1[-1])[-c(1,2)])  ## without indexLines and legend

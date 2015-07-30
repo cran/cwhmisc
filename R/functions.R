@@ -24,7 +24,7 @@ quotmean <- function(x,y) mean(x,na.rm = TRUE)/mean(y,na.rm = TRUE)
 
 safeDiv <- function( num, den ) {
   q <- ifelse (num==0 & den==0, 1,  num/den)
-  return( ifelse (is.infinite(q), cMAXREALBY3Q, q) )
+  return( ifelse (is.infinite(q), c3Q, q) )
 }
 
 solveQeq <- function(a,b,c) { # solve ax^2 + bx + c = 0 for x
@@ -45,4 +45,20 @@ solveQeq <- function(a,b,c) { # solve ax^2 + bx + c = 0 for x
 }
 
 chsvd <- function(s){ s$u %*% diag(s$d) %*% t(s$v) }
+
+divmod <- function(x,y) c(x %/% y, x %% y)
+
+submod <- function(x, v) {
+  if (x <= 0) return ( c(0,0) )
+  v <- c(0, v)
+  ii <- sum( v < x  )
+  return( c( ii-1, x - v[ii]) )
+}  # submod
+
+dsm <-  function( x, w ) {
+   dm <- divmod( x, sum(w) )
+   sm <- submod( dm[2], cumsum(w) )
+   res <- c( dm[1], sm )
+   return( res )
+ } # dsm
 

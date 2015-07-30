@@ -1,6 +1,7 @@
 \name{digits}
 \alias{allDigits}
 \alias{isNumeric}
+\alias{str2dig}
 \alias{xToBase}
 \title{Test, convert numbers}
 \description{
@@ -17,9 +18,9 @@ xToBase( x, base=2 )
   \item{str}{String}
 }
 \details{
-  \code{alldigits} Convert a string to a number literally.\cr
+  \code{alldigits} Convert literally a string to a number.\cr
   \code{isNumeric} Test whether the elements of a character vector
-	represent legal numbers only.
+	represent legal numbers only.\cr
   \code{str2dig} Convert a string to a vector of integers.\cr
   \code{int} integer part truncate towards 0.\cr
   \code{xToBase} return \code{res$a}, \code{res$e} so that\cr

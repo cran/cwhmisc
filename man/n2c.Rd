@@ -13,8 +13,7 @@
   \code{n2cCompact} combines \code{n2c} and \code{indexLine} to generate
   a vector of strings good for printing numerical matrices. 
   \code{charMat} processes the output from \code{n2cCompact} and returns
-  vectors x, y, tx of equal lengths for input to
-  \code{\link{pltCharMat}}. 
+  vectors x, y, tx of equal lengths for input to \code{\link{pltCharMat}}. 
   \code{explainLegend} gives a more readable version of attribute \code{legend}.
 }
 \usage{

@@ -1,10 +1,3 @@
-pdfc <- function (file = "Rplot.pdf", ...) {
-  current.device <- dev.cur()
-  dev.off(dev.copy(device = pdf, file = file, ...))
-  dev.set(current.device)
-  print(paste(file, "generated."))
-  }
-
 lpr <- function (object, file = "Rplotlpr.ps", ...) 
 {
     if (missing(object)) {

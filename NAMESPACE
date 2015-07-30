@@ -1,2 +1,4 @@
 exportPattern("^[^\\.]")
-import(lattice,grid)
+import(lattice,grid,
+  graphics, grDevices, stats 
+)

@@ -2,10 +2,11 @@
 \alias{replacechar}
 \title{Replace a character in a string by another}
 \description{
-  \code{replacechar} replaces a character in a string by another
+  \code{replacechar} replaces a character in a string by another, deprecated!
 }
 \usage{
 replacechar(str, char = "_", newchar = ".")
+# is gsub(char, newchar,str)
 }
 \arguments{
   \item{str}{The string to be altered.}

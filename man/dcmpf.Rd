@@ -1,4 +1,4 @@
-\name{dc}
+\name{dcm}
 \alias{dc}
 \alias{dcn}
 \alias{mpf}
@@ -43,7 +43,7 @@ a <- -2; b <- -4; c <- 7
 ##  The coefficients are: $a = \Sexpr{a}$, $b = \Sexpr{b}$, $c = \Sexpr{c}$.
 ##  
 
-##  For the linear combination $$z = a + bx +cy$$ we have
+##  For the linear combination $$z = a + bx +cy$$ we thenhave
 ##   $$z = \Sexpr{sprintf(\%.4f,a)} \Sexpr{mpf(b,3)} x \Sexpr{mpf(c,5)} y$$
 #### end T.Rnw
 ###  Sweave: T.Rnw .. T.tex .. T.dvi

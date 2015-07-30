@@ -38,9 +38,10 @@ is.prime(n)
 # meaning 423 = 3^2 * 47^1
 prodN(p) # 423
 is.prime(.Machine$integer.max) # TRUE
+is.prime(16) # FALSE
 ## check speed of your machine
   s <- Sys.time(); p<-primes(10^4);difftime(Sys.time(),s) 
-## Time difference of 8.36586 secs  on my machine  
+## Time difference of 2.906242 secs  on my machine  
 x <-factorN(.Machine$integer.max)
 }
 \author{

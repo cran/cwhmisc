@@ -48,6 +48,5 @@ formatFix(c(-rev(xxbig),-rev(xx),0,NA,xx,xxbig),6,3,FALSE)
 }
 \author{
   Christian W. Hoffmann <christian@echoffmann.ch>
-  2013-08-19: added restore dimensions
 }
 \keyword{print}

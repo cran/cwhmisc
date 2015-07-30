@@ -44,9 +44,7 @@ RNGkind(ok[1])
 
 lmo <- lm(y ~ x)
 FC.lm(lmo)  # 1.00472
-\dontrun{
 R2.lm(lmo)  # 6.1926e-05
-}
 s.lm(lmo)   # 0.0970954
 }
 \references{Finney D.J., 1941. On the distribution of a variable whose

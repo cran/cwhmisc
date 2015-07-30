@@ -1,5 +1,5 @@
 %\VignetteIndexEntry{cwhmisc}
-%% cwhmisc.Rnw   2012-12-03, 16:44   CWHoffmann
+%% cwhmisc.Rnw   "2015-07-30, 15:03:25"   CWHoffmann
 \documentclass[a4paper,11pt,leqno]{scrartcl}
 \usepackage[russian,ngerman,english]{babel}
 \usepackage{lineno}
@@ -17,8 +17,6 @@
 \usepackage{Sweave}
 %%
 
-%\usepackage{Sweave}
-
 \newenvironment{Stable}[3]{%
     \begin{table}[hbtp]
     \centering
@@ -29,16 +27,15 @@
     \end{table}}
 
 \begin{document}
-%%\SweaveOpts{prefix.string=fig/Fig}
 
-
-\date{2014-08-18}
+\date{\Sexpr{cwhmisc:::datetime()}}
   
-\title{\textbf{The package "cwhmisc", an overview}}
+\title{\textbf{The package "cwhmisc", an Overview}}
 \author{Christian W. Hoffmann}
 \maketitle
 
 \href{<christian@echoffmann.ch}{www.echoffmann.ch}
+\vspace{8mm}
 
 This package contains material which has been developed and collected as useful and handy. Own ideas and those from others have been used to ease my work. In some cases I incorporated material as is, and references to its author(s) may have to be updated from the web, or may even be lost.
 
@@ -54,87 +51,98 @@ Functions are supplied for
 \end{itemize}
 
 \begin{Stable}{|p{35mm}p{115mm}|}{Functions for mathematical
-    use}{t:math}
+    use A}{t:math1}
 \hline
-c..                     & Astronomical constants \\
-cMAXREALBY38            & Constants \\
-LB2MK ..  YX2 ..        & Geographical coordinates to and from<-> Swiss topo coordinates \\
-angle                   & simple vector operations \\
-adapt..                 &  Numerically evaluate integral using adaptive rule \\
-allDigits               & Test, convert numbers \\
-astroC                  &  Astronomical constants \\
-astroGeo                & Convert geographical to and from Swiss topo coordinates  \\
-cJDJ2000 ..             & Astronomical constants \\
-IsCounter..             & Directed angles \\
-ClockSense              & clock sense \\
-Const                   &  Mathematical constants \\
-chsvd                   & Check svd to reproduce matrix \\
-div.prot                &  Protected division \\
-deg, rad                & Convert to degrees, radian \\
-ellipse1                &  Generate ellipses \\
-eql                     &   Check on equality, including NA==NA and NaN==NaN.\\
-Eratosthenes            & Create primes \\
-EulerPhi                & Number of divisors \\
-Euclid                  & Computes a, b which solve the equation a*m + b*n = gcd(m,n) \\
-factorN, prodN          & Factor an integer into primes, combine  factors \\
-frac                    &  Fractional part of number \\
-gcd                     &  Greatest common divisor \\
-inrange                 &  Functions for testing and other \\
-intToASCII              & Show character or octal representation in the ASCII sequence \\
-intTo..                 & Convert intege to string representation in a base 2...16 \\
-is.constant             &  is.constant \\
-is.prime                & Check if prime \\
-IsCounterCl2            & Functions for directed arcs \\
-isNumeric               &   Test, convert numbers \\
-normalize               &  Base power and multiplier of real\\
-numberof                & Count the number elements that satisfy a condition \\
-numericString           & Test character vector on legal numbers \\
-lengths.angle           &   Lengths of two vectors and angle between them \\
-modexp                  & Exponentiation modulo an integer \\
-modulo, modS, modR      & m\%\%n, modulo symmetric, towards negative infinity \\
-num.ident               &    Check numerical values for identity \\
-pointfit                & Least squares fit of point clouds aka "Procrustes problem" \\
-primes                  & Create primes \\
-quadmin                & argument of the minimum \\
-reda, reda2            & reduce arc like quantities \\
-quotmean                & quotient of means of non-NA elements \\
-rotA, .V, .L, .Z        & Rotate x-y with angle \\
-scm                     & Smallest common multiple \\
-seqm                    &  sequences, empty if "by" not conforming \\
-setup, eval ..Interp    &  Polynomial and rational interpolation \\
-signp                  &   Sign Function -1  1  1 instead of -1  0  1\\
-solveQeq             & Solve the quadratic equation \\
-toPol,toRec         &  Polar <-> rectangular coordinates \\
-toSph, toXyz         &  Spherical <-> x-y-z coordinates \\
-whole.number         &   Check an array on whole numbers (x in I). \\
+c..                   & Astronomical constants \\
+c38, c3Q              & Constants \\
+LB2MK ..  YX2 ..      & Geographical coordinates <-> Swiss topo coordinates \\
+angle                 & simple vector operations \\
+adapt..               &  Numerically evaluate integral using adaptive rule \\
+allDigits             & Test, convert numbers \\
+astroC                &  Astronomical constants \\
+astroGeo              & Convert geographical to and from Swiss topo coordinates  \\
+cJDJ2000 ..           & Astronomical constants \\
+IsCounter..           & Directed angles \\
+ClockSense            & clock sense \\
+Const                 &  Mathematical constants \\
+chsvd                 & Check svd to reproduce matrix \\
+divmod                & Combination of div and mod \\
+div.prot              &  Protected division \\
+deg, rad              & Convert to degrees, radian \\
+circle1               &  Generate circles and ellipses \\
+eql                   &  Check on equality, including NA==NA and NaN==NaN.\\
+Eratosthenes          & Create primes \\
+EulerPhi              & Number of divisors \\
+Euclid                & Computes a, b which solve the equation a*m + b*n = gcd(m,n) \\
+factorN, prodN        & Factor an integer into primes, combine  factors \\
+frac                  &  Fractional part of number \\
+gcd                   &  Greatest common divisor \\
+inrange               &  Functions for testing and other \\
+intToASCII            & Show character or octal representation in the ASCII sequence \\
+intTo..               & Convert intege to string representation in a base 2...16 \\
+is.constant           & Check if one constant \\
+is.prime              & Check if prime \\
+IsCounterCl2          & Functions for directed arcs \\
+isNumeric             & Test, convert numbers \\
+Julian Date           & Julian Dates \\
+lV                    & Length of vector \\
+normalize             & Base power and multiplier of real\\
+numberof              & Count the number elements that satisfy a condition \\
+numericString         & Test character vector on legal numbers \\
+lengths.angle         &   Lengths of two vectors and angle between them \\
+modexp                & Exponentiation modulo an integer \\
+modulo, modS, modR    & m\%\%n, modulo symmetric, towards negative infinity \\
+num.ident             &    Check numerical values for identity \\
+pointfit              & Least squares fit of point clouds aka "Procrustes problem" \\
+primes                & Create primes \\
+quadmin               & argument of the minimum \\
+reda, reda2           & reduce arc like quantities \\
+quotmean              & quotient of means of non-NA elements \\
+rotA, .V, .L, .Z      & Rotate x-y with angle \\
+scm                   & Smallest common multiple \\
+\hline
+\end{Stable}
+
+\begin{Stable}{|p{35mm}p{115mm}|}{Functions for mathematical
+    use B}{t:math2}
+\hline
+scprod                & scalar product \\
+seqm                  &  sequences, empty if "by" not conforming \\
+setup, eval ..Interp  &  Polynomial and rational interpolation \\
+signp                 &  Sign Function -1  1  1 instead of -1  0  1\\
+solveQeq              & Solve the quadratic equation \\
+submod                & Analog to divmod \\
+toPol,toRec           &  Polar <-> rectangular coordinates \\
+toSph, toXyz          &  Spherical <-> x-y-z coordinates \\
+whole.number          &  Check an array on whole numbers (x in I). \\
 \hline
 \end{Stable}
 
 
 \begin{Stable}{|p{35mm}p{115mm}|}{Functions for string manipulation}{t:string}
 \hline
-%&%               &  Paste(infix)  \\
+%p%               &  Paste(infix)  \\
 cap               &  Change case of strings \\
 capply            &  Apply function to elements in character vector. \\
 cap(italize)      &  Change to upper/lower case  \\
 lower(ize)        &  Change to upper/lower case \\
 CapLeading        &  Capitalize first character \\
 cpos, cposR       &  Find the position of a substring \\
-datetime, my..       &  Show date and/or time in ISO format \\
-dc                   &  Convert number for table columns, for equations \\
-deg, rad             &  Convert arcs \\
-delstr               &  Delete a substring from a string \\
-dt2str               &  Convert time difference to string \\
-formatFix            &  Format to a fixed format representation \\
+datetime, my..    &  Show date and/or time in ISO format \\
+dc                &  Convert number for table columns, for equations \\
+deg, rad          &  Convert arcs \\
+delstr            &  Delete a substring from a string \\
+dt2str            &  Convert time difference to string \\
+formatFix         &  Format to a fixed format representation \\
 term.names2formula   &  Combine two vectors of strings into a formula. \\
 formula2string       &  Return the left and the right hand sides of a formula \\
-formula2term.names    &  Return one chosen side of a formula. \\
-formula2Rterm.names   &  Return the right hand side of a formula. \\
-grepnot               &  Show elements passing or not a grep \\
-num2Latex             &    Convert numeric containing e+-power \\
-padding               &  Padding a string with justification \\
-pasteInfix            &   Paste(infix) \\
-pasteRound            &   Paste rounded values \\
+formula2term.names   &  Return one chosen side of a formula. \\
+formula2Rterm.names  &  Return the right hand side of a formula. \\
+grepnot              &  Show elements passing or not a grep \\
+num2Latex            &    Convert numeric containing e+-power \\
+padding              &  Padding a string with justification \\
+pasteInfix           &   Paste(infix) \\
+pasteRound           &   Paste rounded values \\
 replacechar          &  Replace a character in a string by another \\
 str2dig              &  Convert literally a string to a vector \\
 str2formula          &  Convert string to a formula \\
@@ -155,15 +163,15 @@ jitterNA             &  Jitter vector containing NA \\
 my.table.NA          &  Tabulate data, with extra rows and columns. \\
 napply               &  Apply a function to the corresponding elements of two lists (?) \\
 neg.bin.gof          &  Approximate a Negative binomial distribution \\
-qnorm.ap16            &   Approximation to the inverse normal distribution function. \\
+qnorm.ap16           &   Approximation to the inverse normal distribution function. \\
 qres.binom           &  Randomized quantile residuals \\
-remove.dup.rows       &  Remove duplicate rows \\
+remove.dup.rows      &  Remove duplicate rows \\
 scode                &  Generate the significance codes as in summary.lm \\
 select.range         &  Select values from a vector depending on a range in a second vector \\
-shapiro.wilk.test      & Shapiro-Wilk Normality Test \\
+shapiro.wilk.test    & Shapiro-Wilk Normality Test \\
 smoothed.df          &  Fit cumulative distribution from kernel estimate \\
 summaryFs            &  Print extended summary of lm \\
-w.median            &   Weighted median \\
+w.median             &   Weighted median \\
 \hline
 \end{Stable}
 
@@ -171,15 +179,15 @@ w.median            &   Weighted median \\
 \hline
 heading              &  Write a line of text with underlining and blank lines \\
 lpr                  &   Print an object or plot \\
-n22dig                  & Show vector or matrix (of 0 <= x <=1) in a compact way \\
+n22dig               & Show vector or matrix (of 0 <= x <=1) in a compact way \\
 n2c                  &   Show absolute values as characters, prepare for plotting \\
-prinE(xsv, \dots)     & Print a string expression and its evaluation in the form "xsv = evaluation" \\
-prinL(xs, \dots)   & Print a string expression and its evaluation in the form "xs" newline evaluation" \\
-printP                & Print without square brackets, expression values together with their call strings \\
+prinE(xsv, \dots)    & Print a string expression and its evaluation in the form "xsv = evaluation" \\
+prinL(xs, \dots)     & Print a string expression and its evaluation in the form "xs" newline evaluation" \\
+printP               & Print without square brackets, expression values together with their call strings \\
 prinV                & Print a vector without [], in fix format. \\
-prinM               &  Print a matrix without [], in fix format. \\
-prinT               &   Print an array, TAB delimited. \\
-progress.meter        &  Monitor the progress of a repetitive calculation \\
+prinM                &  Print a matrix without [], in fix format. \\
+prinT                &   Print an array, TAB delimited. \\
+progress.meter       &  Monitor the progress of a repetitive calculation \\
 tex.table            &  Convert a data matrix into LaTeX code \\
 \hline
 \end{Stable}
@@ -187,49 +195,35 @@ tex.table            &  Convert a data matrix into LaTeX code \\
 \begin{Stable}{|p{35mm}p{115mm}|}{Functions for plotting}{t:plot}
 \hline
 T3plot               &  T3plot, show normality of data \\
-lowess.bygroup        &  Plot data in groups, each group with separate lowess smoothing \\
+lowess.bygroup       &  Plot data in groups, each group with separate lowess smoothing \\
 lpr                  &  Print an object or plot \\
-mult.fig.p            &   Plot Setup for multiple plot, incl. main title \\
+mult.fig.p           &   Plot Setup for multiple plot, incl. main title \\
 p.screeplot.princomp &  Plot screeplot \\
 panel.cor            &  Alternative panel functions for lattice plots \\
-pdfc                &   Print current plot \\
-elayanel.hist            &  Alternative panel functions for lattice plots \\
-plotSymbols            &  Plot symbols, colours, and allow to choose \\
-pltCharMat            &   Plot depending on switch, Create multiple plots with title and time stamp \\
-setPPT                  &Set PowerPoint style \\
-triplot                &  Ternary or Triangular Plots. \\
+pdfc                 &   Print current plot \\
+elayanel.hist        &  Alternative panel functions for lattice plots \\
+plotSymbols          &  Plot symbols, colours, and allow to choose \\
+pltCharMat           &   Plot depending on switch, Create multiple plots with title and time stamp \\
+setPPT               &  Set PowerPoint style \\
+SplomT               &  Embellished scatterplot matrix \\
+triplot              &  Ternary or Triangular Plots. \\
 \hline
 \end{Stable}
 
 \label{l:misc}
 \begin{Stable}{|p{35mm}p{115mm}|}{Miscellaneous functions}{t:tool}
 \hline
-ASCII                 &  Internal cwhmisc functions \\
-delayt                &  Delay execution \\
-Dim                   &  Uniform 'dim' fo vectors AND arrays  \\
-grepnot               &   Grep utility  \\
-Hd ..                 &  Conversion of hour representations  \\
-libs                  &  List all installed packages, or all functions in a package \\
-ls.functions          &  List available local functions \\
-progress.meter        &  Monitor the progress of a repetitive  calculation \\
-RCA                   &  Check, build, install package \\
-waitReturn            &  Wait for <Return> \\
+ASCII                &  Internal cwhmisc functions \\
+delayt               &  Delay execution \\
+Dim                  &  Uniform 'dim' fo vectors AND arrays  \\
+grepnot              &   Grep utility  \\
+Hd ..                &  Conversion of hour representations  \\
+libs                 &  List all installed packages, or all functions in a package \\
+ls.functions         &  List available local functions \\
+progress.meter       &  Monitor the progress of a repetitive  calculation \\
+RCA                  &  Check, build, install package \\
+waitReturn           &  Wait for <Return> \\
 \hline
 \end{Stable}
-
-<<Scw,fig=TRUE>>=
-#  Show use of 'SplomT'
-dontrun <- FALSE # TRUE
-if (!dontrun) {
-  library(cwhmisc)
-  nr <- 100; nc <- 8;
-  data <- as.data.frame(matrix(rnorm(nr*nc),nrow=nr,ncol=nc))
-  data[,nc]   <- data[,nc-2] + 0.3*data[,nc-1] #generate higher correlations
-  data[,nc-1] <- data[,nc-1] + 0.9*data[,nc]
-  colnames(data)<-paste("vw",letters[1:nc],sep="")
-#  splom(~data,cex=0.2)
-  SplomT(data,mainL="SplomT with random data",hist="d",cex.diag=0.6,hist.col="green")
-}
-@
 
 \end{document}

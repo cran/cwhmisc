@@ -34,12 +34,3 @@ ClockSense3 <- function( U, V, W, ref ) {
   }
 } ## end  ClockSense3
 
-angle <- function(v,w) {
-    acos( ( v %*% w )/vlen(v)/vlen(w) )[1,1]
-    ##  
-}
-
-lV <- function(v) sqrt( v %*% v )[1,1]
-
-chsvd <- function(s) s$u%*% diag(s$d) %*% t(s$v)
-

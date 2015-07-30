@@ -39,7 +39,7 @@
   \code{cC} = 299792458.0  , [m/s] defined speed of light\cr
   \code{cRE} = 6378140.0  , [m]  radius of earth.s equator\cr
   \code{cMY} = 0.01230002  , ratio mass of moon/mass of earth\cr
-  \code{cPRECESS} = 5029.0966  , [arc sec] praezession per year at 2000.0\cr
+  \code{cPRECESS} = 5029.0966  , [arc sec] precession per year at 2000.0\cr
   \code{cEPSOBL}23.43929111  , [deg]  inclination of ecliptic at 2000.0\cr  \code{cAE} = 1.49597870E11 , [m]  distance Earth to Sun\cr
   \code{cSBYE} = 332946.0   , ratio mass of Sun/mass of Earth\cr
   \code{cSBYEMY} = 328900.5  , ratio mass of Sun/mass of, Earth+Moon\cr
@@ -53,7 +53,7 @@
   \code{cSBYPL} = 130000000.0  , ratio mass of Sun/mass of Pluto\cr
   \code{cSOLBYSID} = 1.00273790934 , ratio solar/sidereal day\cr
   \code{cSIDBYSOL} = 0.99726956634 , ratio sidereal/solar day\cr
-  \code{DPY} = cDAYPJULCENT/100.0; Tage/jul.Jahr\cr
+  \code{DPY} = cDAYPJULCENT/100.0; days/jul.Jahr\cr
   \code{DAYINMONTH} = c(31,28,31,30,31,30,31,31,30,31,30,31,31)
 }
 \author{  Christian W. Hoffmann <christian@echoffmann.ch>}

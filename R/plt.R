@@ -58,7 +58,7 @@ SplomT <- function (data, mainL = deparse(substitute(data)), xlabL = "",
   cexd  <- ce/mxnam
   cexn  <- ce/5
   print(splom(~data, as.matrix = TRUE, main = mainL, xlab = paste(xlabL, 
-    datetime(), sep = if (nchar(xlabL) > 0) ", " else " "),
+    "Blue: smothed in vertical, Red: smoothed in horizontal direction.\nHigh correlation corresponds to nearly parallel lines.\n", datetime(), sep = if (nchar(xlabL) > 0) ", " else " "),
     upper.panel = function(x, y, breaks = NULL, ...) {
       minS <- 0.05
       ccr <- cor(x, y, use = "complete.obs")
@@ -91,4 +91,4 @@ SplomT <- function (data, mainL = deparse(substitute(data)), xlabL = "",
     },
     varnames = abbreviate(names(data)), pscales = 0 )
   )
-}  ## end SplomT  2008-06-02, 17:16
+}  ## end SplomT
