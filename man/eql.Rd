@@ -2,8 +2,8 @@
 \alias{eql}
 \title{Check on equality, including NA==NA and NaN==NaN.}
 \description{
-  \code{my.table} checks two vectors on equality, two NA's and two NaN's
-	compare as equal.
+  \code{eql} checks two vectors on equality; two NA's and two NaN's
+	are compared as equal.
 }
 \usage{
 eql(x, y)
@@ -17,7 +17,7 @@ eql(x, y)
 \examples{
   eql(c(1,2,3),c(1,3)) #>  TRUE FALSE FALSE
   eql(c(1,2,3),c(1,2)) #>  TRUE  TRUE FALSE
-  eql(c(NA,NaN,2,NA,3),c(NA,NaN,1,2,3)) #>  TRUE  TRUE FALSE FALSE
+  eql(c(NA,NaN,2,NA,3),c(NA,NaN,1,2,3)) #> TRUE TRUE FALSE FALSE TRUE
 }
 \author{
   Christian W. Hoffmann <christian@echoffmann.ch>, \cr

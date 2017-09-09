@@ -39,6 +39,7 @@ adaptlob(f, a,b,tol=.Machine$double.eps,trace=FALSE,...)
   List (Q, term) with Q = the approximate value of the integral and term = the information, whether the tolerance given was too small. 
 }
 \examples{
+\dontrun{
 options(digits=7)
 FexGander <- function(xx) ifelse(xx < 1,xx+1,ifelse(xx <= 3, 3 - xx, 2 ))
 adaptsim(sin,0,pi,2.0e-3,TRUE)$Q - 2.0 #   -1.686905e-05
@@ -49,6 +50,7 @@ adaptlob(FexGander,0,5,2.0e-6)$Q - 7.5 #  1.781274e-06 instead of 0
 adaptlob(FexGander,0,5)$Q-7.5 #   instead of  -8.881784e-16, with warnings
 #  that required tolerance is too small.
 adaptlob(FexGander,0,5,5.0*.Machine$double.eps)$Q-7.5 #  -5.329071e-15
+}
 }
 \source{
  	Walter Gautschi, 08/03/98.

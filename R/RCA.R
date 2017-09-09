@@ -1,32 +1,39 @@
-RCA <- function(dir, pkg, sw=0:6, echoonly=FALSE, verbose=TRUE)
-{ # 2015-07-19, 17:24:10
-  stopifnot(sw %in% 0:6)
+RCA <- function(dir=getwd(), pkg, Rsty="/Users/hoffmannc/Rtest/Rd.sty", sw=c(2,5:7), echoonly=FALSE, verbose=TRUE)
+{ #
+  stopifnot(sw %in% 0:7)
+  if (missing( pkg ) ) { # need to separate dir and pkg
+    pkg <- basename( dir ) # where one is
+    dir <- dirname ( dir ) # one up
+  }
+  if ( 0 %in% sw ) catE("dir")
   pp <- paste(dir,pkg,sep="/")
-  wdold <- setwd(dir)
+  wdold <- if ( file.exists(dir) ) dir else getwd()
+  if (verbose) catE("file.exists( Rsty )")
+  stopifnot( file.exists( Rsty ) )
   oold <- options(warn=-1)
-  x <- system2("grep", c( "-inr", 'version', paste(pp,"/DESCRIPTION",sep="")),,TRUE )
+  x <- system2("grep", c( "-inr", 'version', paste(pp,"/DESCRIPTION", sep="")),,TRUE )
   version <- strsplit(x, ": ")[[1]][2]
-            if (verbose)  cat("version = ", version,"\n")
+  if (verbose)  catE( "version" )
   S <-paste("R CMD",c(
     " Rd2pdf --no-clean --force", ## look at mypkg.Rcheck/mypkg-manual.pdf for problems
-    " build --force",
+    " build --force --no-build-vignettes",
     " check",
     " check --as-cran",
     paste(" check --as-cran ",pp,"_",version,".tar.gz",sep=""),
-    " install"
-    ), rep( pp, 6) ) # paste
-#            if (verbose) catn( "Package = ", paste(S[sw],"\n") )
-  if ( (0 == sw)[1] ) for (ii in 1:6) print(paste(" RCA ( ",ii, " ): ", S[ii]))
-            if (verbose) cat("old dir, current dir: ",wdold, ", ",getwd(),"\n")
+    " install",
+    paste0(" Sweave --pdf ", pp, "/vignettes/",pkg,".Rnw") ), c( rep( pp, 4), "", pp, "" ) ) # paste
+            if (verbose) catn( "Package = ", paste(S[sw],"\n") )
+  if ( (0 == sw)[1] ) for (ii in 1:7) print(paste(" RCA ( ",ii, " ): ", S[ii]))
+    if (verbose) cat(" --- old dir, current dir: ",wdold, ", ",getwd(),"\n")
   for (kk in setdiff(sw,0)) {
     if (echoonly) {  catn( kk, " ", S[kk])
     } else {
-      if (verbose) print(paste(" ==== RC (", kk, ") : ",S[kk], " on: ",datetime()))
+      if (verbose) print(paste(" ==== RCA (", kk, ") : ",S[kk], " on: ",datetime()))
       system( S[kk] )
     } # !echoonly
  }
-              if (verbose) print(datetime())
+    if (verbose) print(datetime())
     setwd(wdold)
     options(warn=oold$warn)
   return( invisible() )
-}  ##  RCA
+}  # RCA

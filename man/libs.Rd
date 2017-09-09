@@ -13,8 +13,10 @@ needed).
   \item{Lib}{package name, if missing see above}
 }
 \examples{
+ \dontrun{
   libs()
   libs(base)
+ }
 }
 \author{
 ??

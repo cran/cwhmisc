@@ -34,13 +34,12 @@ Inv <- function(a, n) {
   }
 }  # end Inv
 
-modexp <- function(a, b, n)  {  ## a^b mod n  using repeated squaring
-  ## from http://mvngu.wordpress.com/2008/08/01/parigp-programming-for-basic-cryptography/
-    bin <- intToBase( b )
-    d <- a %% n;
-    for (ii in seqm(2,nchar(bin))) {
+modexp <- function(a, b, n)  { # a^b mod n
+    bin <- int2B( b, 2 )[[1]]
+    d <- a %% n
+    for (ii in seqm(2,nchar(bin ) ) ) {
         d <- (d*d) %% n
         if (substr(bin,ii,ii) == "1")  d <- (d*a) %% n
     }
-    return(d %% n);
+    return(d %% n)
 }  ## end modexp

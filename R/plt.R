@@ -1,4 +1,4 @@
-# last revised  2012-10-22,  15:34,  CWH
+# last revised  2015-01-28,  CWH
 
 pltCharMat <- function( m, ... ) {
   n22 <- n2cCompact(m)
@@ -23,8 +23,8 @@ pltRCT <- function (rows, cols, tit="", f = function(x) 0, cex = 1.5,
 }  # end pltRCT
 
 histRCT <- function (data, rows = round(sqrt(ncol(data))), 
-    cols = ceiling(ncol(data)/rows), breaks = "Sturges", mainL = deparse(substitute(data)), mainC = colnames(eval(substitute(data)))) 
-{
+    cols = ceiling(ncol(data)/rows), breaks = "Sturges", mainL = deparse(substitute(data)), mainC = colnames(eval.parent(substitute(data)))) 
+{#  changed 2015-01-28 to # eval."parent"(substitute(add.expr)) 
   if (is.null(dim(data))) { # "data" is vector
     if (!is.null(data)) {
       dt <- data

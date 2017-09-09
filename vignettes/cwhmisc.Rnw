@@ -1,5 +1,5 @@
 %\VignetteIndexEntry{cwhmisc}
-%% cwhmisc.Rnw   "2015-07-30, 15:03:25"   CWHoffmann
+%% cwhmisc.Rnw  "2017-09-08, 14:39:47"   CWHoffmann
 \documentclass[a4paper,11pt,leqno]{scrartcl}
 \usepackage[russian,ngerman,english]{babel}
 \usepackage{lineno}
@@ -26,15 +26,22 @@
    {\end{tabular}
     \end{table}}
 
+\DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{xleftmargin=2em}
+\fvset{listparameters={\setlength{\topsep}{0pt}}}
+\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
+%% From \url{/Users/hoffmannc/Desktop/0Manuals/0_R-Manuals/Sweave-customisation.pdf}
+   
 \begin{document}
 
-\date{\Sexpr{cwhmisc:::datetime()}}
-  
 \title{\textbf{The package "cwhmisc", an Overview}}
 \author{Christian W. Hoffmann}
-\maketitle
+\date{\Sexpr{format(Sys.time(), "%Y-%m-%d, %X")}}
 
-\href{<christian@echoffmann.ch}{www.echoffmann.ch}
+   \maketitle
+
+\href{<christian@echoffmann.ch>}   home: \url{www.echoffmann.ch}
 \vspace{8mm}
 
 This package contains material which has been developed and collected as useful and handy. Own ideas and those from others have been used to ease my work. In some cases I incorporated material as is, and references to its author(s) may have to be updated from the web, or may even be lost.
@@ -140,7 +147,7 @@ formula2term.names   &  Return one chosen side of a formula. \\
 formula2Rterm.names  &  Return the right hand side of a formula. \\
 grepnot              &  Show elements passing or not a grep \\
 num2Latex            &    Convert numeric containing e+-power \\
-padding              &  Padding a string with justification \\
+pad                     &  Padding a string with justification \\
 pasteInfix           &   Paste(infix) \\
 pasteRound           &   Paste rounded values \\
 replacechar          &  Replace a character in a string by another \\

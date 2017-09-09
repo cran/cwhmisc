@@ -1,6 +1,7 @@
 \name{Julian date}
 \alias{Dat2Jul}
 \alias{Jul2Dat}
+\alias{isLeap}
 \alias{monthsN}
 \alias{Mnames}
 \alias{Dnames}
@@ -25,12 +26,12 @@
 \arguments{
   \item{yr, mo, dy}{integer, year, month, day of date}
   \item{hr, JD}{real, hrs, Julian date}
-  \item{leap}{Boolean, = is concerning year a leap year ?}
-  \item{dk}{Integer }
+  \item{leap}{Boolean, = is given year a leap year ?}
+  \item{dk}{integer, day in year }
 }
 \value{
-  \code{Dat2Jul:} JD, year Y BC is to be given as -|Y-1|, e.g. 4 BC = -3 !!\cr
-  \code{Jul2Dat:} date ( year, month, day, hours ).\cr
+  \code{ Dat2Jul:} JD, year year BC is to be given as -|year-1|, e.g. 4 BC = -3, 1 BC = 0 !!\cr
+  \code{ Jul2Dat:} date ( year, month, day, hours ).\cr
   \code{ monthsN:}  cumulative sum of days in months.\cr
   \code{ Mnames:}  names of months.\cr
   \code{ Dnames:}  names of weekdays.\cr
@@ -39,12 +40,24 @@
   \code{ Yday:}   number of day, from 0 = Jan 1.
 }
 \examples{
- Dat2Jul(-4712,01,01)  # =     0  i.e. Start of Julian day numbering
- Jul2Dat( 0 )          #  -4712    1    1   12
- formatFix(Dat2Jul(c(1582,10,4,23+59/60)),8,10) # 2299160.499.. = last day of Julian calendar
- Jul2Dat( 2299160 )          # 1582  10  4   12
- Dat2Jul(c(2000,3,2))   # 2451606
- Jul2Dat(2451606.0)    # 2000    3    2   12
+c(Jul2Dat(dd <- Dat2Jul( -4712,1,1) ) )
+   # -4712, 1, 1, 12;  JD=0  i.e. Start of Julian day numbering
+c(Jul2Dat(dd <- Dat2Jul( -1, 1, 1)),dd)
+   #    -1,  1,  1, 12; JD=1720693 , start of last year BC
+c(Jul2Dat(dd <- Dat2Jul( -1,12,31)),dd)
+   #    -1, 12, 31, 12; JD=1721057 , last day BC
+c(Jul2Dat(dd <- Dat2Jul( -0, 1, 1)),dd)
+   #     0,  1,  1, 12; JD=1721058 , first day AD
+c(Jul2Dat(dd <- Dat2Jul(  1, 1 ,1)),dd)
+   #     1,  1,  1, 12; JD=1721424
+c(Jul2Dat(dd <- Dat2Jul( 1582,10, 4 )),dd)
+   #  1582, 10,  4, 12; 2299160, last day of Julian calendar
+c(Jul2Dat(dd <- Dat2Jul( 1582,10,15)),dd)
+   #  1582, 10, 15, 12; 2299161, first day of Gregorian calendar
+round(c(Jul2Dat(dd <- Dat2Jul( 1582,10,15, 0.0168)),dd),1 )
+   #  1582, 10, 15, 12; 2299160.5 first day of Gregorian calendar
+c(Jul2Dat(dd <- Dat2Jul( 2001,1,1)),dd)
+   #  2001,  1,  1, 12; 2451911
  mdiny(1,TRUE)    #  1 1
  mdiny(60,TRUE)   #  2 29
 }

@@ -136,3 +136,4 @@ quadmin <- function(x, y) { # Newton interpolation with 3 values
   return((x[m-1]+x[m])/2 - d1/(2*e1))
 }
 
+lerp <-  function(p1, p2, t) (1 - t)*p1 + t*p2

@@ -20,7 +20,7 @@ pltRCT(rows, cols, tit="", f = function(x) 0, cex = 1.5,
     reset = TRUE, outer = TRUE, oma = c(2, 2, 4, 2), mar = c(4, 4, 2, 1))
 histRCT(data, rows = round(sqrt(ncol(data))), 
     cols = ceiling(ncol(data)/rows), breaks = "Sturges",
-      mainL = deparse(substitute(data)), mainC = colnames(eval(substitute(data))))
+      mainL = deparse(substitute(data)), mainC = colnames(eval.parent(substitute(data))))
 SplomT(data, mainL = deparse(substitute(data)), xlabL = "", 
     hist = "h", adjust = 1, hist.col = trellis.par.get("strip.background")$col[5],
       cex.diag = 1, h.diag=0.4, colYonX = "red", colXonY = "blue", ...)

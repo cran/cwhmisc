@@ -10,7 +10,5 @@ pasteRound <- function (..., digits=16, sep=" ", collapse=NULL) {
       else args[[i]] <- as.character(args[[i]])
    paste(args, sep, collapse)
   }
-}
-
-
+} # pasteRound
 

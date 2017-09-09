@@ -9,7 +9,6 @@
 \alias{rotL}
 \alias{getAp}
 \alias{angle}
-\alias{lV}
 \alias{scprod}
 \alias{vecprod}
 \alias{\%v\%}
@@ -30,7 +29,6 @@
   rotL(phi,k=1,m=2,N=3)
   getAp( M )
   angle(v,w)
-  lV( v )
   scprod(v, w)
   vecprod(v, w)
   v \%v\% w
@@ -38,7 +36,7 @@
 \arguments{
   \item{x,y,z,r,theta,phi}{Real, rectangular, spherical coordinates; x,
     y, z may be combined as c(x,y,z), and  r, theta, phi as c(r,theta,phi)}
-  \item{P}{c(x,y,z), coordinates of point or projection direction \code{P-'O'}, with \code{'O' =c(0,0,0)}.}
+  \item{P}{c(x,y,z), coordinates of point or projection direction \code{P-'O'}, with \code{'O' =c(0,0,0)} = origin.}
   \item{v, w}{3-vectors (x, y, z).}
   \item{N}{Order of the square rotation matrix >= 2.}
   \item{k,m}{Integers (m != k) describing the plane of rotation. m==k gives Unit matrix.}
@@ -51,7 +49,7 @@
                    phi=atan2(y,x) ; v=sqrt(x^2+y^2)\cr
   \code{toXyz:}   c(x, y, z), x=r*sin(phi)*sin(theta), y=r*cos(phi)*sin(theta), z=r*cos(theta)\cr
   \code{rotZ:}    c(x', y') = rotated (x, y) by angle phi, counter clockwise,\cr
-  -- Rotation matrices\cr
+  -- Rotation matrices:\cr
   \code{rotA}: Ratation matrix to rotate around axis \code{P - 'O'}.\cr
   \code{rotV}: Ratation matrix to rotate \code{v}  into \code{w}.\cr
   \code{rotL}: Matrix \code{m} for multiplication \code{m \%*\% vector}.\cr
@@ -69,14 +67,14 @@
 }
 \examples{
   pkg <- TRUE # FALSE for direct use
-  x <- toPol(1.0, 1.0) # $r 1.41421, $p 0.785398 = pi/4
-  y <- toRec(2.0,pi) # $x -2, $y 2.44921e-16
+  (x <- toPol(1.0, 1.0) ) # $r 1.41421, $p 0.785398 = pi/4
+  (y <- toRec(2.0,pi) ) # $x -2, $y 2.44921e-16
   toPol(y[1], y[2]) # 2, pi
   toRec( x[1], x[2]) # 1, 1
   rotZ( 1, 0, pi/2 )  # 6.123032e-17 1.000000e+00
   x <- 1;  y <- 2;  z <- 3
-  (R <- toSph(x,y,z))  # r= 3.7416574, theta= 0.93027401, phi= 1.1071487
-  c(R[1],180/pi*(R[2:3])) #  3.741657 53.300775 63.434949
+  (R <- toSph(x,y,z))  # r= 3.7416574, theta= 0.64052231, phi= 1.1071487
+  c(R[1],180/pi*(R[2:3])) #  3.741657 36.6992252 63.434949
   (w <- toXyz(R[1], R[2], R[3]))  #  = x,y,z
   rotZ(1,2,pi/2)  # -2, 1
   opar <- par(mfrow=c(2,4))
@@ -88,6 +86,7 @@
   RD <-  Data \%*\% rotL(phi[1],1,2)   # !! # rotate around z-axis
   RD2 <- RD \%*\% rotL(phi[2],2,3) # !! # rotate further around x
   RD3 <- RD2 \%*\% rotL(phi[3],1,2) # !! # rotate back around z
+ \dontrun{
   plot(Data[,-3],xlim=lim,ylim=lim,xlab="x",ylab="y",pty="s")
   plot(RD[,-3],xlim=lim,ylim=lim,xlab="RD x",ylab="y",pty="s",pch=5,col="red")
   plot(RD2[,-3],xlim=lim,ylim=lim,xlab="RD2 x",ylab="y",pch=6,col="blue")
@@ -95,6 +94,7 @@
   plot(Data[,1],RD3[,1])
   plot(Data[,2],RD3[,2])
   plot(Data[,3],RD3[,3])
+ }
   m <- rotL(phi[1],1,2) \%*\% rotL(phi[2],2,3) \%*\% rotL(phi[3],1,2) # !! #
   if (pkg) {
     m <- rotL(phi[1],1,2) \%*\% rotL(phi[2],2,3) \%*\% rotL(phi[3],1,2) # !! #
@@ -115,9 +115,10 @@
 # [3,]    1    0    0
 }
 \note{
-  \code{angle} uses \code{\link{acos}} and \code{\link{asin}}\cr
-  \code{  v \%v\% w } same as \code{ vecprod(v, w)}\cr
-  \code{  v \%s\% w } same as \code{ scprod(v, w)}
+  \code{rotZ}: see \code{\link{toPol}}
+  \code{angle}: uses \code{\link{acos}} and \code{\link{asin}}\cr
+  \code{  v \%v\% w }: same as \code{ vecprod(v, w)}\cr
+  \code{  v \%s\% w }: same as \code{ scprod(v, w)}
  
 }
 \author{

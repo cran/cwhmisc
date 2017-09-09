@@ -3,6 +3,7 @@
 \alias{evalInterp}
 \alias{minInterp}
 \alias{quadmin}
+\alias{lerp}
 \title{Polynomial and rational interpolation
 }
 \description{
@@ -13,11 +14,14 @@ setupInterp(x, y, doPoly = TRUE)
 evalInterp(xi, ss)
 minInterp(x, y, add = FALSE, doPoly = TRUE)
 quadmin(x, y)
+lerp(p1, p2, t)
 }
 \arguments{
   \item{x}{vector of x-coordinates}
   \item{y}{vector of y-coordinates}
   \item{xi}{argument x of interpolation}
+  \item{p1,p2}{point coordinates for linear interpolation}
+  \item{t}{0 <= t <= 1, linear interpolation distance}
   \item{ss}{setup given by setupInterp}
   \item{add}{if TRUE, one more point is used than for FALSE (default)}
   \item{doPoly}{if TRUE, polynomial interpolation is used, if FALSE, rational interpolation is used, with three points and four points respectively (latter for add=FALSE)}
@@ -25,6 +29,7 @@ quadmin(x, y)
 \value{
   \item{setupInterp}{Generate structure \code{ss} for evaluation in \code{evalInterp}}
   \item{minInterp, quadmin}{x-value of the minimum. NA if too few points are given or no minimumm exists in \code{x}.}
+  \item{lerp}{linerly interpolated point, t=0 -> p1, t=1 -> p2}
 }
 \references{
 Stoer, J., 1989. Numerische Mathematik 1ed. 5. Springer, Berlin.  Applied and Computational Complex Analysis, Vol.2. Wiley, 

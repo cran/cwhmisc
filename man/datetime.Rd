@@ -17,8 +17,6 @@ character string
 }
 \examples{
 datetime()  #[1] "2014-10-03, 16:00:03"
-mydate()  #[1] "2014-10-03"
-mytime()  #[1] "16:00:09"
 }
 \note{These functions are implemented using POSIX}
 \author{

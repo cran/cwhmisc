@@ -1,0 +1,98 @@
+% \VignetteIndexEntry{gChangeLogmisc}
+%% ChangeLogcwhmisc.Rnw "2017-09-08, 14:39:47"   CWHoffmann
+\documentclass[a4paper,11pt,leqno]{scrartcl}
+\usepackage[russian,ngerman,english]{babel}
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{textcomp}  % special symbols
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=2.4cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2cm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{underscore}
+\usepackage{url}
+\usepackage{psfrag}  % for greek letters etc.
+\usepackage{Sweave}
+   
+\newenvironment{Stable}[3]{%
+    \begin{table}[hbtp]
+    \centering
+    \caption{#2\label{#3}}
+    \vskip 0.25cm
+    \begin{tabular}{#1}}%
+   {\end{tabular}
+    \end{table}}
+
+\DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{xleftmargin=2em}
+\fvset{listparameters={\setlength{\topsep}{0pt}}}
+\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
+
+\begin{document}
+
+\date{\Sexpr{format(Sys.time(), '%Y-%m-%d, %X')}}
+
+\title{\textbf{ChangeLog}}
+\author{Christian W. Hoffmann}
+\maketitle
+{<christian@echoffmann.ch}{www.echoffmann.ch}
+ \begin{Stable}{|rl|}{Changelog 1}{t:chl }
+\hline
+version  & 6.0 + -> 7.0\\
+2015-12-03  & 'Jul2Dat', 'Dat2Jul' now with default arguments\\
+&	'ggrep' checks for 'pkg' to exist\\
+&	'insstr', 'exch' added\\
+&	'normalize' vectorized, named: \\
+&	'checkNormalize' added\\
+2015-08-13  & 'ls.notfunctions' added\\
+2015-08-04  & 'Dat2Jul' cleaned from spurious output\\
+2015-10-15  & 'Hms'  : Output changed to vector\\
+&	'Jul2Dat'  : bug in hours corrected\\
+ 2015-11-25  & added   'setincl'\\
+2015-11-24  & all  'intTo..' renamed to 'int2..'\\
+2015-11-18  & 'signp' <- 1 also for NA, NaN\\
+2015-11-14  & 'int2..' will expand to common maximum length if\\
+&	'i' is provided as vector.\\
+2015-12-10  & 'cpos', 'cposV', 'cposR' added and/or vectorized\\
+&	'catn0','cat0','catn' added\\
+2016-01-01  & 'cpos.Rd' corrected\\
+2016-02-06  & 'Lerp' added  : linear interpolation\\
+2016-03-01  & 'RCA'  : default for 'dir' to ease sw=0,\\
+& changed to 'pkg' = missing, as input parameter\\
+2016-06-01  & 'prinE', 'prinL' changed to evalu \\
+&	'pn' superfluous, use 'catn' instead\\
+     \hline
+     \end{Stable}
+     \begin{Stable}{|rl|}{Changelog 2}{t:ch2l}
+     \hline
+2016-06-08  & 'padding' renamed to 'pad', 'str' may \\
+&	returns original if 'space' is too small or 'just' \\
+&    	'just' matching 'center' the fill on the right is \\
+&	the fill on the left, if space to be filled is an \\
+&      'with' defaults	now to " ", and switched pla  \\
+2016-06-16  & 'prin..'  : return value changed to 'invisible()'.\\
+2016-06-23  & 'catE' added ; like 'prinE' but including\\
+2016-06-24  & 'prinL' eliminated, superseded by 'prinE'\\
+&	excluding matrices; 'catn0','cat0' eliminated\\
+2016-06-25  & 'NA2str' added  : suplies string for all '!is.finite()'\\
+2016-08-30  & 'r2B', 'NA2str', 'str2B'  added\\
+2016-09-02  & 'Nd'  : base changed to 10\\
+2016-03-30  & 'alldigits' changed \\
+&	'xToBase'       -> 'normalize'\\
+&	'allDigits(str)' -> 'allDigits(str,base)'\\
+2017-04-04  & 'RCA' checks for 'Rd.sty' \\
+2017-04-19  & 'pad'  : parameter 'just' changed to 'loc', \\
+2017-04-19  & 'justify' added\\
+2017-05-12  & 'sigplaces'   new \\
+2017-05-23  & 'HexagesDig'   new hexagesimal letters\\
+&	'last   last element of vector\\
+&	'LE'   short form of 'length'\\
+&	'LS'   recall '.Last.value'\\
+2017-05-25  & 'r2B', 'str2B'   base now in 'HexagesDig''\\
+2017-05-25  & 'HexagesDig' = 2:60, supersedes HexDig\\
+\hline
+\end{Stable}
+\end{document}

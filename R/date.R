@@ -1,10 +1,6 @@
-Dat2Jul <- function( yr, mo, dy, hr=12 ) { #
-  if ( missing(mo)) { # yr = c(yr, mo, dy, hr)
-    hr <-  if(length(yr)==4) yr[4] else 12;  dy <- yr[3];  mo <- yr[2];  yr <- yr[1]  
-  }
+Dat2Jul <- function( yr=-4712, mo=1, dy=1, hr=12 ) { #
   if ( mo <= 2 )  { yr <- yr-1; mo <-  mo+12 } # Jan, Feb
   H <-  hr/24
-    catn(" H =", H)
   if ( (yr*100 + mo )*100 + dy >= 15821015 ) {  # i.e. 1582-10-15
   # Gregorian calendar:
     A <- yr %/% 100  # centuries
@@ -24,26 +20,26 @@ Dat2Jul <- function( yr, mo, dy, hr=12 ) { #
   return( JD )
 } #  Dat2Jul
 
-Jul2Dat <- function( JD ) { #
+Jul2Dat <- function( JD=0 ) { #
   stopifnot(is.numeric(JD)) 
   CC16 <- 2305447.5 # 1.1.1600 0h
-  CC82 <- 2299160.5 # 1582   10    15    0
+  CC82 <- 2299160.5 # 15.10.1582 0h
   BLp   <- c(366, 365, 365, 365) # for normal leap blocks, sum = 1461
-  if ( JD < CC16 ) { #  1600
+  if ( JD <= CC16 ) { #  1600
     if (JD >= CC82)  JD <-  JD + 10   #  make up for 10d gap
     yr   <- -4712
     rest <- JD + 0.5 # noon
     BL   <- BLp
   } else { # Gregorian calendar
-    JD <- JD - CC16  # y1600
+    JD <- JD - CC16  # yr 1600
     yr   <- 1600
     rest <- JD
-# block 400  ||||YnnnYnnn...|NnnnYnnnYnnn...|Nnnnnnn...|Nnnnynnn...
+# block 400y  ||||YnnnYnnn...|NnnnYnnnYnnn...|Nnnnnnn...|Nnnnynnn...
     BL <- c(36525, 36524, 36524, 36524)
     M <- dsm( rest, BL )
     yr <- yr +M[1]*400 + M[2]*100
     rest <- M[3]
-# block 100   # |.nnnYnnnYnnn...
+# block 100y   # |.nnnYnnnYnnn...
     BL <- BLp
     if ( M[2] == 0 ) {  # all quartets have c(366, 365, 365, 365)
       M <- dsm( rest, BL )
@@ -57,9 +53,9 @@ Jul2Dat <- function( JD ) { #
         rest <- M[3]
       } # END blocks with c(366
     }  # all quartets have c(366
-# end block 100
+# end block 100y
   } # Gregorian calendar
-# block 4
+# block 4y
   if ( yr < 1600 || yr %% 400 == 0 ) {
     BL <- BLp          # isLeap  Ynnn
   } else {
@@ -68,24 +64,29 @@ Jul2Dat <- function( JD ) { #
   M <- dsm( rest, BL )
   yr <- yr + M[1]*4 + M[2]
   rest   <- M[3]
-  isLeap <- (yr %% 4 == 0) && ( (yr < 1600) || (yr %% 100 != 0) || ( yr %% 400 == 0 ) )
-  md <- mdiny( rest, isLeap )
+  isleap <- isLeap( yr )
+  md <- mdiny( rest, isleap )
   mo <- md[1]
   if (mo > 12) {
     mo <- mo-12; yr <-  yr + 1
   }
-  dy <- floor(md[2]) + 1 ### 201503021453
+  dy <- floor(md[2])
   hr <- (md[2] - dy)*24.0
-  res <- c(yr, mo, dy, hr)    
+  res <- c(yr, mo, dy+1, hr)
   names(res) <- c("yr", "mo", "dy", "hr")
-    return ( res )
+  return ( res )
 } # Jul2Dat
-monthsN <- function(leap)  {
+
+isLeap <- function( yr ) (yr %% 4 == 0) && ( (yr < 1600) || (yr %% 100 != 0) || ( yr %% 400 == 0 ) )
+
+monthsN <- function(leap=FALSE)  {
     res <- c( 31, 28+leap, 31, diff(floor( ((1:10)*153+2)/5 )))
     return( res)
 } # monthsN
 Mnames <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 Dnames <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday") 
-mdiny <- function( dk, leap ) submod( dk, cumsum( monthsN(leap ) )) + c(1,0) # 
+mdiny <- function( dk, leap=FALSE ) submod( dk, cumsum( monthsN(leap ) )) + c(1,0) # 
 Wday <- function( JD ) { d <- JD %% 7; if (d == 0) d <- 7; return( Dnames[d] ) }
-Yday <- function(mo, dy, leap ) if (mo==1) 0 else cumsum( monthsN( leap ) )[mo-1] + dy
+Yday <- function(mo, dy, leap=FALSE ) 
+{  if (mo==1) 0 else cumsum( monthsN( leap ) )[mo-1] + dy
+}

@@ -3,21 +3,23 @@
 \alias{Eratosthenes}
 \alias{factorN}
 \alias{prodN}
+\alias{allFactors}
 \alias{is.prime}
 \alias{PRIMES}
 \title{
 Create primes, factor an integer, combine factors, check if prime
 }
 \description{
-Create primes, determine the prime factors of an integer
-  together with their multiplicities, recombine factors, primitive version of the sieve of Eratosthenes.
+Create primes, determine the prime factors of an integer (first row)
+  together with their multiplicities (second row), recombine factors, primitive version of the sieve of Eratosthenes.
 }
 \usage{
-primes(n)
-Eratosthenes(n)
-factorN(n)
-prodN(fp)
-is.prime(n)
+primes( n)
+Eratosthenes( n )
+factorN( n )
+allFactors( n )
+prodN( fp )
+is.prime( n )
 }
 \arguments{
 \item{n}{positive integer, number of primes, number to be factored, to be tested}
@@ -27,6 +29,7 @@ is.prime(n)
 \item{primes}{Generate the first n primes, also found in PRIMES.}
 \item{Eratosthenes}{Execute the sieve of Eratosthenes.}
 \item{factorN}{Determine the prime factors together with their multiplicities.}
+\item{allFactors}{generate all factors of n: 1..n.}
 \item{prodN}{Recombine factors, inverse of factorN.}
 \item{is.prime}{Check if positive integer is prime.}
 \item{PRIMES}{The first primes up to 17389.}
@@ -41,8 +44,8 @@ is.prime(.Machine$integer.max) # TRUE
 is.prime(16) # FALSE
 ## check speed of your machine
   s <- Sys.time(); p<-primes(10^4);difftime(Sys.time(),s) 
-## Time difference of 2.906242 secs  on my machine  
-x <-factorN(.Machine$integer.max)
+## Time difference of 1.578922 secs  on my machine  
+x <- factorN(.Machine$integer.max)
 }
 \author{
   Christian W. Hoffmann <hristian@echoffmann.ch>

@@ -1,5 +1,3 @@
-lV <- function( v ) as.vector( sqrt(v %*% v) )
-
 scprod <- function(v, w) { # v . w
   return( sum(v*w) )
 } # end scprod

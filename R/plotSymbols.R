@@ -30,10 +30,10 @@ plotSymbols <- function(interactive=FALSE) {
         x <- round(x)
         y <- round(y)
         z <- 16*y + x
-        ch  <- intToASCII(z)
+        ch  <- int2ASCII(z)
         dec <- as.character(z) 
-        hex <- intToHex(z)
-        oct <- intToOct(z)
+        hex <- int2Hex(z)
+        oct <- int2Oct(z)
         spc <- paste(rep("0", 2-nchar(hex)), collapse="")
         hex <- paste(spc, hex, sep="")
         spc <- paste(rep("0", 3-nchar(oct)), collapse="")

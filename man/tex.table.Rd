@@ -46,7 +46,7 @@ tex.tab0(dm, prec = 2, rnames = NULL, cnames = NULL,
 # B & 0.18 & 0.39 & 0.78 & -0.10 & -0.25 & -0.61 & -0.04 & -0.71 & -0.14 & 1.21\\ 
 # ...
 }
-\author{
+\author{ ??
 Adapted by:
   Christian W. Hoffmann <christian@echoffmann.ch>
 }

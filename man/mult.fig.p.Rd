@@ -52,6 +52,7 @@ mult.fig.p(nr.plots, mfrow, mfcol,
 }
 \seealso{\code{\link{par}}, \code{\link{layout}}.}
 \examples{
+\dontrun{
 AA <- mult.fig.p(5, main= "Sine functions of different frequencies")
 x <- seq(0, 1, len = 201)
 for (n in 1:5)
@@ -66,5 +67,6 @@ str(rr)
 par(rr$old.par)
 ## Look at the par setting *AFTER* the above:
 str(do.call("par", as.list(names(rr$new.par))))
+}
 }
 \keyword{hplot}

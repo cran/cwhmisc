@@ -1,40 +1,55 @@
 \name{int2}
-\alias{intToASCII}
-\alias{intToBase}
-\alias{intToOct}
-\alias{intToHex}
-\title{convert integers, string to integer wector}
-\description{
- Functions for conversion of integers to bases other than decimal
+\alias{NdM}
+\alias{int2ASCII}
+\alias{int2B}
+\alias{int2Oct}
+\alias{int2Hex}
+\alias{strRound}
+\title{convert integers, string to integer vector}
+\description{ Functions for conversion to string representation of
+  integers to arbitrary bases
 }
 \usage{
-intToASCII(i)
-intToBase( i, base=2 )
-intToOct( i )
-intToHex( i )
+  NdM( x, B=10 )
+  int2ASCII( n)
+  int2B( n, B=10, space, plus=lead, lead="",just=c("left","right","center","none") )
+  int2Oct( n )
+  int2Hex( n )
+  strRound( str, digits = getOption("digits"), B=10)
 }
 \arguments{
-  \item{i,base}{Integer}
+  \item{str}{String representing a real}
+  \item{n}{Integer vector}
+  \item{B}{1 < integer < 17, base of representation}
+  \item{space}{Integer, space for conversion}
+  \item{plus}{string for signifying positive values, usually "" or "+" }
+  \item{lead}{string for insertion between sign and first significant
+    digit, usually "" or "0"}
+  \item{just}{String for choosing kind of justification within 'space',
+    partial matching allowed}
+  \item{x}{Vector of reals}
+  \item{digits}{no. of digits for roeunding}
+}
+\value{
+  \code{NdM} maximum number of decimal places needed for trunc(x)\cr
+  \code{int2ASCII,int2B,int2Oct,int2Hex} vector of strings  represented by 'n'\cr
+  \code{strRound} real, represented by x
 }
 \details{
-  \code{isNumeric} Test whether the elements of a character vector
-	represent legal numbers only.
-  \code{intToASCII} Show character or octal representation at a place in the ASCII sequence.\cr
-  \code{intToBase} Convert an integer number to string representation in a base between 2 and 16 inclusive.\cr
-  \code{intToOct} Convert integer to octal representation.\cr
-  \code{intToHex} Convert integer to hex representation.\cr
-  \code{contfrac} Convert to continued fraction representation.\cr
-  \code{evalcfr} Evaluate continued fraction to corresponding real.\cr
-  \code{toFrac} Build rational approximation \code{num/den} to \code{x} using forward continued fraction recursion to a depth of \code{depth}. Stopping criterion: either \code{depth} is reached, or abs(x - num/den) is increasing again.\cr
-  \code{toFrac2} same as \code{toFrac}, but vectors of partial numerators and denominators are returned.\cr
-  \code{xToBase} return \code{res$a}, \code{res$e} so that  x  = a*base^e, abs( a ) in [1, base)\cr
+  \code{int2Oct} Convert integer to octal representation.\cr
+  \code{int2Hex} Convert integer to hex representation
 }
 \examples{
-intToASCII(1:255)[121:129] # "x"   "y"   "z"   "{"   "|"   "}"   "~"   "\177" "\200"
-sapply(1:50,intToBase,2)
-sapply(1:50,intToBase,7)
-sapply(1:50,intToOct)
-sapply(1:50,intToHex)
+  NdM(10^(1:4)) # 5
+  int2ASCII(1:255)[121:129] # "x" "y" "z" "{" "|" "}" "~" "\177" "\200"
+  int2B(1:50,2) # all of same length
+  int2B(1:50*(-1)^(1:50),just="r") # left flush
+  unlist(sapply(1:50,int2B,2,just="l")[1,] ) # individual lengths
+  unlist(sapply(1:50,int2B,7)[1,] ) # individual lengths
+  unlist(sapply(1:50,int2B)[1,] )
+  unlist(sapply(1:50,int2Oct)[1,] )
+  unlist(sapply(1:50,int2Hex)[1,] )
+  strRound(pi*10^4,0)/10^4 == strRound(pi,4) # TRUE
 }
 \author{
   Christian W. Hoffmann <christian@echoffmann.ch>

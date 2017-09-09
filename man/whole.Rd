@@ -1,11 +1,11 @@
-\name{whole.number}
-\alias{whole.number}
+\name{whole}
+\alias{whole}
 \title{Check an array on whole numbers (x in I).}
 \description{
-  \code{whole.number} checks an array whether it consists of whole numbers only (x in I).
+  \code{whole} checks an array whether it consists of whole, i.e. integer , numbers only (x in I).
 }
 \usage{
-whole.number(x)
+whole(x)
 }
 \arguments{
   \item{x}{A numerical array.}
@@ -14,8 +14,8 @@ whole.number(x)
 	\code{\link{TRUE}}, \code{\link{FALSE}}
 }
 \examples{
-whole.number(c(pi,2,3)) # FALSE
-whole.number(c(1,2,3))  # TRUE
+whole(c(pi,2,3)) # FALSE
+whole(c(1,2,3))  # TRUE
 }
 \author{Bill Venables
 adapted by   Christian W. Hoffmann <christian@echoffmann.ch>

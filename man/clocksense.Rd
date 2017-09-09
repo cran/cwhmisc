@@ -24,7 +24,8 @@ ClockSense3( U, V, W, ref )
 \code{ClockSense2} Return the clock sense of U and V\cr
 \code{ClockSense3} Return the clock sense of U, V, W\cr
 \code{IsCounterCl2} Check if the directed angle from U towards W is counter clockwise, including U==W. Ref is the measure of a full circle, 360 for degrees, 2*Pi for radians, 400 for gon\cr
-\code{IsCounterCl3} Check if U, V, W form a counterclock wise sequence.    }
+\code{IsCounterCl3} Check if U, V, W form a counterclock wise sequence.
+}
 \examples{
 ClockSense2(0,220,360) # "clckws"
 ClockSense2(0,170,360) # "Cntclck"

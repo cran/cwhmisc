@@ -1,8 +1,8 @@
 capply <- function(str, ff,...) {
   x <- strsplit(str, NULL)
   y <- lapply(x, ff,...)
-  sapply(y, paste, collapse="")
-} ## 2008-09-29, intermediate results introduced
+  return( sapply(y, paste, collapse="") )
+} # capply
 
 cap <- function(char) {
   # change lower letters to upper, others leave unchanged
@@ -36,13 +36,6 @@ CapLeading <- function(str) {
   capply(str,ff)
 }
 
-#cap("f")
-#cap("R")
-#capitalize(c("TruE","faLSe"))
-#capitalize(c("faLSe","TruE"))
-#lower("f")
-#lower("R")
-#lowerize("TruE")
-#lowerize("faLSe")
-    
+strReverse <- function(str)
+        capply( str, rev)
 
