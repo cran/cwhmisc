@@ -1,1 +1,1 @@
-paste00 <- function(...)  paste0(..., collapse="")
+paste00 <- function(...)  paste0(..., collapse = "")

@@ -5,7 +5,7 @@
 \alias{reda2}
 \title{Convert and reduce arcs}
 \description{
- Functions for reduction of arcs.
+ Functions for conversions and reduction of arcs.
 }
 \usage{
 deg( radian )

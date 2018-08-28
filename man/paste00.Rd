@@ -8,7 +8,7 @@
   paste00(...)
 }
 \arguments{
-  \item{...}{list of items to paste, coerced tor string}
+  \item{...}{list of items to paste, coerced to string}
 }
 \value{
   pasted strings using collapse="".

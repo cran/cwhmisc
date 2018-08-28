@@ -39,7 +39,7 @@
   \item{P}{c(x,y,z), coordinates of point or projection direction \code{P-'O'}, with \code{'O' =c(0,0,0)} = origin.}
   \item{v, w}{3-vectors (x, y, z).}
   \item{N}{Order of the square rotation matrix >= 2.}
-  \item{k,m}{Integers (m != k) describing the plane of rotation. m==k gives Unit matrix.}
+  \item{k,m}{Integers (m != k) describing the plane of rotation. m==k gives unit matrix.}
   \item{M}{3x3 rotation matrix.}
 }
 \value{
@@ -73,7 +73,7 @@
   toRec( x[1], x[2]) # 1, 1
   rotZ( 1, 0, pi/2 )  # 6.123032e-17 1.000000e+00
   x <- 1;  y <- 2;  z <- 3
-  (R <- toSph(x,y,z))  # r= 3.7416574, theta= 0.64052231, phi= 1.1071487
+  (R <- toSph(c(x,y,z)) )  # r= 3.7416574, theta= 0.64052231, phi= 1.1071487
   c(R[1],180/pi*(R[2:3])) #  3.741657 36.6992252 63.434949
   (w <- toXyz(R[1], R[2], R[3]))  #  = x,y,z
   rotZ(1,2,pi/2)  # -2, 1

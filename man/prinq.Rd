@@ -93,9 +93,6 @@ y <- prinP("catt(32)");
 # This function will write ' 32 ' on one line
 
 prinE("y ")
-# y =[1] "catt(32)"
-
-prinE("y ")
 # y  =	NULL
 
 prinP("y ")

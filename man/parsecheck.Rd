@@ -5,7 +5,7 @@
   check files for parsing errors
 }
 \usage{
-parsecheck(str="/Users/hoffmannc/R/test0/R")
+parsecheck(str)
 }
 \arguments{
   \item{str}{Directory containing *.R files to examine}

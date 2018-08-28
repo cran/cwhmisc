@@ -11,10 +11,11 @@
   \item{x, X}{sets.}
 }
 \value{
-  \code{TRUE}, if \code{x} is included in \code{X}.
+  \code{TRUE}, if set \code{x} is contained in set \code{X}.
 }
 \examples{
   setincl(2:3, 1:7) # TRUE
+# compare this to:
   grep( "15926",as.character(pi)) == 1 # TRUE
 }
 \author{

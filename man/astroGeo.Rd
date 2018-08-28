@@ -5,7 +5,7 @@
 \alias{YX2MK}
 \alias{LongBerne}
 \alias{LatBerne}
-\alias{xToNorthBerne}
+\alias{xtoNorthBerne}
 \alias{yToEastBerne}
 
 \title{Convert geographical coordinates to and from Swiss topo coordinates}
@@ -15,11 +15,12 @@
 \usage{
 LB2MK( long, lat )
 LB2YX( long, lat )
-YX2LB( yToEast, xToNorth )
-YX2MK( yToEast, xToNorth )
+YX2LB( yt_e, xt_n )
+YX2MK( yt_e, xt_n )
 }
 \arguments{
-  \item{long,lat, yToEast, xToNorth}{Real}
+  \item{long,lat}{Real, geogr. longitude, latitude}
+  \item{yt_e, xt_n}{Real, Swiss coordinates, east, north positive}
 }
 \details{
   \code{LB2MK} From geogr. longitude and latitude to planar meridian convergence [gon].\cr
@@ -27,14 +28,14 @@ YX2MK( yToEast, xToNorth )
   \code{YX2LB} From Swiss coordinates  to geogr. longitude and latitude.\cr
   \code{YX2MK} From Swiss coordinates North and East to planar meridian convergence [gon].\cr
   \code{LongBerne, LatBerne} geogr. coordinates of Berne, 7deg26'22.50" east, 46deg57'08.66" north.\cr
-  \code{yToEastBerne, xToNorthBerne} Swiss topo coordinates of refernce point near Berne.
+  \code{yToEastBerne, xtoNorthBerne} Swiss topo coordinates of refernce point near Berne.
 }
 
 \examples{
 LB2MK( LongBerne, LatBerne) #  7.21188e-16 [gon]
 LB2MK( 9.132582913360895, 46.18669420448755) # somewhere in Switzerland , 1.37472
 LB2YX( LongBerne, LatBerne) # 600.0, 200.0
-YX2LB ( yToEastBerne, xToNorthBerne ) # 7.4395833  46.9524055
+YX2LB ( yToEastBerne, xtoNorthBerne ) # 7.4395833  46.9524055
 YX2MK ( 600, 200) #  =   0
 }
 \author{

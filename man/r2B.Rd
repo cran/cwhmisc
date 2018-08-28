@@ -6,7 +6,7 @@
 \alias{strB2i}
 \title{Conversion of  real to string  and rounding, in given base
 }
-\description{ Functions for conversion of real to string in given base, and back, fixed and exponential format; and rounding in base number system
+\description{ Functions for conversion of real to string and back, in given base, in fixed and exponential format; and rounding in base number system.
 }
 \usage{
   r2B(x, base = 10, rnd = 0, space = 0, plus = "", lead = "", 

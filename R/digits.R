@@ -1,14 +1,14 @@
-allDigits <- function ( str, base=10 ) {
-  Legal <- HexDig[ 1:(base) ]
-  legal <- union( Legal, lowerize( Legal ) )
+allDigits <- function (str, base=10) {
+  legal <- HexDig[1:base]
+  legal <- union(legal, lowerize(legal))
   k <- length(str)
   res <- logical(k)
   for (i in 1:k) {
     st <- str[i]
-    ex <- unlist( strsplit(st, NULL) )
+    ex <- unlist(strsplit(st, NULL))
     res[i] <- all(match(ex, legal, nomatch = 0) > 0)
   }
-  return( res )
+  return(res)
 } # allDigits
 
 isNumeric <- function (str) {
@@ -17,12 +17,12 @@ isNumeric <- function (str) {
     !is.na(as.numeric(str))
 } # isNumeric
 
-str2dig <- function( str ) {
+str2dig <- function(str) {
   k <- length(str)
   res <- logical(k)
   for(i in 1:k) {
     st <- str[i]
-    res[i] <- as.numeric( unlist(strsplit(st,NULL)) )
+    res[i] <- as.numeric( unlist(strsplit(st, NULL)) )
   }
-  return( res )
+  return(res)
 } # str2dig

@@ -39,6 +39,19 @@
    points(q6,pch="-")
  }
 }
+\note{
+Halton, J.H., Smith, G.G., 1961. Algorithm 247
+Radical-inverse quasi-random point sequence
+ Computes a sequence of N quasi-random points
+ lying in the K-dimensional unit cube given by
+ 0 < x_i < 1, i = 1,2,..,K. The i-th component
+ of the m-th point is stored in Q[m,i].
+ The sequence is initiated by a zero-th point
+ stored in P, and each component sequence is
+ iteratively generated with parameter R[i].
+ E is a positive error-parameter.
+ K, N, E, P[i], R[i], i=1..K, are to be given.
+}
 \source{
   J. H. Halton, 1964. Algorithm 247: Radical-inverse quasi-random point sequence, Communications of the ACM, Vol.7,12, pp. 701 - 702 .
 }

@@ -31,7 +31,9 @@
 }
 \note{\code{d} not missing is practical for use in \code{\link{dc}}
 \cr
-For \code{confrac} see also \code{link[MASS]{fractions}}.
+  For \code{confrac} see also \code{link[MASS]{fractions}}.
+  from Mathematics 5335 Fall 2009
+  The Euclidean Algorithm and Continued Fractions
 }
 \examples{
 (pcf <- contfrac(pi)) # 3, 7, 15, 1, 292, 1, 1, 1, 2, 1, 3, 1, 14, 2, (1)

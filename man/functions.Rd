@@ -10,10 +10,11 @@
 \alias{frac}
 \alias{int}
 \alias{inrange}
-\alias{K}
 \alias{Km}
+\alias{Ko}
 \alias{last}
 \alias{LE}
+\alias{loop.vp}
 \alias{LS}
 \alias{lV}
 \alias{mod}
@@ -48,10 +49,11 @@
   frac(x,d)
   int( x )
   inrange( x, y )
-  K(z)
+  Ko(z)
   Km(z)
   last( x )
   LE ( x )
+  loop.vp( ve, overlap=1 )
   LS ( )
   lV ( x )
   mod( x, y )
@@ -72,24 +74,30 @@
   zero ( x )
 }
 \arguments{
-  \item{a,b,c,prec,L,R}{Real}
+  \item{prec,L,R}{Real}
+  \item{a,b,c,z}{Complex}
   \item{i}{Integer vector}
   \item{d}{If not missing, 'frac' shows 'd' decimals after "." as integer }
   \item{n,num,den}{Integer}
   \item{rel}{Boolean}
   \item{s}{square matrix, result of \code{\link{svd}} }
-  \item{v}{real vector > 0, preferably cumsum of some other positive vector}
+  \item{v}{real vector > 0, preferably cumsum of some other positive vector}  \item{ve}{real any vector or matrix}
+  \item{overlap}{integer vector, giving element indices/column numbers to be appended at the end, see examples}
   \item{x,y}{Real vector}
-  \item{w}{real vector > 0}
-  \item{z}{complex number}
+  \item{w}{Real vector > 0}
 }
 \value{
   \code{exch}: Exchanges elements 'L' and 'R': x[which( x == L )] <- R; x[which( x == R )] <- L\cr
   \code{K}: Cayley transform \code{ (z - i)/(z + i)}\cr
   \code{Km}: \code{ (1 + z)i/(1 - z)}, inverse transformation of \code{K}
   \code{norm2}: 2-norm.\cr
-  \code{pythag}: c(A,B,C), A=final a' = sqrt( a^2 + b^2 ) without squaring and taking the square root, avoiding overflow and underflow, B=final b', C=residual = final (b'/a')^2, see note. \cr
-  \code{signp}: ifelse( is.na(x) | (!is.finite(x) | x>=0),1,-1 ), avoiding NA, NaN and 0 in the result.\cr
+  \code{last}: last element of vector
+  \code{LE}: = length of vector
+  \code{pythag}: c(A,B,C), A=final a' = sqrt( a^2 + b^2 ) without squaring and \cr
+  taking the square root, avoiding overflow and underflow, B=final b',\cr
+           C=residual = final (b'/a')^2, see note. \cr
+  \code{signp}: ifelse( is.na(x) | (!is.finite(x) | x>=0),1,-1 ), avoiding\cr
+            NA, NaN and 0 in the result.\cr
   \code{sqrtH}: Square root with Halley's hyperbolical method.
 }
 \details{
@@ -105,7 +113,8 @@
   \code{last} return the last element of a vector.\cr
   \code{LE} short for 'length(x)'.\cr
   \code{LS} short for '.Last.value'.\cr
-  \code{modR}: same as 'mod', but towards negative infinity.\cr
+  \code{loop.vr}: loop around vector with overlap.\cr
+  \code{LS} short for '.Last.value'.\cr
   \code{modS}: same as 'mod', symmetric to 0.\cr
   \code{mod} = x \%\% y, x and y with same number of elements. \cr
   \code{onebyx} = 1.0/x\cr
@@ -113,10 +122,12 @@
   \code{powr} = x^y, with  0^0 := 1, 0^y := 0, any y\cr
   \code{quotmean} Compute quotient of means of non-NA elements of x by y\cr
   \code{safeDiv} Compute quotient, set 0/0 -> 1,  and safeguard r/0 <- \code{\link{c3Q}} otherwise  \cr
-  \code{signp(0)} -> 1, \code{signp(complex)} -> NA !
-  \code{solveQeq} Solve the quadratic equation given by the coefficients, return two solutions if a != 0, else one solution, possibly NA\cr
+  \code{signp(0)} -> 1, \code{signp(complex)} -> NA ! \cr
+  \code{solveQeq} Solve the quadratic equation \code{a*z^2+ b*z+c} given\cr
+  the coefficients \code{a,b,c} OR \code{c(a,b,c)}, returns always *two*\cr
+  solutions; if \code{a = b = 0} returns {c(Inf, Inf)}\cr
   \code{sqr} = x^2\cr
-  \code{submod} analog to divmod for unequally spaced data, c(greatest index 'gi' of 'v' s.t. v < x, x - v['gi']  \cr
+  \code{submod} analog to divmod for unequally spaced data, c(greatest index \code{gi} of \code{v} s.t. v < x, x - v['gi']  \cr
   \code{zero} returns 0.0, same length as 'x'\cr
 }
 \examples{
@@ -131,6 +142,12 @@ modS((-3:5),4) # -3 -2 -1  0  1  2  3  0  1
 x <- 200; y <- x + 0.1
 equalFuzzy(x,y,0.1*c(10^(-3:0))) # FALSE  TRUE  TRUE  TRUE
 equalFuzzy(x,y,0.1*c(10^(-3:0)),FALSE) # FALSE FALSE FALSE  TRUE
+loop.vp(1:4) #  1 2 3 4 1
+loop.vp(matrix(1:12,nrow=3),c(2,4))
+#     [,1] [,2] [,3] [,4] [,5] [,6]
+#[1,]    1    4    7   10    4   10
+#[2,]    2    5    8   11    5   11
+#[3,]    3    6    9   12    6   12
 safeDiv(0:3,c(0,0:2)) # 1.552518e+231
 signp(c(-1:1,NA,NaN,Inf, -Inf)) # -1   1   1  1  1     1  1
 #  instead of sign() =            -1   0   1  NA NaN   1  -1
@@ -160,13 +177,10 @@ Note that \code{ 1 } results with \code{ signp( 0 ) };\cr
 \code{pythag}: The invariant of the iteration is sqrt(a^2 + b^2), iterating a':=max(a,b) and reducing b':=min(a,b).
 }
 \references{
-  Moler, C. and Morrison. D, 1983 \emph{Replacing Square Roots by Pythagorean Sums}, IBM J.Res.Devel., \bold{27}, 6, 577--589.
-\href{http://www.mathpath.org/Algor/squareroot/algor.square.root.halley.htm}{Mathpath, Formula for Halley}
-  
-  \href{https://en.wikipedia.org/wiki/Halley's_method}{Wikin pedia, Derivation of Halley}
+  Moler, C. and Morrison. D, 1983 \emph{Replacing Square Roots by Pythagorean Sums}, IBM J.Res.Devel., \bold{27}, 6, 577--589.\cr
+\href{http://www.jjam.de/JavaScript/Mathematik/Primzahlen.html}{jjam(Prime numbers)};  \href{http://www.mathpath.org/Algor/squareroot/algor.square.root.halley.htm}{Mathpath(Formula for Halley)};  \href{https://en.wikipedia.org/wiki/Halley's_method}{Wikipedia(Derivation of Halley)}
 }
 \author{
   Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{arith}
-

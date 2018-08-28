@@ -15,15 +15,12 @@
 }
 \value{
   the number of internal calls of Sys.time()
-	}
-\examples{
-\donttest{
-  Sys.time(); nrof <- delayt(5); Sys.time()
-  print(nrof) # 26596 on my machine (2.33 GHz MacBook Pro)
 }
+\examples{
+  Sys.time(); nrof <- delayt(5); Sys.time()
+  print(nrof) # 116596 on my machine (2.33 GHz MacBook Pro)
 }
 \author{
   Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{chron}
-

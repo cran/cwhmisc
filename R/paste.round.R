@@ -5,10 +5,10 @@ pasteRound <- function (..., digits=16, sep=" ", collapse=NULL) {
       character(0)
     else ""
   else{
-    for(i in seq_along(args))
-      if(is.numeric(args[[i]])) args[[i]] <-  as.character(round(args[[i]], digits))
+    for (i in seq_along(args))
+      if (is.numeric(args[[i]])) args[[i]] <-
+               as.character(round(args[[i]], digits))
       else args[[i]] <- as.character(args[[i]])
    paste(args, sep, collapse)
   }
 } # pasteRound
-

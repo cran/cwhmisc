@@ -1,26 +1,26 @@
-\name{cwhmisc}
+\name{cwhmisc-package}
 \alias{cwhmisc-package}
 \alias{cwhmisc}
 \docType{package}
-\title{A collection of useful functions and constants}
-\description{
-Useful functions and constants for mathematics, astronomy, plotting, printing, data manipulation, statistics, string manipulation, etc.
+\title{cwhmisc
 }
-\details{
-\tabular{ll}{
-Package: \tab cwhmisc\cr
-Type: \tab Package\cr
-Version: \tab 6.0\cr
-Date: \tab 2015-07-30\cr
-License: \tab GPL (>= 2)\cr
-Author: \tab  Christian W. Hoffmann <christian@echoffmann.ch> www.echoffmann.ch\cr
-Maintainer: \tab same
+\description{Miscellaneous Functions for Math, Plotting, Printing,
+        Statistics, Strings, and Tools
 }
+\details{Useful functions and constants for mathematics, astronomy, plotting, printing, data manipulation, statistics, string manipulation, etc.
 }
 \author{
-Christian W. Hoffmann <christian@echoffmann.ch>
+Christian W. Hoffmann
+Maintainer: Christian W. Hoffmann <christian@echoffmann.ch>
 }
 \keyword{ package }
+\keyword{ math }
+\keyword{ character }
+\keyword{ data }
+\keyword{ manip }
+\keyword{ print }
+\keyword{ utilities }
+\keyword{ hplot }
 \examples{
 \dontrun{ #  Show use of 'SplomT'
   nr <- 100; nc <- 8;

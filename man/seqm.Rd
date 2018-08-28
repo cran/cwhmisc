@@ -2,7 +2,7 @@
 \alias{seqm}
 \title{sequences, empty if "by" not conforming}
 \description{
-  Generate sequences, but unlike "seq", return NULL, when "seq" would generate a backward sequence. This function is useful for \code{\link{for}}-loops, when empty loops are required, if \code{by} is in the "wrong" direction, see \emph{examples}.
+  Generate sequences, but unlike "seq", return NULL, when "seq" would generate a backward sequence. This function is useful for \code{\link{for}}-loops, when empty loops are required in the case where \code{by} is in the "wrong" direction, see \emph{examples}.
 }
 \usage{
   seqm(from, to, by=1)

@@ -18,7 +18,8 @@ tex.tab0(dm, prec = 2, rnames = NULL, cnames = NULL,
   \item{dm}{data matrix}
   \item{bare}{TRUE: \code{ prec,rnames,cnames} will get useful
 		defaults, FALSE: set these parameters yourself}
-  \item{prec}{precision of rounding within the LATEX table, if NA, then no transformation to numeric is done}
+  \item{prec}{precision of rounding within the LATEX table,
+  if NA, then no transformation to numeric is done}
   \item{rnames}{row names}
   \item{cnames}{column names}
   \item{caption}{caption for LATEX table, default: no caption}
@@ -26,7 +27,7 @@ tex.tab0(dm, prec = 2, rnames = NULL, cnames = NULL,
   \item{tpos}{position of captions: "a" for above table, "b" for below table}
   \item{stretch}{optional vector with two entries, giving the baselinestretch for the caption (stretch[1]) and the colums of the table (stretch[2]);
   default: no adjustment of baselinestretch}
-  \item{adjust}{adjusts the columns of the LATEX table, default: "r" (right), 
+  \item{adjust}{adjusts the columns of the LATEX table, default: "r" (right),                                                                       
     also possible: "l" (left) and "c" (centre) or user defined:
      "adjust=c("l","c","r",...)" yields \{l|cr...\}}
   \item{file}{output file, default: printout in console}

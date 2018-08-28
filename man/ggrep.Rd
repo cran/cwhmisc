@@ -3,17 +3,19 @@
 \alias{ggrep}
 \alias{countChar}
 \title{Convenience functions for grep}
-\description{ Grepping in (my) R directory
+\description{ Grepping in a (my) R directory
 }
 \usage{
 grepnot(str,x,value=TRUE)
-ggrep(opt="inr",str,dir= "/Users/hoffmannc/R/",pkg="",split=FALSE, lines=10,out=FALSE)
+ggrep( opt = "inr", str, exclude = "", dir =  "/Users/hoffmannc/R/",
+           pkg = "", split = FALSE, lines = 10, out = FALSE)
 countChar( str, dir="/Users/hoffmannc/R/", pkg="",split=FALSE,out=FALSE)
 }
 \arguments{
   \item{str}{string to do grep for}\cr
+  \item{exclude}{string to exclude from grep}\cr
   \item{x}{array of strings to check with \code{grep}.}\cr
-  \item{value}{third argument to \code{\link{grep}} ('ignore.case').}\cr
+  \item{value}{Boolean, third argument to \code{\link{grep}} ('ignore.case').}\cr
   \item{opt}{options for '\code{\link{grep}}' without leading '-'}\cr
   \item{dir}{name of root directory to do grep in}\cr
   \item{pkg}{package name to do grep in; may be "" if \code{dir} itself is meant.}
@@ -40,6 +42,8 @@ countChar( str, dir="/Users/hoffmannc/R/", pkg="",split=FALSE,out=FALSE)
   - "v": inverts matches,\cr 
   - "w": complete word matches only,\cr
   - "x": matches must be whole lines only\cr
+  ggrep("-v","xxx",exclude="") is the same as\cr
+  ggrep(,"",exclude="xxx"), except that the former lacks line numbers.
 }
 \examples{
 \dontrun{

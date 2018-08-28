@@ -22,7 +22,7 @@
   par(mfrow=c(2,2))
   T3plot(rnorm(100))
   T3plot(rnorm(10000))
-  T3plot(rnorm(1000)+runif(1000)*0.1,"Rather well normal")
+  T3plot(rnorm(1000)+runif(1000)*0.1,"Mixture,rather well normal")
   T3plot(rnorm(1000)+runif(1000)*10,"Not < 1 percent error for normality")
 }
 \references{Ghosh, S. (1996) A new graphical tool to detect non-normality. Journal of the Royal Statistical  Society B , 58, 691-702. }

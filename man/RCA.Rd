@@ -10,20 +10,15 @@ Check, build, install package in a unified manner.
   RCA(dir=getwd(),pkg, Rsty, sw=c(2, 5:7), echoonly=FALSE, verbose=TRUE)
 }
 \arguments{
-  \item{dir}{character, code{link{dirname}} of package(s).}
-  \item{pkg}{character, code{link{basename}} of package}
+  \item{dir}{character, dirname of package(s).}
+  \item{pkg}{character, basename of package}
   \item{Rsty}{full path name of 'Rd.sty'}
   \item{echoonly}{boolean, give echo of R CMD ..., more verbosely}
   \item{verbose}{boolean, give only echo of intended 'R CMD ...'}
-  \item{sw}{switch, for alternatives, must be in 0:6, see note}
-}
-\examples{
-  \dontrun{
-  RCA(,"mypackage", 2:4)
-  }
+  \item{sw}{switch, for alternatives, must be in 0:7, see note}
 }
 \note{
-  If the complete filepath of the package source is given in 'dir', 'pkg' must be empty!\cr\cr
+  If the complete filepath of the package source is given in 'dir', 'pkg' must be *empty* !\cr\cr
   "RCA" calls system("R CMD <options> path-to-package ") with options\cr
   \code{sw}: \cr 
    - 0  = (show sw alternatives), \cr
@@ -37,7 +32,8 @@ Check, build, install package in a unified manner.
 The order 2 to 6 is suggested by \url{https://cran.r-project.org/doc/manuals/r-release/R-exts.pdf}. \cr
 sw = 1 shows errors present in the creation of the manual. \cr
 sw = 4 is provided for checking as required by CRAN policy. \cr
-\emph{'Rd.sty'} must be provided in \code{Rsty}. \cr
+\emph{'Rd.sty'} must be provided in \code{Rsty}, mine is in \cr
+\code{/Users/hoffmannc/Rtest/Rd.sty.}
 Permissions for the vignette *.Rnw should be changed by system("chmod
 u=rwx ...Rnw "), if necessary.
 }

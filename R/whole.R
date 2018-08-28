@@ -1,1 +1,3 @@
-whole <- function( x ) all ( frac( x ) == 0 )
+whole <- function(x) {
+    all(frac(x) == 0)
+}

@@ -2,7 +2,7 @@
 \alias{triplot}
 \title{Ternary or Triangular Plots.}
 \description{
-  \code{plotCI} plots in a triangle the values of three variables. Useful for mixtures 
+  \code{triplot} plots in a triangle the values of three variables. Useful for mixtures 
 	(chemistry etc.).
 }
 \usage{

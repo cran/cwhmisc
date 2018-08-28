@@ -26,9 +26,10 @@
 \alias{cSIDBYSOL}
 \alias{DPY}
 \alias{DAYINMONTH}
-\title{ Astronomical constants}
-\description{ Astronomical constants }
+\title{Astronomical constants}
+\description{Astronomical constants}
 \details{
+ See: \url{http://www.kayelaby.npl.co.uk/general_physics/2_7/2_7_2.html}\cr
   \code{cJDJ2000} = 2451545.0 , Julian day number of the epoch J2000.0\cr
   \code{cDAYPJULCENT} = 36525.0 , days per julian century\cr
   \code{cDAYPYEARTROP} = 365.242198781 , days per tropical year\cr

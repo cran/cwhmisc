@@ -1,5 +1,4 @@
-lpr <- function (object, file = "Rplotlpr.ps", ...) 
-{
+lpr <- function (object, file = "Rplotlpr.ps", ...) {
     if (missing(object)) {
         current.device <- dev.cur()
         dev.off(dev.copy(device = postscript, file = file, ...))
@@ -8,7 +7,7 @@ lpr <- function (object, file = "Rplotlpr.ps", ...)
         print(paste(file, "printed."))
     }
     else {
-        if (missing(file)) 
+        if (missing(file))
             file <- "Robjlpr.txt"
         sink(file)
         object <- as.character(substitute(object))
